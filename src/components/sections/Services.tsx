@@ -106,7 +106,7 @@ export const Services: React.FC<ServicesProps> = ({
         fr: 'Lifting manuel ancestral Kobido, nettoyage profond aux ultrasons & élixirs botaniques.',
         en: 'Ancestral Japanese Kobido sculpting lift, deep ultrasonic cleansing & botanicals.'
       },
-      image: SPA_IMAGES.socialSpaProducts,
+      image: SPA_IMAGES.facialSkincareReference,
       filterFn: (s) => s.category === 'facial',
       subCategories: [
         { id: 'all', label: { fr: 'Tous les soins visage', en: 'All Facials' } }

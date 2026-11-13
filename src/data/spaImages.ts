@@ -37,6 +37,7 @@ export const SPA_IMAGES = {
   freshaBeautyClean:  spa('fresha-beauty-clean.jpg'),  // Clean spa/nail/beauty area
   beautyNailsReference: spa('beauty-nails-reference.jpg'), // Official reference beauty & nails photo
   hairCareReference:    spa('hair-care-reference.jpg'),    // Official reference hair care photo
+  facialSkincareReference: spa('facial-skincare-reference.jpg'), // Official reference facial & skincare photo
   freshaJacuzziBlue:  spa('fresha-jacuzzi-blue.jpg'),  // Jacuzzi blue water (bright)
 
   // Social / Portrait
