@@ -35,6 +35,7 @@ export const SPA_IMAGES = {
   freshaTreatment:    spa('fresha-treatment.jpg'),      // Pinkish, treatment-related
   freshaMassageCandle: spa('fresha-massage-candle.jpg'), // Candle-lit massage setting
   freshaBeautyClean:  spa('fresha-beauty-clean.jpg'),  // Clean spa/nail/beauty area
+  beautyNailsReference: spa('beauty-nails-reference.jpg'), // Official reference beauty & nails photo
   freshaJacuzziBlue:  spa('fresha-jacuzzi-blue.jpg'),  // Jacuzzi blue water (bright)
 
   // Social / Portrait

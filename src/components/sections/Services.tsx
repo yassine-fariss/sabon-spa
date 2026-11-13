@@ -70,7 +70,7 @@ export const Services: React.FC<ServicesProps> = ({
         fr: 'Soins spa des mains et des pieds, manucure russe, BIAB, rehaussement de cils & regard.',
         en: 'Spa manicure & pedicure, Russian technique, BIAB, lash lift & brow styling.'
       },
-      image: SPA_IMAGES.freshaBeautyClean,
+      image: SPA_IMAGES.beautyNailsReference,
       filterFn: (s) => s.category === 'manicure-pedicure' || s.category === 'lashes-brows' || s.category === 'extras',
       subCategories: [
         { id: 'all', label: { fr: 'Toutes les prestations', en: 'All Services' } },
