@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { ChevronDown, Sparkles, Shield, Star, Layers, Rotate3d, X, Droplets, Compass } from 'lucide-react';
+import React from 'react';
+import { ChevronDown, Sparkles, Shield, Star, Waves, ArrowRight } from 'lucide-react';
 import { Language } from '../../types';
-import { BlueSanctuary3D } from './BlueSanctuary3D';
 import { getAssetUrl } from '../../utils/assets';
+import { SPA_IMAGES } from '../../data/spaImages';
 
 interface HeroSectionProps {
   lang: Language;
@@ -13,139 +13,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   lang,
   onOpenBooking,
 }) => {
-  const [viewMode, setViewMode] = useState<'3d' | 'video'>('3d');
-  const [isFocus3D, setIsFocus3D] = useState(false);
-  const rippleTriggerRef = useRef<(() => void) | null>(null);
-
-  const handleToggle3D = () => {
-    if (viewMode !== '3d') {
-      setViewMode('3d');
-      setIsFocus3D(true);
-    } else {
-      // If already in 3D, toggle focus mode so clicking directly activates full interactive experience
-      setIsFocus3D(!isFocus3D);
-    }
-    if (rippleTriggerRef.current) {
-      rippleTriggerRef.current();
-    }
-  };
-
-  const handleTriggerRipple = () => {
-    if (rippleTriggerRef.current) {
-      rippleTriggerRef.current();
-    }
-  };
-
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-28 pb-10">
-      {/* Background Layer: 3D Sanctuary OR Authentic Video Reel */}
+      {/* Background Layer: Authentic Hammam Ambient Video & High-Res Photography Fallback */}
       <div className="absolute inset-0 z-0">
-        {viewMode === '3d' ? (
-          <>
-            <BlueSanctuary3D
-              isFocusMode={isFocus3D}
-              onTriggerRipple={(fn) => {
-                rippleTriggerRef.current = fn;
-              }}
-            />
-            {/* Subtle underwater ambient gradient & grain - pointer-events-none so 3D receives drag */}
-            <div className={`absolute inset-0 transition-opacity duration-700 pointer-events-none ${
-              isFocus3D ? 'opacity-30' : 'opacity-100'
-            }`}>
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/70" />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/50 to-transparent" />
-            </div>
-          </>
-        ) : (
-          <div className="absolute inset-0">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover filter brightness-[0.75] contrast-[1.05]"
-              src={getAssetUrl('videos/hero-ambient.mp4')}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-navy-950/70" />
-            <div className="absolute inset-0 bg-navy-950/30 backdrop-blur-[1px]" />
-          </div>
-        )}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={SPA_IMAGES.hammamStarlight}
+          className="w-full h-full object-cover filter brightness-[0.65] contrast-[1.08] scale-105"
+          src={getAssetUrl('videos/hero-ambient.mp4')}
+        />
+        {/* Cinematic dark luxury vignettes */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-navy-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-transparent" />
+        {/* Subtle underwater caustic shimmer */}
+        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-aqua/20 via-transparent to-transparent pointer-events-none animate-caustic" />
       </div>
 
-      {/* Top Controls: Mode Switcher Badge */}
+      {/* Top Status Badge */}
       <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left: Focus Mode status when active */}
-        {isFocus3D && viewMode === '3d' ? (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/90 backdrop-blur-md border border-aqua/40 text-[11px] text-aqua shadow-glow-aqua animate-fade-in">
-            <Sparkles size={12} className="animate-pulse" />
-            <span className="font-medium">
-              {lang === 'fr' ? 'Mode 3D immersif actif • Glissez la souris ou touchez pour faire pivoter' : 'Interactive 3D Active • Drag to rotate 360°'}
-            </span>
-          </div>
-        ) : (
-          <div className="hidden sm:block" />
-        )}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/80 backdrop-blur-md border border-aqua/30 text-[11px] text-aqua shadow-glow-aqua">
+          <span className="w-2 h-2 rounded-full bg-aqua animate-pulse" />
+          <span className="font-medium tracking-wide">
+            {lang === 'fr' ? 'Vue Hammam Authentique • Tanger Malabata' : 'Authentic Hammam View • Tangier Malabata'}
+          </span>
+        </div>
 
-        {/* Right: Switcher Badges */}
-        <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-navy-900/80 backdrop-blur-md border border-aqua/30 text-[11px] text-mist/80 shadow-lg">
-          <button
-            onClick={handleToggle3D}
-            title={lang === 'fr' ? 'Cliquez pour explorer en 3D' : 'Click to explore in 3D'}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition font-medium ${
-              viewMode === '3d'
-                ? 'bg-brand text-white shadow-glow-aqua'
-                : 'text-mist/70 hover:text-white'
-            }`}
-          >
-            <Sparkles size={12} className={isFocus3D ? 'animate-spin-slow text-aqua' : ''} />
-            <span>3D Sanctuary {isFocus3D ? '(360°)' : ''}</span>
-          </button>
-          <button
-            onClick={() => {
-              setViewMode('video');
-              setIsFocus3D(false);
-            }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition font-medium ${
-              viewMode === 'video'
-                ? 'bg-brand text-white shadow-glow-aqua'
-                : 'text-mist/70 hover:text-white'
-            }`}
-          >
-            <Layers size={12} />
-            <span>{lang === 'fr' ? 'Vue Hammam' : 'Hammam View'}</span>
-          </button>
+        <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/60 backdrop-blur-md border border-aqua/20 text-[11px] text-mist/75">
+          <Waves size={12} className="text-aqua" />
+          <span>{lang === 'fr' ? 'Le Sanctuaire Bleu' : 'The Blue Sanctuary'}</span>
         </div>
       </div>
 
-      {/* Floating 3D Interaction Toolbar when in Focus Mode */}
-      {isFocus3D && viewMode === '3d' && (
-        <div className="relative z-30 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-4 flex items-center justify-end gap-2 animate-fade-in">
-          <button
-            onClick={handleTriggerRipple}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-900/80 hover:bg-navy-800 text-mist text-xs border border-aqua/30 transition hover:text-aqua"
-            title={lang === 'fr' ? 'Créer une onde dans l’eau' : 'Trigger water ripple'}
-          >
-            <Droplets size={12} className="text-aqua" />
-            <span>{lang === 'fr' ? 'Onde d’eau' : 'Ripple'}</span>
-          </button>
-          <button
-            onClick={() => setIsFocus3D(false)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand/90 hover:bg-brand text-white text-xs border border-aqua/40 shadow-glow-aqua transition"
-          >
-            <X size={12} />
-            <span>{lang === 'fr' ? 'Quitter 3D' : 'Exit 3D'}</span>
-          </button>
-        </div>
-      )}
-
-      {/* Main Content Area */}
-      <div className={`relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8 transition-all duration-700 pointer-events-none ${
-        isFocus3D ? 'opacity-20 pointer-events-none scale-95 translate-y-8' : 'opacity-100'
-      }`}>
-        <div className="max-w-2xl lg:max-w-3xl pointer-events-auto">
+      {/* Main Hero Content Area */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8">
+        <div className="max-w-2xl lg:max-w-3xl">
           {/* Eyebrow / Location */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 backdrop-blur-md border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-6 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-aqua animate-pulse" />
+            <Sparkles size={12} className="text-aqua" />
             <span>Tanger • Baie de Malabata</span>
           </div>
 
@@ -180,20 +88,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {lang === 'fr' ? 'Réserver une expérience' : 'Book an Experience'}
             </button>
 
-            <button
-              onClick={() => {
-                setViewMode('3d');
-                setIsFocus3D(true);
-                if (rippleTriggerRef.current) rippleTriggerRef.current();
-              }}
-              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua"
-            >
-              <Sparkles size={14} className="text-aqua animate-pulse" />
-              <span>{lang === 'fr' ? 'Explorer en 3D' : 'Explore in 3D'}</span>
-            </button>
-
             <a
               href="#rituels"
+              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua"
+            >
+              <span>{lang === 'fr' ? 'Découvrir les rituels' : 'Discover Rituals'}</span>
+              <ArrowRight size={14} />
+            </a>
+
+            <a
+              href="#soins"
               className="px-6 py-4 rounded-full bg-navy-900/50 hover:bg-navy-800/70 backdrop-blur-md border border-aqua/20 text-mist/80 hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition text-center"
             >
               {lang === 'fr' ? 'Soins & Tarifs' : 'Treatments'}
@@ -234,14 +138,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       </div>
-
-      {/* Interactive 3D drag hint (Desktop right corner) */}
-      {!isFocus3D && viewMode === '3d' && (
-        <div className="hidden lg:flex items-center gap-2.5 absolute right-8 bottom-16 z-20 px-4 py-2 rounded-full bg-navy-950/70 backdrop-blur-md border border-aqua/30 text-[11px] text-aqua/90 shadow-glow-aqua animate-fade-in pointer-events-none select-none">
-          <Rotate3d size={14} className="animate-spin-slow text-aqua" />
-          <span>{lang === 'fr' ? 'Faites glisser la souris pour faire pivoter le sanctuaire 3D' : 'Drag with mouse to rotate 3D sanctuary'}</span>
-        </div>
-      )}
 
       {/* Bottom Scroll Cue */}
       <div className="relative z-10 flex justify-center pb-2">
