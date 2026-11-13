@@ -10,7 +10,6 @@ import { PacksSection } from './components/sections/PacksSection';
 import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
 import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
-import { TeamSection } from './components/sections/TeamSection';
 import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { MessageSquare } from 'lucide-react';
@@ -52,10 +51,7 @@ export const App: React.FC = () => {
         {/* 8. Why Sabon Spa */}
         <WhySabon lang={lang} />
 
-        {/* 9. Master Team Section */}
-        <TeamSection lang={lang} />
-
-        {/* 10. Verified Google Reviews & Social Proof */}
+        {/* 9. Verified Google Reviews & Social Proof */}
         <ReviewsSection lang={lang} />
 
         {/* 11. FAQ Section */}

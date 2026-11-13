@@ -100,9 +100,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   <a href="#sanctuaire" className="hover:text-aqua transition">{lang === 'fr' ? 'Galerie du Sanctuaire' : 'Sanctuary Gallery'}</a>
                 </li>
                 <li>
-                  <a href="#equipe" className="hover:text-aqua transition">{lang === 'fr' ? 'Maîtres Praticiens' : 'Master Therapists'}</a>
-                </li>
-                <li>
                   <a href="#avis" className="hover:text-aqua transition">{lang === 'fr' ? 'Avis Clients Google (5.0 ★)' : 'Google Reviews (5.0 ★)'}</a>
                 </li>
                 <li>

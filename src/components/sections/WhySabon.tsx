@@ -39,8 +39,8 @@ export const WhySabon: React.FC<WhySabonProps> = ({ lang }) => {
         en: 'Master Certified Bodyworkers'
       },
       desc: {
-        fr: 'Des thérapeutes chevronnés (Latifa, Anne, Jay, Sam...) experts du hammam royal marocain, du Kobido japonais et du Deep Tissue myofascial.',
-        en: 'Experienced therapists (Latifa, Anne, Jay, Sam...) seasoned in authentic Moroccan hammam rituals, Japanese Kobido lift, and myofascial deep tissue.'
+        fr: 'Des thérapeutes chevronnés et diplômés, experts du hammam royal marocain, du Kobido japonais et du Deep Tissue myofascial.',
+        en: 'Experienced, certified bodyworkers seasoned in authentic Moroccan hammam rituals, Japanese Kobido lift, and myofascial deep tissue.'
       }
     },
     {
