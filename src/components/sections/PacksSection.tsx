@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Sparkles, Clock, Crown, ArrowRight, X, Heart, Check, ChevronRight } from 'lucide-react';
+import { Sparkles, Clock, Crown, ArrowRight, X, Heart, Check, ChevronRight, MessageSquare } from 'lucide-react';
 import { Language } from '../../types';
 import { ALL_TREATMENTS, TreatmentService } from '../../data/servicesData';
 import { SPA_IMAGES } from '../../data/spaImages';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface PacksSectionProps {
   lang: Language;
-  onSelectPack: (packName: string) => void;
 }
 
 export const PacksSection: React.FC<PacksSectionProps> = ({
-  lang,
-  onSelectPack
+  lang
 }) => {
   const [isAllPacksOpen, setIsAllPacksOpen] = useState(false);
   const [filterTab, setFilterTab] = useState<'all' | 'adults' | 'kids'>('all');
@@ -190,13 +189,15 @@ export const PacksSection: React.FC<PacksSectionProps> = ({
 
               {/* Booking CTA */}
               <div className="p-6 sm:p-7 pt-0">
-                <button
-                  onClick={() => onSelectPack(pack.name[lang])}
-                  className="w-full py-3.5 px-6 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white font-medium text-xs uppercase tracking-[0.16em] shadow-glow-aqua transition flex items-center justify-center gap-2"
+                <a
+                  href={getWhatsAppUrl(pack.name[lang], lang)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs uppercase tracking-[0.16em] shadow-lg transition flex items-center justify-center gap-2"
                 >
-                  <span>{lang === 'fr' ? 'Réserver ce forfait' : 'Book Package'}</span>
-                  <ArrowRight size={14} />
-                </button>
+                  <MessageSquare size={14} />
+                  <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                </a>
               </div>
             </div>
           ))}
@@ -316,16 +317,15 @@ export const PacksSection: React.FC<PacksSectionProps> = ({
                       {pack.price}
                     </span>
 
-                    <button
-                      onClick={() => {
-                        setIsAllPacksOpen(false);
-                        onSelectPack(pack.name[lang]);
-                      }}
-                      className="px-5 py-2 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-[0.14em] font-medium shadow-glow-aqua transition flex items-center gap-1.5"
+                    <a
+                      href={getWhatsAppUrl(pack.name[lang], lang)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.14em] font-medium shadow-lg transition flex items-center gap-1.5"
                     >
-                      <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
-                      <ArrowRight size={13} />
-                    </button>
+                      <MessageSquare size={13} />
+                      <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                    </a>
                   </div>
                 </div>
               ))}

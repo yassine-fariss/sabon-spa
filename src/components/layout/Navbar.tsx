@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MessageSquare, Globe, ChevronRight } from 'lucide-react';
+import { Menu, X, Phone, MessageSquare, ChevronRight } from 'lucide-react';
 import { Language } from '../../types';
 import { BUSINESS_INFO } from '../../data/content';
 import { getAssetUrl } from '../../utils/assets';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface NavbarProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
-  onOpenBooking: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   lang,
-  onLanguageChange,
-  onOpenBooking
+  onLanguageChange
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,17 +109,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             <MessageSquare size={16} />
           </a>
 
-          {/* Primary Booking CTA */}
-          <button
-            onClick={onOpenBooking}
-            className="relative group overflow-hidden px-5 py-2.5 rounded-full bg-gradient-to-r from-brand to-brand-600 border border-aqua/40 text-white text-xs uppercase tracking-[0.16em] font-medium shadow-glow-aqua hover:shadow-lg transition active:scale-95"
+          {/* Primary Booking CTA — WhatsApp */}
+          <a
+            href={getWhatsAppUrl(undefined, lang)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group overflow-hidden px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.16em] font-medium shadow-lg transition active:scale-95 flex items-center gap-1.5"
           >
-            <span className="relative z-10 flex items-center gap-1.5">
-              <span>{lang === 'fr' ? 'Réserver' : 'Book Now'}</span>
-              <ChevronRight size={14} className="group-hover:translate-x-0.5 transition" />
-            </span>
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition duration-300" />
-          </button>
+            <MessageSquare size={14} />
+            <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -159,25 +157,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           <div className="mt-6 pt-4 flex flex-col gap-3">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenBooking();
-              }}
-              className="w-full py-3 rounded-xl bg-brand text-white text-xs uppercase tracking-[0.16em] font-medium flex items-center justify-center gap-2 shadow-glow-aqua"
-            >
-              <span>{lang === 'fr' ? 'Réserver une expérience' : 'Book an Experience'}</span>
-              <ChevronRight size={15} />
-            </button>
-
             <a
-              href={BUSINESS_INFO.whatsappLink}
+              href={getWhatsAppUrl(undefined, lang)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl bg-[#25D366] text-white text-xs uppercase tracking-[0.16em] font-medium flex items-center justify-center gap-2"
             >
               <MessageSquare size={16} />
-              <span>WhatsApp Direct</span>
+              <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
             </a>
 
             <div className="flex items-center justify-center gap-4 text-xs text-mist/60 pt-2">

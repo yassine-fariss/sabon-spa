@@ -1,15 +1,15 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import {
   Clock, Sparkles, ArrowRight, X, Crown, Heart, Waves,
-  Smile, Hand, Scissors, Search, Check, ChevronRight
+  Smile, Hand, Scissors, Search, Check, ChevronRight, MessageSquare
 } from 'lucide-react';
 import { Language } from '../../types';
 import { ALL_TREATMENTS, TreatmentService } from '../../data/servicesData';
 import { SPA_IMAGES } from '../../data/spaImages';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface ServicesProps {
   lang: Language;
-  onSelectService: (serviceName: string) => void;
 }
 
 interface MainCategory {
@@ -23,7 +23,6 @@ interface MainCategory {
 
 export const Services: React.FC<ServicesProps> = ({
   lang,
-  onSelectService
 }) => {
   const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
   const [activeSubCategory, setActiveSubCategory] = useState<string>('all');
@@ -430,16 +429,15 @@ export const Services: React.FC<ServicesProps> = ({
                       {service.price}
                     </span>
 
-                    <button
-                      onClick={() => {
-                        setActiveCategoryId(null);
-                        onSelectService(service.name[lang]);
-                      }}
-                      className="px-5 py-2 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-[0.14em] font-medium shadow-glow-aqua transition flex items-center gap-1.5"
+                    <a
+                      href={getWhatsAppUrl(service.name[lang], lang)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.14em] font-medium shadow-lg transition flex items-center gap-1.5"
                     >
-                      <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
-                      <ArrowRight size={13} />
-                    </button>
+                      <MessageSquare size={13} />
+                      <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                    </a>
                   </div>
                 </div>
               ))}

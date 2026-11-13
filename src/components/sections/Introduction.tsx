@@ -1,17 +1,14 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Droplets, HeartHandshake, Eye, Award } from 'lucide-react';
+import { ArrowRight, Sparkles, Droplets, HeartHandshake, Eye, Award, MessageSquare } from 'lucide-react';
 import { Language } from '../../types';
 import { SPA_IMAGES } from '../../data/spaImages';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface IntroductionProps {
   lang: Language;
-  onOpenBooking: () => void;
 }
 
-export const Introduction: React.FC<IntroductionProps> = ({
-  lang,
-  onOpenBooking
-}) => {
+export const Introduction: React.FC<IntroductionProps> = ({ lang }) => {
   return (
     <section id="presentation" className="relative py-28 bg-navy-950 overflow-hidden">
       {/* Decorative background glows */}
@@ -24,13 +21,13 @@ export const Introduction: React.FC<IntroductionProps> = ({
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium">
               <Sparkles size={13} />
-              <span>{lang === 'fr' ? 'L’Esprit Sabon Spa' : 'The Sabon Spa Philosophy'}</span>
+              <span>{lang === 'fr' ? "L'Esprit Sabon Spa" : 'The Sabon Spa Philosophy'}</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-serif text-white leading-[1.15] font-light">
               {lang === 'fr' ? (
                 <>
-                  Une immersion rare entre <span className="italic text-aqua">l’onde bleue</span> et la tradition marocaine.
+                  Une immersion rare entre <span className="italic text-aqua">l&apos;onde bleue</span> et la tradition marocaine.
                 </>
               ) : (
                 <>
@@ -41,8 +38,8 @@ export const Introduction: React.FC<IntroductionProps> = ({
 
             <p className="text-mist/80 text-base sm:text-lg leading-relaxed font-light">
               {lang === 'fr'
-                ? 'Dès l’entrée, l’effervescence de Tanger s’efface au profit d’une atmosphère feutrée et apaisante. Conçu comme un sanctuaire aquatique, Sabon Spa associe la chaleur enveloppante du hammam traditionnel en briques de sel, la délicatesse des rituels botaniques et l’intimité la plus absolue.'
-                : 'From the moment you step inside, the vibrant bustle of Tangier fades into a serene, atmospheric haven. Imagined as an aquatic sanctuary, Sabon Spa unites the radiant warmth of traditional salt-brick hammams, precious botanical care, and absolute discretion.'}
+                ? "Dès l'entrée, l'effervescence de Tanger s'efface au profit d'une atmosphère feutrée et apaisante. Conçu comme un sanctuaire aquatique, Sabon Spa associe la chaleur enveloppante du hammam traditionnel en briques de sel, la délicatesse des rituels botaniques et l'intimité la plus absolue."
+                : "From the moment you step inside, the vibrant bustle of Tangier fades into a serene, atmospheric haven. Imagined as an aquatic sanctuary, Sabon Spa unites the radiant warmth of traditional salt-brick hammams, precious botanical care, and absolute discretion."}
             </p>
 
             {/* Two key pillars */}
@@ -57,7 +54,7 @@ export const Introduction: React.FC<IntroductionProps> = ({
                   </h4>
                   <p className="text-xs text-mist/70 mt-0.5 leading-relaxed">
                     {lang === 'fr'
-                      ? 'Des briques de sel minéral illuminées d’une lumière sous-marine pour purifier les voies respiratoires et le corps.'
+                      ? "Des briques de sel minéral illuminées d'une lumière sous-marine pour purifier les voies respiratoires et le corps."
                       : 'Illuminated mineral salt bricks and fiber-optic starfields creating an otherworldly therapeutic microclimate.'}
                   </p>
                 </div>
@@ -81,13 +78,15 @@ export const Introduction: React.FC<IntroductionProps> = ({
             </div>
 
             <div className="pt-4 flex flex-wrap items-center gap-5">
-              <button
-                onClick={onOpenBooking}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-[0.16em] font-medium shadow-glow-aqua transition"
+              <a
+                href={getWhatsAppUrl(undefined, lang)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.16em] font-medium shadow-lg transition"
               >
-                <span>{lang === 'fr' ? 'Vivre l’expérience' : 'Experience the Spa'}</span>
-                <ArrowRight size={15} />
-              </button>
+                <MessageSquare size={15} />
+                <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+              </a>
 
               <a
                 href="#sanctuaire"
@@ -115,7 +114,7 @@ export const Introduction: React.FC<IntroductionProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-4 left-4 right-4 p-3 bg-navy-950/80 backdrop-blur-md rounded-lg border border-aqua/20">
                     <span className="text-[10px] uppercase tracking-[0.2em] text-aqua font-medium block">
-                      {lang === 'fr' ? 'Lounge d\'Accueil' : 'Welcome Lounge'}
+                      {lang === 'fr' ? "Lounge d'Accueil" : 'Welcome Lounge'}
                     </span>
                     <span className="text-xs text-white font-serif">
                       {lang === 'fr' ? 'Marbre rayé, velours rose poudré & arbre fleuri' : 'Striped marble, blush velvet & cherry blossoms'}

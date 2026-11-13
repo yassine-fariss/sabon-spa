@@ -1,17 +1,16 @@
 import React from 'react';
-import { ChevronDown, Sparkles, Shield, Star, ArrowRight } from 'lucide-react';
+import { ChevronDown, Sparkles, Shield, Star, ArrowRight, MessageSquare } from 'lucide-react';
 import { Language } from '../../types';
 import { getAssetUrl } from '../../utils/assets';
 import { SPA_IMAGES } from '../../data/spaImages';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface HeroSectionProps {
   lang: Language;
-  onOpenBooking: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   lang,
-  onOpenBooking,
 }) => {
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-28 pb-10">
@@ -66,12 +65,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* CTAs */}
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <button
-              onClick={onOpenBooking}
-              className="px-8 py-4 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition active:scale-[0.98] text-center"
+            <a
+              href={getWhatsAppUrl(undefined, lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition active:scale-[0.98] flex items-center justify-center gap-2 text-center"
             >
-              {lang === 'fr' ? 'Réserver une expérience' : 'Book an Experience'}
-            </button>
+              <MessageSquare size={16} />
+              <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+            </a>
 
             <a
               href="#soins"

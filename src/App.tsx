@@ -12,21 +12,12 @@ import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
 import { TeamSection } from './components/sections/TeamSection';
 import { ReviewsSection } from './components/sections/ReviewsSection';
-import { BookingSection } from './components/sections/BookingSection';
 import { FAQSection } from './components/sections/FAQSection';
-import { BookingModal } from './components/ui/BookingModal';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
 
 export const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('fr');
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [preselectedService, setPreselectedService] = useState<string | undefined>(undefined);
-
-  const handleOpenBooking = (serviceId?: string) => {
-    setPreselectedService(serviceId);
-    setIsBookingOpen(true);
-  };
 
   return (
     <div className="min-h-screen bg-navy-950 text-white font-sans selection:bg-brand selection:text-white">
@@ -34,36 +25,23 @@ export const App: React.FC = () => {
       <Navbar
         lang={lang}
         onLanguageChange={setLang}
-        onOpenBooking={() => handleOpenBooking()}
       />
 
       <main>
         {/* 1. Cinematic Video Hero */}
-        <HeroSection
-          lang={lang}
-          onOpenBooking={() => handleOpenBooking()}
-        />
+        <HeroSection lang={lang} />
 
         {/* 2. Proof Strip */}
         <ProofStrip lang={lang} />
 
         {/* 3. Brand Story & Architecture */}
-        <Introduction
-          lang={lang}
-          onOpenBooking={() => handleOpenBooking()}
-        />
+        <Introduction lang={lang} />
 
         {/* 4. The 6 Image-Focused Categories */}
-        <Services
-          lang={lang}
-          onSelectService={(name) => handleOpenBooking(name)}
-        />
+        <Services lang={lang} />
 
         {/* 5. Separate Curated Packages Section */}
-        <PacksSection
-          lang={lang}
-          onSelectPack={(name) => handleOpenBooking(name)}
-        />
+        <PacksSection lang={lang} />
 
         {/* 6. Immersive Caustic Break */}
         <ImmersiveBreak lang={lang} />
@@ -80,26 +58,12 @@ export const App: React.FC = () => {
         {/* 10. Verified Google Reviews & Social Proof */}
         <ReviewsSection lang={lang} />
 
-        {/* 11. Booking & Practical Coordinates */}
-        <BookingSection lang={lang} />
-
-        {/* 12. FAQ Section */}
+        {/* 11. FAQ Section */}
         <FAQSection lang={lang} />
       </main>
 
       {/* Footer with Interactive Google Map & Hours */}
-      <Footer
-        lang={lang}
-        onOpenBooking={() => handleOpenBooking()}
-      />
-
-      {/* Global Booking Modal */}
-      <BookingModal
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
-        lang={lang}
-        preselectedServiceId={preselectedService}
-      />
+      <Footer lang={lang} />
 
       {/* Floating Instant WhatsApp Button */}
       <a

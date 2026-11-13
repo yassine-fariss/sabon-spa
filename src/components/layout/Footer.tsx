@@ -3,13 +3,13 @@ import { Phone, MessageSquare, MapPin, Clock, Instagram, ArrowUp, Sparkles, Navi
 import { Language } from '../../types';
 import { BUSINESS_INFO } from '../../data/content';
 import { getAssetUrl } from '../../utils/assets';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface FooterProps {
   lang: Language;
-  onOpenBooking: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
+export const Footer: React.FC<FooterProps> = ({ lang }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -70,12 +70,15 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
                 <MessageSquare size={17} />
               </a>
 
-              <button
-                onClick={onOpenBooking}
-                className="px-5 py-2.5 rounded-full bg-brand/30 hover:bg-brand border border-aqua/30 text-white text-xs uppercase tracking-wider font-medium transition shadow-glow-aqua"
+              <a
+                href={getWhatsAppUrl(undefined, lang)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-wider font-medium transition shadow-lg flex items-center gap-1.5"
               >
-                {lang === 'fr' ? 'Réserver un soin' : 'Book Ritual'}
-              </button>
+                <MessageSquare size={14} />
+                <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+              </a>
             </div>
           </div>
 
