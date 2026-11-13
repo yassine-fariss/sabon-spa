@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparkles, Users, Award } from 'lucide-react';
 import { Language } from '../../types';
 import { TEAM_MEMBERS } from '../../data/content';
+import { getAssetUrl } from '../../utils/assets';
 
 interface TeamSectionProps {
   lang: Language;
@@ -38,7 +39,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ lang }) => {
         {/* Big Authentic Team Photo Banner */}
         <div className="mb-16 relative rounded-3xl overflow-hidden border border-navy/10 shadow-2xl bg-navy-950 max-h-[500px]">
           <img
-            src="/images/team.jpg"
+            src={getAssetUrl('images/team.jpg')}
             alt="L'équipe Sabon Spa Tanger"
             className="w-full h-full object-cover object-center filter contrast-[1.03]"
           />

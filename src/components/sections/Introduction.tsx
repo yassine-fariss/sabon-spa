@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Sparkles, Droplets, HeartHandshake } from 'lucide-react';
 import { Language } from '../../types';
+import { getAssetUrl } from '../../utils/assets';
 
 interface IntroductionProps {
   lang: Language;
@@ -105,7 +106,7 @@ export const Introduction: React.FC<IntroductionProps> = ({
               <div className="col-span-8 relative">
                 <div className="arch-top overflow-hidden border border-aqua/25 shadow-2xl relative h-[420px] sm:h-[480px]">
                   <img
-                    src="/images/lounge.jpg"
+                    src={getAssetUrl('images/lounge.jpg')}
                     alt="Sabon Spa Reception & Lounge"
                     className="w-full h-full object-cover filter contrast-[1.03] hover:scale-105 transition duration-700"
                   />
@@ -125,7 +126,7 @@ export const Introduction: React.FC<IntroductionProps> = ({
               <div className="col-span-6 absolute -bottom-8 -right-2 sm:-right-4 w-[220px] sm:w-[260px]">
                 <div className="arch-top overflow-hidden border-2 border-aqua/30 shadow-luxury rounded-2xl relative h-[280px] sm:h-[320px] bg-navy-900">
                   <img
-                    src="/images/hammam-vault.jpg"
+                    src={getAssetUrl('images/hammam-vault.jpg')}
                     alt="Sabon Spa Hammam Vault"
                     className="w-full h-full object-cover filter contrast-[1.05] hover:scale-105 transition duration-700"
                   />

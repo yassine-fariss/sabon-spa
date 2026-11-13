@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, MessageSquare, Globe, ChevronRight } from 'lucide-react';
 import { Language } from '../../types';
 import { BUSINESS_INFO } from '../../data/content';
+import { getAssetUrl } from '../../utils/assets';
 
 interface NavbarProps {
   lang: Language;
@@ -48,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <a href="#" className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-aqua">
           <div className="relative w-10 h-10 rounded-full overflow-hidden border border-aqua/40 shadow-glow-aqua transition group-hover:scale-105">
             <img
-              src="/logo.jpg"
+              src={getAssetUrl('logo.jpg')}
               alt="Sabon Spa Logo"
               className="w-full h-full object-cover"
             />

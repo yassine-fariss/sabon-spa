@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, MessageSquare, MapPin, Clock, Instagram, ArrowUp, Sparkles } from 'lucide-react';
 import { Language } from '../../types';
 import { BUSINESS_INFO } from '../../data/content';
+import { getAssetUrl } from '../../utils/assets';
 
 interface FooterProps {
   lang: Language;
@@ -25,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full overflow-hidden border border-aqua/40 shadow-glow-aqua">
                 <img
-                  src="/logo.jpg"
+                  src={getAssetUrl('logo.jpg')}
                   alt="Sabon Spa Logo"
                   className="w-full h-full object-cover"
                 />
