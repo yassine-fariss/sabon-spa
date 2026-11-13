@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Star, Quote, CheckCircle2, Sparkles, ShieldCheck, MessageCircle, HeartHandshake } from 'lucide-react';
 import { Language, ReviewItem } from '../../types';
 import { REVIEWS } from '../../data/content';
+import { Reveal } from '../ui/Reveal';
 
 interface ReviewsSectionProps {
   lang: Language;
@@ -155,55 +156,57 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ lang }) => {
         {/* ========================================================= */}
         {/* SECTION HEADER                                            */}
         {/* ========================================================= */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-900/90 border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-4 shadow-glow-aqua">
-            <ShieldCheck size={14} className="text-aqua" />
-            <span>{lang === 'fr' ? '10 Avis Vérifiés • Google Maps Tanger' : '10 Verified Reviews • Google Maps Tangier'}</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-light tracking-tight leading-tight">
-            {lang === 'fr' ? (
-              <>
-                L’expérience vécue par <span className="italic font-normal text-aqua">nos hôtes</span>
-              </>
-            ) : (
-              <>
-                What Our Guests <span className="italic font-normal text-aqua">Truly Experience</span>
-              </>
-            )}
-          </h2>
-
-          <p className="mt-4 text-sm sm:text-base text-mist/80 font-light leading-relaxed max-w-2xl mx-auto">
-            {lang === 'fr'
-              ? 'Faites défiler pour découvrir l’ensemble des 10 avis authentiques partagés par nos clients sur Google Maps. Chaque témoignage reflète l’art de l’accueil et l’excellence de notre sanctuaire.'
-              : 'Scroll down to discover all 10 authentic reviews shared by our guests on Google Maps. Each experience reflects the genuine hospitality and excellence of our sanctuary.'}
-          </p>
-
-          {/* Google Summary Banner */}
-          <div className="mt-7 inline-flex flex-wrap items-center justify-center gap-3.5 px-6 py-3 rounded-2xl bg-navy-900/80 border border-aqua/30 shadow-xl backdrop-blur-md">
-            <div className="w-6 h-6 flex items-center justify-center font-bold text-xs rounded-full bg-white text-navy-950 shadow-sm">
-              <span className="text-[#4285F4]">G</span>
+        <Reveal variant="fade-up" duration={700}>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-900/90 border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-4 shadow-glow-aqua">
+              <ShieldCheck size={14} className="text-aqua" />
+              <span>{lang === 'fr' ? '10 Avis Vérifiés • Google Maps Tanger' : '10 Verified Reviews • Google Maps Tangier'}</span>
             </div>
 
-            <div className="flex items-center gap-1.5 text-gold">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} fill="currentColor" className="drop-shadow-sm" />
-              ))}
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-light tracking-tight leading-tight">
+              {lang === 'fr' ? (
+                <>
+                  L’expérience vécue par <span className="italic font-normal text-aqua">nos hôtes</span>
+                </>
+              ) : (
+                <>
+                  What Our Guests <span className="italic font-normal text-aqua">Truly Experience</span>
+                </>
+              )}
+            </h2>
+
+            <p className="mt-4 text-sm sm:text-base text-mist/80 font-light leading-relaxed max-w-2xl mx-auto">
+              {lang === 'fr'
+                ? 'Faites défiler pour découvrir l’ensemble des 10 avis authentiques partagés par nos clients sur Google Maps. Chaque témoignage reflète l’art de l’accueil et l’excellence de notre sanctuaire.'
+                : 'Scroll down to discover all 10 authentic reviews shared by our guests on Google Maps. Each experience reflects the genuine hospitality and excellence of our sanctuary.'}
+            </p>
+
+            {/* Google Summary Banner */}
+            <div className="mt-7 inline-flex flex-wrap items-center justify-center gap-3.5 px-6 py-3 rounded-2xl bg-navy-900/80 border border-aqua/30 shadow-xl backdrop-blur-md">
+              <div className="w-6 h-6 flex items-center justify-center font-bold text-xs rounded-full bg-white text-navy-950 shadow-sm">
+                <span className="text-[#4285F4]">G</span>
+              </div>
+
+              <div className="flex items-center gap-1.5 text-gold">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} fill="currentColor" className="drop-shadow-sm" />
+                ))}
+              </div>
+
+              <span className="text-white font-semibold text-base font-serif">5.0 / 5.0</span>
+              <span className="text-mist/30 hidden sm:inline">•</span>
+              <span className="text-xs text-mist/90 font-medium">
+                {lang === 'fr' ? '10 avis 5 étoiles affichés au fil du défilement' : 'All 10 5-star reviews popping up on scroll'}
+              </span>
             </div>
 
-            <span className="text-white font-semibold text-base font-serif">5.0 / 5.0</span>
-            <span className="text-mist/30 hidden sm:inline">•</span>
-            <span className="text-xs text-mist/90 font-medium">
-              {lang === 'fr' ? '10 avis 5 étoiles affichés au fil du défilement' : 'All 10 5-star reviews popping up on scroll'}
-            </span>
+            {/* Interactive Scroll Cue */}
+            <div className="mt-6 flex items-center justify-center gap-2 text-xs text-aqua/70 font-light">
+              <span className="w-2 h-2 rounded-full bg-aqua animate-ping" />
+              <span>{lang === 'fr' ? 'Faites défiler vers le bas — chaque avis apparaît en pop-up' : 'Scroll down — each review pops up into view'}</span>
+            </div>
           </div>
-
-          {/* Interactive Scroll Cue */}
-          <div className="mt-6 flex items-center justify-center gap-2 text-xs text-aqua/70 font-light">
-            <span className="w-2 h-2 rounded-full bg-aqua animate-ping" />
-            <span>{lang === 'fr' ? 'Faites défiler vers le bas — chaque avis apparaît en pop-up' : 'Scroll down — each review pops up into view'}</span>
-          </div>
-        </div>
+        </Reveal>
 
         {/* ========================================================= */}
         {/* ALL 10 REVIEWS STREAM (EACH SCROLL POPS UP A REVIEW)     */}
@@ -222,17 +225,19 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ lang }) => {
         {/* ========================================================= */}
         {/* BOTTOM COMPLETION & TRUST BANNER                          */}
         {/* ========================================================= */}
-        <div className="mt-16 text-center pt-10 border-t border-aqua/15">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-aqua/80 font-medium mb-3">
-            <CheckCircle2 size={14} className="text-aqua" />
-            <span>{lang === 'fr' ? '10 avis sur 10 affichés • Source Google Maps Tanger' : '10 out of 10 reviews displayed • Source: Google Maps'}</span>
+        <Reveal variant="fade-up" delay={200}>
+          <div className="mt-16 text-center pt-10 border-t border-aqua/15">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-aqua/80 font-medium mb-3">
+              <CheckCircle2 size={14} className="text-aqua" />
+              <span>{lang === 'fr' ? '10 avis sur 10 affichés • Source Google Maps Tanger' : '10 out of 10 reviews displayed • Source: Google Maps'}</span>
+            </div>
+            <p className="text-xs text-mist/60 font-light">
+              {lang === 'fr'
+                ? 'Toutes les citations sont authentiques et retranscrites mot pour mot selon les avis publics déposés par les clients.'
+                : 'All quotes are authentic and transcribed verbatim from public reviews left by our clients.'}
+            </p>
           </div>
-          <p className="text-xs text-mist/60 font-light">
-            {lang === 'fr'
-              ? 'Toutes les citations sont authentiques et retranscrites mot pour mot selon les avis publics déposés par les clients.'
-              : 'All quotes are authentic and transcribed verbatim from public reviews left by our clients.'}
-          </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

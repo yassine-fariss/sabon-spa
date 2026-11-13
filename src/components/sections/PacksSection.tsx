@@ -4,6 +4,7 @@ import { Language } from '../../types';
 import { ALL_TREATMENTS, TreatmentService } from '../../data/servicesData';
 import { SPA_IMAGES } from '../../data/spaImages';
 import { getWhatsAppUrl } from '../../utils/whatsapp';
+import { Reveal } from '../ui/Reveal';
 
 interface PacksSectionProps {
   lang: Language;
@@ -103,117 +104,127 @@ export const PacksSection: React.FC<PacksSectionProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
-            <Sparkles size={13} />
-            <span>{lang === 'fr' ? 'Nos Expériences & Packs' : 'Signature Experiences & Packs'}</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
-            {lang === 'fr' ? (
-              <>
-                Les Grands Forfaits du <span className="italic text-aqua">Sanctuaire</span>
-              </>
-            ) : (
-              <>
-                The Sanctuary’s <span className="italic text-aqua">Signature Packs</span>
-              </>
-            )}
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
-            {lang === 'fr'
-              ? 'Des rituels combinés de 2h à 5h associant hammam privé sous voûte de sel, gommages authentiques, massages signatures et soins d’exception.'
-              : 'Holistic journeys from 2h to 5h pairing private thermal hammams, artisanal scrubs, signature bodywork, and restorative care.'}
-          </p>
-        </div>
-
-        {/* 3 Prominent Featured Package Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {featuredPacks.map((pack) => (
-            <div
-              key={pack.id}
-              className="rounded-3xl overflow-hidden bg-navy-900/80 border border-aqua/20 hover:border-aqua/50 transition-all duration-500 flex flex-col justify-between group hover:-translate-y-1.5 shadow-xl hover:shadow-glow-aqua"
-            >
-              <div>
-                {/* Photo Header */}
-                <div className="relative h-64 overflow-hidden bg-navy-950">
-                  <img
-                    src={pack.image}
-                    alt={pack.name[lang]}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out filter contrast-[1.05]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
-
-                  {/* Top Badges */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-gold text-navy-950 font-semibold text-[10px] uppercase tracking-wider shadow-md flex items-center gap-1">
-                      <Crown size={11} />
-                      <span>{pack.badge[lang]}</span>
-                    </span>
-
-                    <span className="px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-white font-medium text-xs shadow-sm flex items-center gap-1.5 border border-aqua/20">
-                      <Clock size={12} className="text-aqua" />
-                      <span>{pack.duration}</span>
-                    </span>
-                  </div>
-
-                  {/* Price Banner */}
-                  <div className="absolute bottom-4 left-6">
-                    <span className="text-3xl font-serif font-light text-white drop-shadow-md">
-                      {pack.price}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 sm:p-7">
-                  <h3 className="text-2xl font-serif text-white font-normal mb-2.5 group-hover:text-aqua transition">
-                    {pack.name[lang]}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-mist/80 font-light leading-relaxed mb-6">
-                    {pack.desc[lang]}
-                  </p>
-
-                  {/* Inclusions */}
-                  <div className="space-y-2 mb-4 pt-4 border-t border-aqua/10">
-                    {pack.inclusions[lang].map((inc, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-mist/75">
-                        <Check size={13} className="text-aqua shrink-0" />
-                        <span>{inc}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Booking CTA */}
-              <div className="p-6 sm:p-7 pt-0">
-                <a
-                  href={getWhatsAppUrl(pack.name[lang], lang)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs uppercase tracking-[0.16em] shadow-lg transition flex items-center justify-center gap-2"
-                >
-                  <MessageSquare size={14} />
-                  <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
-                </a>
-              </div>
+        <Reveal variant="fade-up" duration={700}>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
+              <Sparkles size={13} />
+              <span>{lang === 'fr' ? 'Nos Expériences & Packs' : 'Signature Experiences & Packs'}</span>
             </div>
+            <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
+              {lang === 'fr' ? (
+                <>
+                  Les Grands Forfaits du <span className="italic text-aqua">Sanctuaire</span>
+                </>
+              ) : (
+                <>
+                  The Sanctuary’s <span className="italic text-aqua">Signature Packs</span>
+                </>
+              )}
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
+              {lang === 'fr'
+                ? 'Des rituels combinés de 2h à 5h associant hammam privé sous voûte de sel, gommages authentiques, massages signatures et soins d’exception.'
+                : 'Holistic journeys from 2h to 5h pairing private thermal hammams, artisanal scrubs, signature bodywork, and restorative care.'}
+            </p>
+          </div>
+        </Reveal>
+
+        {/* 3 Prominent Featured Package Cards with staggered reveal */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {featuredPacks.map((pack, idx) => (
+            <Reveal
+              key={pack.id}
+              variant="fade-up"
+              delay={idx * 130}
+              duration={750}
+            >
+              <div
+                className="h-full rounded-3xl overflow-hidden bg-navy-900/80 border border-aqua/20 hover:border-aqua/50 transition-all duration-500 flex flex-col justify-between group hover:-translate-y-1.5 shadow-xl hover:shadow-glow-aqua"
+              >
+                <div>
+                  {/* Photo Header */}
+                  <div className="relative h-64 overflow-hidden bg-navy-950">
+                    <img
+                      src={pack.image}
+                      alt={pack.name[lang]}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out filter contrast-[1.05]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
+
+                    {/* Top Badges */}
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                      <span className="px-3 py-1 rounded-full bg-gold text-navy-950 font-semibold text-[10px] uppercase tracking-wider shadow-md flex items-center gap-1">
+                        <Crown size={11} />
+                        <span>{pack.badge[lang]}</span>
+                      </span>
+
+                      <span className="px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-white font-medium text-xs shadow-sm flex items-center gap-1.5 border border-aqua/20">
+                        <Clock size={12} className="text-aqua" />
+                        <span>{pack.duration}</span>
+                      </span>
+                    </div>
+
+                    {/* Price Banner */}
+                    <div className="absolute bottom-4 left-6">
+                      <span className="text-3xl font-serif font-light text-white drop-shadow-md">
+                        {pack.price}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 sm:p-7">
+                    <h3 className="text-2xl font-serif text-white font-normal mb-2.5 group-hover:text-aqua transition">
+                      {pack.name[lang]}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-mist/80 font-light leading-relaxed mb-6">
+                      {pack.desc[lang]}
+                    </p>
+
+                    {/* Inclusions */}
+                    <div className="space-y-2 mb-4 pt-4 border-t border-aqua/10">
+                      {pack.inclusions[lang].map((inc, i) => (
+                        <div key={i} className="flex items-center gap-2 text-xs text-mist/75">
+                          <Check size={13} className="text-aqua shrink-0" />
+                          <span>{inc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Booking CTA */}
+                <div className="p-6 sm:p-7 pt-0">
+                  <a
+                    href={getWhatsAppUrl(pack.name[lang], lang)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs uppercase tracking-[0.16em] shadow-lg transition flex items-center justify-center gap-2"
+                  >
+                    <MessageSquare size={14} />
+                    <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                  </a>
+                </div>
+              </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Action Button: "Voir tous les packs" */}
-        <div className="mt-14 text-center">
-          <button
-            onClick={() => setIsAllPacksOpen(true)}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-navy-900/90 hover:bg-navy-800 text-aqua hover:text-white border border-aqua/30 text-xs uppercase tracking-[0.16em] font-medium transition shadow-lg hover:shadow-glow-aqua"
-          >
-            <Sparkles size={13} className="text-gold" />
-            <span>{lang === 'fr' ? 'Voir tous les packs & forfaits (11)' : 'View All 11 Packages'}</span>
-            <ArrowRight size={14} />
-          </button>
-        </div>
+        <Reveal variant="fade-up" delay={400}>
+          <div className="mt-14 text-center">
+            <button
+              onClick={() => setIsAllPacksOpen(true)}
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-navy-900/90 hover:bg-navy-800 text-aqua hover:text-white border border-aqua/30 text-xs uppercase tracking-[0.16em] font-medium transition shadow-lg hover:shadow-glow-aqua transform hover:-translate-y-0.5 duration-200"
+            >
+              <Sparkles size={13} className="text-gold" />
+              <span>{lang === 'fr' ? 'Voir tous les packs & forfaits (11)' : 'View All 11 Packages'}</span>
+              <ArrowRight size={14} />
+            </button>
+          </div>
+        </Reveal>
       </div>
 
       {/* ========================================================= */}

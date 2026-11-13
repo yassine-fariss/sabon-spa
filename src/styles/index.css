@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ───────────────────────────────────────────────
+   CSS Custom Properties
+─────────────────────────────────────────────── */
 :root {
   --color-brand: #1672B1;
   --color-navy: #082B49;
@@ -11,74 +14,247 @@
   --color-gold: #C9A16B;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* ───────────────────────────────────────────────
+   Smooth Global Scroll
+─────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
-::-webkit-scrollbar-track {
-  background: #041627;
-}
+
+/* ───────────────────────────────────────────────
+   Custom Scrollbar
+─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #041627; }
 ::-webkit-scrollbar-thumb {
   background: #0A3357;
   border-radius: 4px;
   border: 1px solid rgba(99, 185, 209, 0.2);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #1672B1;
-}
+::-webkit-scrollbar-thumb:hover { background: #1672B1; }
 
-/* Glassmorphism Styles based on Brand Guidelines */
+/* ───────────────────────────────────────────────
+   Glassmorphism
+─────────────────────────────────────────────── */
 .glass-dark {
   background: rgba(234, 243, 246, 0.05);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid rgba(99, 185, 209, 0.22);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 20px 40px rgba(0,0,0,0.35);
 }
-
 .glass-dark-hover:hover {
   background: rgba(234, 243, 246, 0.09);
   border-color: rgba(99, 185, 209, 0.45);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 25px 50px rgba(8, 43, 73, 0.5), 0 0 30px rgba(99, 185, 209, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 25px 50px rgba(8,43,73,0.5), 0 0 30px rgba(99,185,209,0.15);
 }
-
 .glass-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(8, 43, 73, 0.10);
-  box-shadow: 0 16px 40px rgba(8, 43, 73, 0.06);
+  border: 1px solid rgba(8,43,73,0.10);
+  box-shadow: 0 16px 40px rgba(8,43,73,0.06);
 }
-
 .glass-card-navy {
-  background: linear-gradient(145deg, rgba(10, 51, 87, 0.75) 0%, rgba(6, 32, 55, 0.85) 100%);
+  background: linear-gradient(145deg, rgba(10,51,87,0.75) 0%, rgba(6,32,55,0.85) 100%);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(99, 185, 209, 0.2);
+  border: 1px solid rgba(99,185,209,0.2);
 }
 
-/* Moorish Arch Mask */
+/* ───────────────────────────────────────────────
+   Shape Utilities
+─────────────────────────────────────────────── */
 .arch-top {
   border-top-left-radius: 9999px;
   border-top-right-radius: 9999px;
 }
 
-/* Subtle Caustic Background Wave */
+/* ───────────────────────────────────────────────
+   Caustic / Shimmer Backgrounds
+─────────────────────────────────────────────── */
 .caustic-shimmer {
-  background: radial-gradient(circle at 50% 50%, rgba(99, 185, 209, 0.15) 0%, rgba(8, 43, 73, 0) 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(99,185,209,0.15) 0%, rgba(8,43,73,0) 70%);
   filter: blur(40px);
 }
-
-/* Zellige Pattern Overlay */
 .zellige-pattern {
-  background-image: radial-gradient(rgba(99, 185, 209, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(99,185,209,0.12) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
-/* Text glow */
-.text-glow-aqua {
-  text-shadow: 0 0 20px rgba(99, 185, 209, 0.4);
+/* ───────────────────────────────────────────────
+   Text Glow Utilities
+─────────────────────────────────────────────── */
+.text-glow-aqua  { text-shadow: 0 0 20px rgba(99,185,209,0.4); }
+.text-glow-gold  { text-shadow: 0 0 20px rgba(201,161,107,0.35); }
+
+/* ───────────────────────────────────────────────
+   Scroll-Reveal Keyframes
+─────────────────────────────────────────────── */
+
+/* Heading character-by-character gradient sweep (applied via JS class toggle) */
+@keyframes revealText {
+  from { opacity: 0; transform: translateY(20px); clip-path: inset(0 0 100% 0); }
+  to   { opacity: 1; transform: translateY(0);    clip-path: inset(0 0 0% 0); }
 }
 
-.text-glow-gold {
-  text-shadow: 0 0 20px rgba(201, 161, 107, 0.35);
+/* Shimmer sweep — used on section dividers & decorative lines */
+@keyframes shimmerSweep {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Orb float — decorative ambient spheres */
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  33%       { transform: translateY(-18px) scale(1.04); }
+  66%       { transform: translateY(10px) scale(0.97); }
+}
+
+/* Slow-drift parallax background */
+@keyframes driftX {
+  0%   { transform: translateX(0) scale(1.06); }
+  100% { transform: translateX(-2.5%) scale(1.06); }
+}
+
+/* Pulsing glow ring */
+@keyframes glowRing {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,185,209,0); }
+  50%       { box-shadow: 0 0 0 12px rgba(99,185,209,0.08); }
+}
+
+/* Fade-in-up — simple named animation (also referenced in Tailwind config) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes clipReveal {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0% 0); }
+}
+
+/* ───────────────────────────────────────────────
+   Named Animation Utility Classes
+─────────────────────────────────────────────── */
+.animate-fade-in {
+  animation: fadeInUp 0.65s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+.animate-shimmer-line {
+  background: linear-gradient(90deg,
+    rgba(99,185,209,0) 0%,
+    rgba(99,185,209,0.6) 50%,
+    rgba(99,185,209,0) 100%);
+  background-size: 200% auto;
+  animation: shimmerSweep 3s linear infinite;
+}
+.animate-orb-float {
+  animation: orbFloat 10s ease-in-out infinite;
+}
+.animate-glow-ring {
+  animation: glowRing 3s ease-in-out infinite;
+}
+
+/* ───────────────────────────────────────────────
+   Parallax Image Container
+   Apply to the <div> wrapping a parallax img.
+   The img inside gets translated by JS or CSS.
+─────────────────────────────────────────────── */
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+.parallax-img {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ───────────────────────────────────────────────
+   Image Hover Zoom (gallery / service cards)
+─────────────────────────────────────────────── */
+.img-zoom-wrap {
+  overflow: hidden;
+}
+.img-zoom-wrap img {
+  transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change: transform;
+}
+.img-zoom-wrap:hover img {
+  transform: scale(1.07);
+}
+
+/* ───────────────────────────────────────────────
+   Section Divider Shimmer Line
+─────────────────────────────────────────────── */
+.shimmer-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(99,185,209,0.5) 50%,
+    transparent 100%);
+  background-size: 200% auto;
+  animation: shimmerSweep 4s linear infinite;
+}
+
+/* ───────────────────────────────────────────────
+   Decorative Ambient Orbs
+─────────────────────────────────────────────── */
+.orb {
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  position: absolute;
+}
+.orb-aqua  { background: rgba(99,185,209,0.12); }
+.orb-brand { background: rgba(22,114,177,0.10); }
+.orb-gold  { background: rgba(201,161,107,0.09); }
+
+/* ───────────────────────────────────────────────
+   Stat Counter Underline Accent
+─────────────────────────────────────────────── */
+.stat-accent {
+  position: relative;
+  display: inline-block;
+}
+.stat-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-aqua), var(--color-brand));
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.stat-accent.in-view::after {
+  transform: scaleX(1);
+}
+
+/* ───────────────────────────────────────────────
+   Reduced Motion Override
+   All transitions / animations are disabled
+   when the user prefers reduced motion.
+─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

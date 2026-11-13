@@ -3,6 +3,7 @@ import { Camera, Maximize2, Sparkles, Filter } from 'lucide-react';
 import { Language } from '../../types';
 import { FULL_GALLERY, GalleryPhoto } from '../../data/spaImages';
 import { Lightbox } from '../ui/Lightbox';
+import { Reveal } from '../ui/Reveal';
 
 interface GallerySectionProps {
   lang: Language;
@@ -133,60 +134,62 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ lang }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
-              <Camera size={13} />
-              <span>{lang === 'fr' ? 'Photographies Officielles' : 'Official Photography'}</span>
+        <Reveal variant="fade-up" duration={700}>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
+                <Camera size={13} />
+                <span>{lang === 'fr' ? 'Photographies Officielles' : 'Official Photography'}</span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
+                {lang === 'fr' ? (
+                  <>
+                    Visite Privée du <span className="italic text-aqua">Sanctuaire</span>
+                  </>
+                ) : (
+                  <>
+                    Private Tour of <span className="italic text-aqua">The Sanctuary</span>
+                  </>
+                )}
+              </h2>
+              <p className="text-xs sm:text-sm text-mist/75 font-light mt-3 leading-relaxed">
+                {lang === 'fr'
+                  ? 'Chaque cliché dévoile l\'atmosphère réelle de notre établissement face à la baie de Malabata : voûtes de sel, bassins azur, alcôves privées et lounges feutrés.'
+                  : 'Every photograph captures the genuine atmosphere of our Malabata Bay sanctuary: illuminated salt vaults, azure pools, private treatment suites, and tranquil lounges.'}
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
-              {lang === 'fr' ? (
-                <>
-                  Visite Privée du <span className="italic text-aqua">Sanctuaire</span>
-                </>
-              ) : (
-                <>
-                  Private Tour of <span className="italic text-aqua">The Sanctuary</span>
-                </>
-              )}
-            </h2>
-            <p className="text-xs sm:text-sm text-mist/75 font-light mt-3 leading-relaxed">
-              {lang === 'fr'
-                ? 'Chaque cliché dévoile l\'atmosphère réelle de notre établissement face à la baie de Malabata : voûtes de sel, bassins azur, alcôves privées et lounges feutrés.'
-                : 'Every photograph captures the genuine atmosphere of our Malabata Bay sanctuary: illuminated salt vaults, azure pools, private treatment suites, and tranquil lounges.'}
-            </p>
-          </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
-            <button
-              onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] font-medium transition duration-300 ${
-                activeFilter === 'all'
-                  ? 'bg-aqua text-navy-950 shadow-glow-aqua'
-                  : 'bg-navy-900/80 text-mist/70 hover:text-white border border-aqua/15 hover:border-aqua/40'
-              }`}
-            >
-              {lang === 'fr' ? `Tous (${FULL_GALLERY.length})` : `All (${FULL_GALLERY.length})`}
-            </button>
-            {categories.map((cat) => {
-              const count = FULL_GALLERY.filter(img => img.category[lang] === cat).length;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveFilter(cat)}
-                  className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] font-medium transition duration-300 ${
-                    activeFilter === cat
-                      ? 'bg-aqua text-navy-950 shadow-glow-aqua'
-                      : 'bg-navy-900/80 text-mist/70 hover:text-white border border-aqua/15 hover:border-aqua/40'
-                  }`}
-                >
-                  {cat} ({count})
-                </button>
-              );
-            })}
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                onClick={() => setActiveFilter('all')}
+                className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] font-medium transition duration-300 ${
+                  activeFilter === 'all'
+                    ? 'bg-aqua text-navy-950 shadow-glow-aqua'
+                    : 'bg-navy-900/80 text-mist/70 hover:text-white border border-aqua/15 hover:border-aqua/40'
+                }`}
+              >
+                {lang === 'fr' ? `Tous (${FULL_GALLERY.length})` : `All (${FULL_GALLERY.length})`}
+              </button>
+              {categories.map((cat) => {
+                const count = FULL_GALLERY.filter(img => img.category[lang] === cat).length;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveFilter(cat)}
+                    className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] font-medium transition duration-300 ${
+                      activeFilter === cat
+                        ? 'bg-aqua text-navy-950 shadow-glow-aqua'
+                        : 'bg-navy-900/80 text-mist/70 hover:text-white border border-aqua/15 hover:border-aqua/40'
+                    }`}
+                  >
+                    {cat} ({count})
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Editorial Masonry-style Grid with Scroll Pop-Up Animations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">

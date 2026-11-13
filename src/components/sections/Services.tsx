@@ -7,6 +7,7 @@ import { Language } from '../../types';
 import { ALL_TREATMENTS, TreatmentService } from '../../data/servicesData';
 import { SPA_IMAGES } from '../../data/spaImages';
 import { getWhatsAppUrl } from '../../utils/whatsapp';
+import { Reveal } from '../ui/Reveal';
 
 interface ServicesProps {
   lang: Language;
@@ -216,84 +217,92 @@ export const Services: React.FC<ServicesProps> = ({
         {/* ========================================================= */}
         {/* SECTION HEADER                                            */}
         {/* ========================================================= */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
-            <Sparkles size={13} />
-            <span>{lang === 'fr' ? 'La Carte des Soins' : 'Treatment Collection'}</span>
+        <Reveal variant="fade-up" duration={700}>
+          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
+              <Sparkles size={13} />
+              <span>{lang === 'fr' ? 'La Carte des Soins' : 'Treatment Collection'}</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-light tracking-tight leading-tight">
+              {lang === 'fr' ? (
+                <>
+                  Découvrez Nos <span className="italic text-aqua">Expériences</span>
+                </>
+              ) : (
+                <>
+                  Discover Our <span className="italic text-aqua">Experiences</span>
+                </>
+              )}
+            </h2>
+
+            <p className="mt-4 text-sm sm:text-base text-mist/75 font-light leading-relaxed max-w-xl mx-auto">
+              {lang === 'fr'
+                ? 'Une collection raffinée de rituels et de cérémonies thermales face à la baie de Tanger. Sélectionnez une expérience pour explorer nos soins.'
+                : 'A curated collection of thermal rituals and botanical ceremonies facing Tangier Bay. Choose a category below to explore treatments.'}
+            </p>
           </div>
-
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-light tracking-tight leading-tight">
-            {lang === 'fr' ? (
-              <>
-                Découvrez Nos <span className="italic text-aqua">Expériences</span>
-              </>
-            ) : (
-              <>
-                Discover Our <span className="italic text-aqua">Experiences</span>
-              </>
-            )}
-          </h2>
-
-          <p className="mt-4 text-sm sm:text-base text-mist/75 font-light leading-relaxed max-w-xl mx-auto">
-            {lang === 'fr'
-              ? 'Une collection raffinée de rituels et de cérémonies thermales face à la baie de Tanger. Sélectionnez une expérience pour explorer nos soins.'
-              : 'A curated collection of thermal rituals and botanical ceremonies facing Tangier Bay. Choose a category below to explore treatments.'}
-          </p>
-        </div>
+        </Reveal>
 
         {/* ========================================================= */}
-        {/* 6 LARGE EDITORIAL CATEGORY CARDS                          */}
+        {/* 6 LARGE EDITORIAL CATEGORY CARDS (STAGGERED REVEAL)       */}
         {/* ========================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {MAIN_CATEGORIES.map((cat, idx) => (
-            <div
+            <Reveal
               key={cat.id}
-              onClick={() => handleOpenCategory(cat.id)}
-              className="group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 flex flex-col justify-between border border-aqua/15 hover:border-aqua/50 bg-navy-900 shadow-xl hover:shadow-glow-aqua hover:-translate-y-1.5 h-[380px] sm:h-[420px]"
+              variant="fade-up"
+              delay={idx * 110}
+              duration={750}
             >
-              {/* High-Resolution Full Cover Image with subtle zoom on hover */}
-              <img
-                src={cat.image}
-                alt={cat.name[lang]}
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover filter contrast-[1.05] brightness-95 group-hover:scale-108 group-hover:brightness-105 transition duration-700 ease-out"
-              />
+              <div
+                onClick={() => handleOpenCategory(cat.id)}
+                className="group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 flex flex-col justify-between border border-aqua/15 hover:border-aqua/50 bg-navy-900 shadow-xl hover:shadow-glow-aqua hover:-translate-y-1.5 h-[380px] sm:h-[420px]"
+              >
+                {/* High-Resolution Full Cover Image with subtle zoom on hover */}
+                <img
+                  src={cat.image}
+                  alt={cat.name[lang]}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover filter contrast-[1.05] brightness-95 group-hover:scale-108 group-hover:brightness-105 transition duration-700 ease-out"
+                />
 
-              {/* Luxury dark gradient vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/20 opacity-85 group-hover:opacity-75 transition duration-500" />
+                {/* Luxury dark gradient vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/20 opacity-85 group-hover:opacity-75 transition duration-500" />
 
-              {/* Subtle top golden light line on hover */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-aqua/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+                {/* Subtle top golden light line on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-aqua/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
 
-              {/* Top Index Badge */}
-              <div className="relative z-10 p-6 flex items-start justify-between">
-                <span className="px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/25 text-aqua text-[11px] font-mono tracking-wider">
-                  0{idx + 1}
-                </span>
-
-                <div className="w-9 h-9 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/30 text-aqua flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-105 transition duration-300">
-                  <ArrowRight size={15} />
-                </div>
-              </div>
-
-              {/* Bottom Editorial Content */}
-              <div className="relative z-10 p-6 sm:p-8 space-y-2.5">
-                <h3 className="text-2xl sm:text-3xl font-serif text-white font-normal group-hover:text-aqua transition duration-300">
-                  {cat.name[lang]}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-mist/80 font-light leading-relaxed line-clamp-2">
-                  {cat.tagline[lang]}
-                </p>
-
-                <div className="pt-2">
-                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-aqua group-hover:text-white font-medium transition duration-300">
-                    <span>{lang === 'fr' ? 'Découvrir' : 'Explore'}</span>
-                    <ArrowRight size={13} className="group-hover:translate-x-1 transition duration-300" />
+                {/* Top Index Badge */}
+                <div className="relative z-10 p-6 flex items-start justify-between">
+                  <span className="px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/25 text-aqua text-[11px] font-mono tracking-wider">
+                    0{idx + 1}
                   </span>
+
+                  <div className="w-9 h-9 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/30 text-aqua flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-105 transition duration-300">
+                    <ArrowRight size={15} />
+                  </div>
+                </div>
+
+                {/* Bottom Editorial Content */}
+                <div className="relative z-10 p-6 sm:p-8 space-y-2.5">
+                  <h3 className="text-2xl sm:text-3xl font-serif text-white font-normal group-hover:text-aqua transition duration-300">
+                    {cat.name[lang]}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-mist/80 font-light leading-relaxed line-clamp-2">
+                    {cat.tagline[lang]}
+                  </p>
+
+                  <div className="pt-2">
+                    <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-aqua group-hover:text-white font-medium transition duration-300">
+                      <span>{lang === 'fr' ? 'Découvrir' : 'Explore'}</span>
+                      <ArrowRight size={13} className="group-hover:translate-x-1 transition duration-300" />
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

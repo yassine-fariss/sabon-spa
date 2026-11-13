@@ -36,13 +36,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-12">
         <div className="max-w-2xl lg:max-w-3xl">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 backdrop-blur-md border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-6 shadow-sm">
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 backdrop-blur-md border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-6 shadow-sm animate-fade-in-up"
+            style={{ animationDelay: '100ms' }}
+          >
             <Sparkles size={12} className="text-aqua" />
             <span>Tanger</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.08] tracking-tight text-glow-aqua">
+          <h1
+            className="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.08] tracking-tight text-glow-aqua animate-fade-in-up"
+            style={{ animationDelay: '250ms' }}
+          >
             {lang === 'fr' ? (
               <>
                 Sous la surface,<br />
@@ -57,19 +63,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </h1>
 
           {/* Subline / Narrative */}
-          <p className="mt-6 text-base sm:text-lg text-mist/85 font-light leading-relaxed max-w-xl">
+          <p
+            className="mt-6 text-base sm:text-lg text-mist/85 font-light leading-relaxed max-w-xl animate-fade-in-up"
+            style={{ animationDelay: '400ms' }}
+          >
             {lang === 'fr'
               ? 'Poussez les portes de notre sanctuaire bleu face à la baie de Tanger. Hammam royal sous voûte étoilée de briques de sel, massages d’exception et espaces 100% séparés hommes et femmes.'
               : 'Enter our deep blue sanctuary facing the historic bay of Tangier. Royal Moroccan hammam beneath illuminated salt-brick vaults, master bodywork, and strictly separate wings for women and men.'}
           </p>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div
+            className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 animate-fade-in-up"
+            style={{ animationDelay: '550ms' }}
+          >
             <a
               href={getWhatsAppUrl(undefined, lang)}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition active:scale-[0.98] flex items-center justify-center gap-2 text-center"
+              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition transform hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2 text-center"
             >
               <MessageSquare size={16} />
               <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
@@ -77,15 +89,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             <a
               href="#soins"
-              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua text-center"
+              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua text-center group"
             >
               <span>{lang === 'fr' ? 'Consulter la carte & tarifs' : 'View Menu & Prices'}</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition duration-200" />
             </a>
           </div>
 
           {/* Trust points strip */}
-          <div className="mt-12 pt-8 border-t border-aqua/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-mist/80">
+          <div
+            className="mt-12 pt-8 border-t border-aqua/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-mist/80 animate-fade-in-up"
+            style={{ animationDelay: '700ms' }}
+          >
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-aqua/15 border border-aqua/30 flex items-center justify-center text-aqua">
                 <Shield size={14} />

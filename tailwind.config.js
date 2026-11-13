@@ -68,7 +68,14 @@ export default {
       animation: {
         'caustic': 'caustic 18s ease-in-out infinite alternate',
         'float-slow': 'float 8s ease-in-out infinite',
+        'float-mid': 'float 12s ease-in-out infinite',
         'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) forwards',
+        'fade-in': 'fadeIn 0.7s ease forwards',
+        'scale-in': 'scaleIn 0.6s cubic-bezier(0.25,0.46,0.45,0.94) forwards',
+        'shimmer-sweep': 'shimmerSweep 3s linear infinite',
+        'orb-float': 'orbFloat 10s ease-in-out infinite',
+        'drift-x': 'driftX 30s ease-in-out infinite alternate',
       },
       keyframes: {
         caustic: {
@@ -83,7 +90,42 @@ export default {
         pulseSubtle: {
           '0%, 100%': { opacity: '0.4' },
           '50%': { opacity: '0.85' },
-        }
+        },
+        fadeInUp: {
+          from: { opacity: '0', transform: 'translateY(32px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        scaleIn: {
+          from: { opacity: '0', transform: 'scale(0.9)' },
+          to: { opacity: '1', transform: 'scale(1)' },
+        },
+        shimmerSweep: {
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        orbFloat: {
+          '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+          '33%': { transform: 'translateY(-18px) scale(1.04)' },
+          '66%': { transform: 'translateY(10px) scale(0.97)' },
+        },
+        driftX: {
+          '0%': { transform: 'translateX(0) scale(1.06)' },
+          '100%': { transform: 'translateX(-2.5%) scale(1.06)' },
+        },
+      },
+      transitionTimingFunction: {
+        'luxury': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'spring': 'cubic-bezier(0.34, 1.35, 0.64, 1)',
+      },
+      scale: {
+        '102': '1.02',
+        '103': '1.03',
+        '107': '1.07',
+        '108': '1.08',
       }
     },
   },
