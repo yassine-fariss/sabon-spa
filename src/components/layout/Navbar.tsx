@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Sabon Spa
             </span>
             <span className="text-[9px] uppercase tracking-[0.25em] text-aqua/90 -mt-1 font-medium">
-              Tanger • Malabata
+              Tanger
             </span>
           </div>
         </a>

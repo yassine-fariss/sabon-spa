@@ -5,8 +5,8 @@ import { SPA_IMAGES } from './spaImages';
 export const BUSINESS_INFO = {
   name: 'Sabon Spa',
   tagline: {
-    fr: 'Le Sanctuaire Bleu • Luxury Spa & Hammam',
-    en: 'The Blue Sanctuary • Luxury Spa & Hammam'
+    fr: 'Luxury Spa & Hammam',
+    en: 'Luxury Spa & Hammam'
   },
   location: {
     address: 'Résidence Iris, 1 Route de Malabata / Bd Mohammed VI',

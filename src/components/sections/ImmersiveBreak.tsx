@@ -42,7 +42,7 @@ export const ImmersiveBreak: React.FC<ImmersiveBreakProps> = ({ lang }) => {
         <div className="pt-3 flex items-center justify-center gap-2">
           <Sparkles size={13} className="text-gold" />
           <span className="text-xs tracking-[0.2em] uppercase text-mist/75 font-light">
-            Sabon Spa Tanger • Le Sanctuaire Bleu
+            Sabon Spa Tanger
           </span>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Sparkles, Shield, Star, Waves, ArrowRight } from 'lucide-react';
+import { ChevronDown, Sparkles, Shield, Star, ArrowRight } from 'lucide-react';
 import { Language } from '../../types';
 import { getAssetUrl } from '../../utils/assets';
 import { SPA_IMAGES } from '../../data/spaImages';
@@ -33,28 +33,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-aqua/20 via-transparent to-transparent pointer-events-none animate-caustic" />
       </div>
 
-      {/* Top Status Badge */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/80 backdrop-blur-md border border-aqua/30 text-[11px] text-aqua shadow-glow-aqua">
-          <span className="w-2 h-2 rounded-full bg-aqua animate-pulse" />
-          <span className="font-medium tracking-wide">
-            {lang === 'fr' ? 'Vue Hammam Authentique • Tanger Malabata' : 'Authentic Hammam View • Tangier Malabata'}
-          </span>
-        </div>
-
-        <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/60 backdrop-blur-md border border-aqua/20 text-[11px] text-mist/75">
-          <Waves size={12} className="text-aqua" />
-          <span>{lang === 'fr' ? 'Le Sanctuaire Bleu' : 'The Blue Sanctuary'}</span>
-        </div>
-      </div>
-
-      {/* Main Hero Content Area */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8">
+      {/* Main Hero Content Area - Minimalist Clean Layout */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-12">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Eyebrow / Location */}
+          {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 backdrop-blur-md border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-6 shadow-sm">
             <Sparkles size={12} className="text-aqua" />
-            <span>Tanger • Baie de Malabata</span>
+            <span>Tanger</span>
           </div>
 
           {/* Main Headline */}

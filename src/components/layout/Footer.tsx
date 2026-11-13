@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
                   Sabon Spa
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-aqua font-medium">
-                  Tanger • Le Sanctuaire Bleu
+                  Tanger
                 </span>
               </div>
             </div>
@@ -180,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
             {/* Top location badge inside map */}
             <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-navy-950/90 backdrop-blur-md border border-aqua/30 text-white text-xs font-serif flex items-center gap-2 shadow-lg pointer-events-none">
               <span className="w-2 h-2 rounded-full bg-aqua animate-pulse" />
-              <span>Sabon Spa • Tanger Malabata</span>
+              <span>Sabon Spa</span>
             </div>
           </div>
         </div>
