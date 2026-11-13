@@ -34,11 +34,13 @@ export interface TeamMember {
 export interface ReviewItem {
   id: string;
   author: string;
-  location: string;
   rating: number;
   date: string;
-  source: 'Google' | 'Tripadvisor' | 'Fresha';
-  quote: { fr: string; en: string };
+  meta: string;
+  isLocalGuide?: boolean;
+  text: string;
+  source: string;
+  avatarInitials: string;
   highlight?: boolean;
 }
 

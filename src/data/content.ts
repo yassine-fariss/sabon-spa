@@ -295,53 +295,108 @@ export const TEAM_MEMBERS: TeamMember[] = [
 
 export const REVIEWS: ReviewItem[] = [
   {
-    id: 'rvp',
-    author: 'Robin van Persie',
-    location: 'Pays-Bas',
-    rating: 5,
-    date: 'Septembre 2026',
+    id: 'google-bisma-hussain',
+    author: 'Bisma Hussain',
+    rating: 5.0,
+    date: '1 month ago',
+    meta: '5 reviews',
     source: 'Google',
-    quote: {
-      fr: 'Une expérience de spa exceptionnelle à Tanger pour toute ma famille. Le hammam, la sérénité des lieux et le professionnalisme des thérapeutes sont dignes des plus grands établissements internationaux.',
-      en: 'An exceptional spa experience in Tangier for my entire family. The hammam, the tranquility of the spaces, and the sheer professionalism of the staff rank alongside world-class resorts.'
-    },
-    highlight: true
+    avatarInitials: 'BH',
+    text: 'So happy with the service, the best experience ever. I am speechless with the quality of the place, the services and everything… especially the staff which is absolutely lovely and kind. The place is beyonddd beautiful.'
   },
   {
-    id: 'rev-ocean',
-    author: 'Camille L.',
-    location: 'Paris, France',
-    rating: 5,
-    date: 'Octobre 2026',
+    id: 'google-ikram-st',
+    author: 'Ikram St',
+    rating: 5.0,
+    date: '2 months ago',
+    meta: '1 review · 7 photos',
     source: 'Google',
-    quote: {
-      fr: 'On a réellement l’impression d’entrer dans un sanctuaire sous l’océan. La voûte étoilée en briques de sel, le parfum d’eucalyptus et la séparation totale hommes/femmes apportent un confort et un calme inégalés.',
-      en: 'It truly feels like stepping into an underwater sanctuary. The starry salt-brick vault, the eucalyptus aroma, and the strictly separate wings provide unparalleled peace.'
-    }
+    avatarInitials: 'IS',
+    text: 'I had a wonderful experience at this spa! I tried the hammam and massage, and everything was absolutely perfect. The staff were very kind, welcoming, and professional.\n\nEverything was clean, well prepared, and organized, which made the whole experience even more relaxing.\n\nI truly enjoyed every moment and left feeling refreshed and relaxed. I highly recommend this place and would definitely come back again! ✨'
   },
   {
-    id: 'rev-tripadvisor',
-    author: 'Karim E.',
-    location: 'Casablanca, Maroc',
-    rating: 5,
-    date: 'Novembre 2026',
-    source: 'Tripadvisor',
-    quote: {
-      fr: 'Le meilleur spa de Tanger sans aucune hésitation. Massage Merzouga divin avec Jay et gommage impeccable avec Latifa. Propreté irréprochable et accueil royal.',
-      en: 'Hands down the finest spa in Tangier. Divine Merzouga massage with Jay and a flawless scrub with Latifa. Impeccable cleanliness and royal hospitality.'
-    }
+    id: 'google-ash-fera',
+    author: 'Ash Fera',
+    rating: 5.0,
+    date: '3 weeks ago',
+    meta: 'Local Guide',
+    isLocalGuide: true,
+    source: 'Google',
+    avatarInitials: 'AF',
+    text: 'An absolutely incredible experience from start to finish. The facilities were spotless and peaceful, and the staff made me feel incredibly pampered. I left feeling completely relaxed and will definitely be back!'
   },
   {
-    id: 'rev-fresha',
-    author: 'Elena S.',
-    location: 'Madrid, Espagne',
-    rating: 5,
-    date: 'Octobre 2026',
-    source: 'Fresha',
-    quote: {
-      fr: 'Une décoration somptueuse entre modernité et tradition. Le salon avec l’arbre fleuri et le canapé rose est sublime, et les soins sont d’une qualité rare.',
-      en: 'Gorgeous design balancing contemporary elegance with Moroccan soul. The lounge with the blossom tree and pink velvet sofa is breathtaking, and treatments are world-class.'
-    }
+    id: 'google-humayra-kabir',
+    author: 'Humayra Kabir',
+    rating: 5.0,
+    date: '1 month ago',
+    meta: '1 month ago',
+    source: 'Google',
+    avatarInitials: 'HK',
+    highlight: true,
+    text: 'Wow wow wow. First time doing the hammam experience and mind was blown, grateful for the flexibility to accomodate a sudden walk in appointment.\n\nAnna the manager is wonderful, Soumaya the site supervisor, the hammam lady and Irish the masseusse, were phenomenal.\n\nThis is a spectacular experience and the perfect way to unwind after days of travel. I can’t wait to come back again!!!'
+  },
+  {
+    id: 'google-valeria-spada',
+    author: 'Valeria Spada',
+    rating: 5.0,
+    date: '1 month ago',
+    meta: 'Local Guide · 14 reviews · 13 photos',
+    isLocalGuide: true,
+    source: 'Google',
+    avatarInitials: 'VS',
+    text: 'Such a lovely atmosphere! I had the pleasure of getting a manicure and pedicure, and it was such a pleasant experience. The staff were also very friendly. I will definitely come back again! 🤍'
+  },
+  {
+    id: 'google-sami-alabed',
+    author: 'Sami Alabed, HTS-ELEKTRO',
+    rating: 5.0,
+    date: '1 month ago',
+    meta: '1 review',
+    source: 'Google',
+    avatarInitials: 'SA',
+    highlight: true,
+    text: 'An absolutely wonderful experience! Everything was excellent, from the hammam to the massage. The service was professional, relaxing, and of a very high standard.\n\nA special mention goes to the manager, who is an exceptionally kind, elegant, and respectful person. Her warm and friendly attitude made the whole experience even more enjoyable.\n\nI highly recommend this place to anyone looking for a great hammam and massage experience. I will definitely come back again!'
+  },
+  {
+    id: 'google-mohammed-alanazi',
+    author: 'Mohammed Alanazi',
+    rating: 5.0,
+    date: '1 month ago',
+    meta: '7 reviews · 2 photos',
+    source: 'Google',
+    avatarInitials: 'MA',
+    text: 'Absolutely exceptional experience! ✨ From the beautiful atmosphere to the professional and attentive service, everything felt luxurious and relaxing. Truly one of the best spas I’ve ever visited!\n\nA special thank you to Anna, Sumyah, and Fedwa for your kindness, professionalism, and all your effort. You made the experience even more special. ❤️\n\nHighly recommended! 💎🌿'
+  },
+  {
+    id: 'google-sabir-fetian',
+    author: 'Sabir Fetian',
+    rating: 5.0,
+    date: '1 month ago',
+    meta: '1 review',
+    source: 'Google',
+    avatarInitials: 'SF',
+    text: 'I had an amazing experience at this spa. Everything was new, clean, relaxing, and well organized. The staff were very friendly and professional, and the treatment was absolutely wonderful. I left feeling refreshed and completely relaxed. I would definitely recommend this place and will happily come back again!'
+  },
+  {
+    id: 'google-wissam-dahrouch',
+    author: 'Wissam Dahrouch',
+    rating: 5.0,
+    date: '2 months ago',
+    meta: '1 review',
+    source: 'Google',
+    avatarInitials: 'WD',
+    text: 'I had an amazing experience at this spa! The salon is beautiful, clean, and relaxing. The service was excellent, and the staff were very welcoming, professional, and attentive. Everything was perfect from start to finish. I highly recommend this place and will definitely come back! ✨'
+  },
+  {
+    id: 'google-mo-chemlali',
+    author: 'Mo Chemlali',
+    rating: 5.0,
+    date: '4 weeks ago',
+    meta: '4 reviews',
+    source: 'Google',
+    avatarInitials: 'MC',
+    text: 'We had a wonderful experience at Spa Sabon! The service was excellent, the staff were very friendly and accommodating, and they really took the time to think along with us. Everything was very clean and beautifully presented. Highly recommended! We would definitely come back again.'
   }
 ];
 
