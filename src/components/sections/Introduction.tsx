@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Droplets, HeartHandshake } from 'lucide-react';
+import { ArrowRight, Sparkles, Droplets, HeartHandshake, Eye, Award } from 'lucide-react';
 import { Language } from '../../types';
-import { getAssetUrl } from '../../utils/assets';
+import { SPA_IMAGES } from '../../data/spaImages';
 
 interface IntroductionProps {
   lang: Language;
@@ -45,9 +45,9 @@ export const Introduction: React.FC<IntroductionProps> = ({
                 : 'From the moment you step inside, the vibrant bustle of Tangier fades into a serene, atmospheric haven. Imagined as an aquatic sanctuary, Sabon Spa unites the radiant warmth of traditional salt-brick hammams, precious botanical care, and absolute discretion.'}
             </p>
 
-            {/* Three key pillars */}
-            <div className="pt-4 space-y-4">
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-navy-900/60 border border-aqua/15">
+            {/* Two key pillars */}
+            <div className="pt-2 space-y-3.5">
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-navy-900/60 border border-aqua/15 hover:border-aqua/30 transition">
                 <div className="w-9 h-9 rounded-lg bg-aqua/10 text-aqua flex items-center justify-center shrink-0 mt-0.5">
                   <Droplets size={18} />
                 </div>
@@ -63,7 +63,7 @@ export const Introduction: React.FC<IntroductionProps> = ({
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-navy-900/60 border border-aqua/15">
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-navy-900/60 border border-aqua/15 hover:border-aqua/30 transition">
                 <div className="w-9 h-9 rounded-lg bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-0.5">
                   <HeartHandshake size={18} />
                 </div>
@@ -80,7 +80,7 @@ export const Introduction: React.FC<IntroductionProps> = ({
               </div>
             </div>
 
-            <div className="pt-4 flex items-center gap-6">
+            <div className="pt-4 flex flex-wrap items-center gap-5">
               <button
                 onClick={onOpenBooking}
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-[0.16em] font-medium shadow-glow-aqua transition"
@@ -93,7 +93,8 @@ export const Introduction: React.FC<IntroductionProps> = ({
                 href="#sanctuaire"
                 className="text-xs uppercase tracking-[0.16em] text-aqua hover:text-white transition inline-flex items-center gap-1.5"
               >
-                <span>{lang === 'fr' ? 'Visiter les espaces' : 'Explore spaces'}</span>
+                <Eye size={13} />
+                <span>{lang === 'fr' ? 'Explorer la galerie' : 'Explore gallery'}</span>
                 <ArrowRight size={13} />
               </a>
             </div>
@@ -102,44 +103,52 @@ export const Introduction: React.FC<IntroductionProps> = ({
           {/* Right Editorial Image Composition */}
           <div className="lg:col-span-6 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none grid grid-cols-12 gap-4">
-              {/* Primary Image: Lounge with Pink Sofa & Blossom Tree */}
+              {/* Primary Image: Lounge with Pink Velvet & Blossom Tree */}
               <div className="col-span-8 relative">
-                <div className="arch-top overflow-hidden border border-aqua/25 shadow-2xl relative h-[420px] sm:h-[480px]">
+                <div className="arch-top overflow-hidden border border-aqua/25 shadow-2xl relative h-[420px] sm:h-[490px] group bg-navy-900">
                   <img
-                    src={getAssetUrl('images/lounge.jpg')}
+                    src={SPA_IMAGES.loungeReception}
                     alt="Sabon Spa Reception & Lounge"
-                    className="w-full h-full object-cover filter contrast-[1.03] hover:scale-105 transition duration-700"
+                    loading="lazy"
+                    className="w-full h-full object-cover filter contrast-[1.03] group-hover:scale-105 transition duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-navy-950/70 backdrop-blur-md rounded-lg border border-aqua/20">
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-navy-950/80 backdrop-blur-md rounded-lg border border-aqua/20">
                     <span className="text-[10px] uppercase tracking-[0.2em] text-aqua font-medium block">
                       {lang === 'fr' ? 'Lounge d\'Accueil' : 'Welcome Lounge'}
                     </span>
                     <span className="text-xs text-white font-serif">
-                      {lang === 'fr' ? 'Marbre, velours rose poudré & arbre fleuri' : 'Striped marble, blush velvet & cherry blossoms'}
+                      {lang === 'fr' ? 'Marbre rayé, velours rose poudré & arbre fleuri' : 'Striped marble, blush velvet & cherry blossoms'}
                     </span>
                   </div>
                 </div>
               </div>
 
               {/* Secondary Overlapping Image: Hammam Starfield */}
-              <div className="col-span-6 absolute -bottom-8 -right-2 sm:-right-4 w-[220px] sm:w-[260px]">
-                <div className="arch-top overflow-hidden border-2 border-aqua/30 shadow-luxury rounded-2xl relative h-[280px] sm:h-[320px] bg-navy-900">
+              <div className="col-span-6 absolute -bottom-8 -right-2 sm:-right-4 w-[230px] sm:w-[270px]">
+                <div className="arch-top overflow-hidden border-2 border-aqua/30 shadow-luxury rounded-2xl relative h-[290px] sm:h-[330px] bg-navy-900 group">
                   <img
-                    src={getAssetUrl('images/hammam-vault.jpg')}
-                    alt="Sabon Spa Hammam Vault"
-                    className="w-full h-full object-cover filter contrast-[1.05] hover:scale-105 transition duration-700"
+                    src={SPA_IMAGES.hammamStarlight}
+                    alt="Sabon Spa Hammam Starfield"
+                    loading="lazy"
+                    className="w-full h-full object-cover filter contrast-[1.05] group-hover:scale-105 transition duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-3 left-3 right-3 p-2 bg-navy-950/80 backdrop-blur-md rounded border border-aqua/20">
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3 right-3 p-2.5 bg-navy-950/85 backdrop-blur-md rounded border border-aqua/20">
                     <span className="text-[9px] uppercase tracking-[0.2em] text-gold font-medium block">
-                      {lang === 'fr' ? 'Hammam Royal' : 'Royal Hammam'}
+                      {lang === 'fr' ? 'Voûte Céleste' : 'Starlight Vault'}
                     </span>
-                    <span className="text-[11px] text-white font-serif">
-                      {lang === 'fr' ? 'Voûte en briques de sel & ciel étoilé' : 'Starry illuminated salt vault'}
+                    <span className="text-[11px] text-white font-serif block">
+                      {lang === 'fr' ? 'Hammam briques de sel illuminées' : 'Illuminated salt-brick hammam'}
                     </span>
                   </div>
                 </div>
+              </div>
+
+              {/* Floating Quality Badge */}
+              <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-navy-950/90 backdrop-blur-md border border-gold/40 text-gold text-[10px] uppercase tracking-[0.16em] font-medium flex items-center gap-1.5 shadow-lg">
+                <Award size={12} className="text-gold" />
+                <span>5.0 ★ Malabata Bay</span>
               </div>
             </div>
           </div>

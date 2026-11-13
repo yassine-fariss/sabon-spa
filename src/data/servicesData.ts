@@ -1,4 +1,5 @@
 import { getAssetUrl } from '../utils/assets';
+import { SPA_IMAGES } from './spaImages';
 
 export interface TreatmentService {
   id: string;
@@ -106,7 +107,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     badge: { fr: 'Luxe Absolu', en: 'Pure Royal Luxury' },
     isFeatured: true,
     isPopular: true,
-    image: getAssetUrl('images/hammam-vault.jpg'),
+    image: SPA_IMAGES.hammamStarlight,
     description: {
       fr: 'Une demi-journée d’immersion totale : Hammam impérial sous voûte étoilée de briques de sel, gommage kessa, massage d’exception, soin visage régénérant et jacuzzi privatif.',
       en: 'A half-day royal sanctuary immersion: Imperial Hammam beneath illuminated salt vaults, bespoke bodywork, revitalizing facial, and private hydro-jacuzzi.'
@@ -121,7 +122,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     category: 'spa-packages',
     badge: { fr: 'Prestige Mariée', en: 'Bridal Grand Prestige' },
     isFeatured: true,
-    image: getAssetUrl('images/lounge.jpg'),
+    image: SPA_IMAGES.loungeReception,
     description: {
       fr: 'La cérémonie nuptiale par excellence : Grand hammam rituel aux pétales de roses, gommage d’or et ghassoul royal, massage à 4 mains, beauté complète des mains & pieds et mise en beauté féerique.',
       en: 'The definitive bridal ritual: Rose petal hammam, royal herbal scrub, synchronized 4-hand massage, complete spa manicure & pedicure, and ethereal bridal care.'
@@ -136,7 +137,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     category: 'spa-packages',
     badge: { fr: 'Choix Signature', en: 'Signature Choice' },
     isPopular: true,
-    image: getAssetUrl('images/detail-massage.jpg'),
+    image: SPA_IMAGES.bluePoolJacuzzi,
     description: {
       fr: 'L’équilibre parfait entre tradition et relaxation : Hammam royal au savon noir d’eucalyptus, enveloppement purifiant et massage signature Merzouga aux pochons chauds.',
       en: 'Harmonious signature experience: Royal eucalyptus hammam, purifying ghassoul cocoon, and Merzouga heated sand herbal pouch massage.'
@@ -149,7 +150,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '800 MAD',
     priceNum: 800,
     category: 'spa-packages',
-    image: getAssetUrl('images/sauna.jpg'),
+    image: SPA_IMAGES.freshaJacuzziBlue,
     description: {
       fr: 'Évasion bien-être côtière : Hammam traditionnel marocain complet, exfoliation kessa vivifiante et massage décontractant aux huiles précieuses.',
       en: 'Seaside wellness escape: Complete traditional Moroccan hammam, invigorating kessa body scrub, and relaxing aromatic body massage.'
@@ -162,7 +163,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '800 MAD',
     priceNum: 800,
     category: 'spa-packages',
-    image: getAssetUrl('images/scrub-care.jpg'),
+    image: SPA_IMAGES.hammamBlueTiles,
     description: {
       fr: 'L’initiation authentique au sanctuaire : Hammam traditionnel marocain privatif, gommage artisanal au savon noir et massage relaxant 45 min.',
       en: 'Authentic sanctuary initiation: Private traditional hammam, eucalyptus black soap kessa scrub, and relaxing 45 min aromatic massage.'
@@ -175,7 +176,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '800 MAD',
     priceNum: 800,
     category: 'spa-packages',
-    image: getAssetUrl('images/treatment-candle.jpg'),
+    image: SPA_IMAGES.massageCandle,
     description: {
       fr: 'Exfoliation tonifiante aux grains de café torréfiés et huiles végétales, gommage dorsal intensif, enveloppement chaud défatigant et massage ciblé de la colonne.',
       en: 'Invigorating roasted coffee bean exfoliation, targeted deep back scrub, warming therapeutic wrap, and intensive spinal muscle massage.'
@@ -194,7 +195,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     category: 'kids-packages',
     badge: { fr: 'Pour Petits Princes & Princesses', en: 'Royal Kids Experience' },
     isFeatured: true,
-    image: getAssetUrl('images/hammam-blue.jpg'),
+    image: SPA_IMAGES.freshaTreatment,
     description: {
       fr: 'Immersion féerique adaptée : Hammam vapeur douce à température modérée, bain moussant délicat, massage relaxant doux et soin fraîcheur.',
       en: 'Gentle royal journey: Mild temperature steam hammam, fun cloud bubble bath, restorative soft massage, and soothing junior care.'
@@ -207,7 +208,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '1 000 MAD',
     priceNum: 1000,
     category: 'kids-packages',
-    image: getAssetUrl('images/ritual-soak.jpg'),
+    image: SPA_IMAGES.socialBrightInterior,
     description: {
       fr: 'Rituel bien-être complet pour enfant : Hammam tiède, gommage doux sans irritation et massage apaisant aux huiles hypoallergéniques.',
       en: 'Full children’s wellness ritual: Gentle warm hammam, irritation-free soft scrub, and calming hypoallergenic massage.'
@@ -220,7 +221,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '750 MAD',
     priceNum: 750,
     category: 'kids-packages',
-    image: getAssetUrl('images/hammam-vault.jpg'),
+    image: SPA_IMAGES.freshaBeautyClean,
     description: {
       fr: 'Moment de détente et d’apaisement : Bain sensoriel doux, enveloppement nourrissant et effleurages décontractants.',
       en: 'Peaceful decompression: Mild sensory bath, gentle nourishing wrap, and relaxing light body effleurage.'
@@ -233,7 +234,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '400 MAD',
     priceNum: 400,
     category: 'kids-packages',
-    image: getAssetUrl('images/scrub-care.jpg'),
+    image: SPA_IMAGES.hammamMarble,
     description: {
       fr: 'Initiation douce et amusante aux bienfaits du hammam marocain avec savon doux et rinçage à l’eau parfumée.',
       en: 'Fun and gentle introduction to Moroccan hammam traditions with gentle natural soap and floral rinse.'
@@ -251,7 +252,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 500,
     category: 'hammam-body',
     subCategory: 'adults',
-    image: getAssetUrl('images/hammam-blue.jpg'),
+    image: SPA_IMAGES.hammamWaterAmber,
     description: {
       fr: 'Inspiré des rituels du désert du Sud marocain : poudres aromatiques sahariennes, savon noir purifiant et enveloppement aux argiles solaires.',
       en: 'Inspired by Southern Moroccan desert traditions: Saharan botanical powders, natural black soap, and solar clay wrap.'
@@ -265,7 +266,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 600,
     category: 'hammam-body',
     subCategory: 'adults',
-    image: getAssetUrl('images/hammam-vault.jpg'),
+    image: SPA_IMAGES.hammamMarble,
     description: {
       fr: 'Immersion sous nuage de mousse soyeuse à la savonnette d’Alep, gommage kessa traditionnel et hydro-rinçage tiède revitalisant.',
       en: 'Enveloping cloud of silky Aleppian olive foam, traditional kessa body exfoliation, and soothing thermal rinse.'
@@ -280,7 +281,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     category: 'hammam-body',
     subCategory: 'adults',
     isPopular: true,
-    image: getAssetUrl('images/hammam-vault.jpg'),
+    image: SPA_IMAGES.hammamStarlight,
     description: {
       fr: 'Notre cérémonie signature sous la voûte céleste aux briques de sel : savon noir d’eucalyptus, gommage kessa artisanal et ghassoul aromatisé aux 7 plantes.',
       en: 'Our quintessential ceremony under the starry salt-brick vault: eucalyptus black soap, artisanal kessa scrub, and 7-herb herbal ghassoul.'
@@ -294,7 +295,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 300,
     category: 'hammam-body',
     subCategory: 'kids',
-    image: getAssetUrl('images/hammam-blue.jpg'),
+    image: SPA_IMAGES.freshaTreatment,
     description: {
       fr: 'Bain de mousse abondant doux et amusant dans un espace tiédi, adapté à la sensibilité de la peau des enfants.',
       en: 'Delicate and playful cloud foam bath in gently heated room, specially formulated for delicate young skin.'
@@ -308,7 +309,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 250,
     category: 'hammam-body',
     subCategory: 'kids',
-    image: getAssetUrl('images/scrub-care.jpg'),
+    image: SPA_IMAGES.socialBrightInterior,
     description: {
       fr: 'Gommage ultra-doux aux poudres minérales naturelles et rinçage à l’eau de fleur d’oranger.',
       en: 'Ultra-gentle natural mineral scrub and fragrant orange blossom floral water rinse.'
@@ -322,7 +323,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 200,
     category: 'hammam-body',
     subCategory: 'kids',
-    image: getAssetUrl('images/hammam-vault.jpg'),
+    image: SPA_IMAGES.hammamMarble,
     description: {
       fr: 'Découverte bienveillante du hammam marocain : vapeur légère, savon doux et enveloppement ghassoul tiède.',
       en: 'Gentle introduction to Moroccan hammam traditions: gentle steam, mild soap, and warm soothing ghassoul clay.'
@@ -337,7 +338,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     category: 'hammam-body',
     subCategory: 'jacuzzi',
     badge: { fr: 'Hydrothérapie', en: 'Hydrotherapy' },
-    image: getAssetUrl('images/ritual-soak.jpg'),
+    image: SPA_IMAGES.bluePoolJacuzzi,
     description: {
       fr: 'Bain à remous privatisé sous lumière bleutée sous-marine, jets hydro-massants ergonomiques et chromothérapie apaisante.',
       en: 'Private bubbling whirlpool under bioluminescent ambient blue light, ergonomic hydro-jets, and restorative chromotherapy.'
@@ -517,6 +518,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 650,
     category: 'massage',
     subCategory: 'premium',
+    image: SPA_IMAGES.massageCandle,
     description: {
       fr: 'Galets de basalte volcanique polis chauffés et huiles essentielles pour une profonde décontraction thermique.',
       en: 'Smooth heated volcanic basalt stones and precious oils offering profound thermic decompression.'
@@ -530,6 +532,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 600,
     category: 'massage',
     subCategory: 'premium',
+    image: SPA_IMAGES.freshaMassageCandle,
     description: {
       fr: 'Étirements passifs inspirés du yoga et pressions calquées sur les lignes d’énergie Sen.',
       en: 'Yoga-inspired passive stretching and rhythmic acupressure along energetic Sen pathways.'
@@ -618,7 +621,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     price: '300 MAD',
     priceNum: 300,
     category: 'facial',
-    image: getAssetUrl('images/facial-glow.jpg'),
+    image: SPA_IMAGES.socialSpaProducts,
     description: {
       fr: 'Soin haute performance conçu spécifiquement pour la peau masculine : nettoyage désincrustant, exfoliation enzymatique, serviette chaude relaxante et hydratation protectrice.',
       en: 'High-performance treatment engineered for men’s skin: deep pore cleansing, enzymatic scrub, warm steam compress, and protective botanical hydration.'
@@ -637,6 +640,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     priceNum: 200,
     category: 'manicure-pedicure',
     subCategory: 'manicure',
+    image: SPA_IMAGES.freshaBeautyClean,
     description: {
       fr: 'Soin complet des ongles, cuticules, gommage exfoliant doux, modelage hydratant et pose protectrice.',
       en: 'Comprehensive nail and cuticle care, gentle exfoliating scrub, moisturizing massage, and protective finish.'
@@ -1267,6 +1271,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     category: 'hair-treatments',
     badge: { fr: 'Lissage Prestige', en: 'Prestige Smoothing' },
     isFeatured: true,
+    image: SPA_IMAGES.spaProducts,
     description: {
       fr: 'Traitement intensif à la kératine pure brésilienne haute concentration : élimination des frisottis, brillance miroir et chevelure soyeuse durant plusieurs mois.',
       en: 'Intensive high-concentration pure Brazilian keratin therapy: eliminates frizz, imparts mirror glass shine, and guarantees months of silkiness.'
@@ -1523,6 +1528,7 @@ export const ALL_TREATMENTS: TreatmentService[] = [
     subCategory: 'package',
     badge: { fr: 'Forfait Signature Salon', en: 'Signature Salon Package' },
     isFeatured: true,
+    image: SPA_IMAGES.spaProducts,
     description: {
       fr: 'Cérémonie capillaire d’exception : diagnostic personnalisé, soin profond régénérant, massage crânien relaxant, coupe sur mesure et brushing haute couture.',
       en: 'Couture hair sanctuary ceremony: diagnostic consultation, intensive botanical therapy, cranial scalp massage, custom haircut, and luxury blowout.'

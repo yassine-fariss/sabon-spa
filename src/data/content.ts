@@ -1,5 +1,6 @@
 import { ServiceItem, PackItem, TeamMember, ReviewItem, FAQItem } from '../types';
 import { getAssetUrl } from '../utils/assets';
+import { SPA_IMAGES } from './spaImages';
 
 export const BUSINESS_INFO = {
   name: 'Sabon Spa',
@@ -65,7 +66,7 @@ export const SERVICES: ServiceItem[] = [
       fr: ['Savon noir bio à l’eucalyptus', 'Gommage kessa artisanal', 'Enveloppement ghassoul aux herbes', 'Salle de repos & thé à la menthe'],
       en: ['Organic eucalyptus black soap', 'Artisanal kessa scrub', 'Herbal ghassoul clay mask', 'Relaxation lounge & mint tea']
     },
-    image: getAssetUrl('images/hammam-vault.jpg'),
+    image: SPA_IMAGES.hammamStarlight,
     popular: true
   },
   {
@@ -85,7 +86,7 @@ export const SERVICES: ServiceItem[] = [
       fr: ['Huile d’argan pure certifiée', 'Pochons de sable chaud de Merzouga', 'Pression moyenne à appuyée', 'Harmonisation énergétique'],
       en: ['Pure certified argan oil', 'Heated Merzouga sand compresses', 'Medium to deep pressure', 'Energy revitalization']
     },
-    image: getAssetUrl('images/detail-massage.jpg'),
+    image: SPA_IMAGES.massageCandle,
     popular: true
   },
   {
@@ -105,7 +106,7 @@ export const SERVICES: ServiceItem[] = [
       fr: ['Pression ciblée sur les méridiens', 'Étirements passifs décontractants', 'Libération des nœuds dorsaux', 'Regain de mobilité immédiat'],
       en: ['Targeted meridian pressure', 'Gentle restorative stretching', 'Deep myofascial knot release', 'Immediate posture relief']
     },
-    image: getAssetUrl('images/treatment-candle.jpg')
+    image: SPA_IMAGES.freshaMassageCandle
   },
   {
     id: 'soin-kobido',
@@ -124,7 +125,7 @@ export const SERVICES: ServiceItem[] = [
       fr: ['Stimulation des fibroblastes', 'Drainage lymphatique doux', 'Sérums botaniques précieux', 'Effet tenseur immédiat'],
       en: ['Fibroblast stimulation', 'Gentle lymphatic drainage', 'Precious botanical elixir', 'Immediate natural contour']
     },
-    image: getAssetUrl('images/facial-glow.jpg')
+    image: SPA_IMAGES.socialSpaProducts
   },
   {
     id: 'hydro-jacuzzi-sauna',
@@ -143,7 +144,7 @@ export const SERVICES: ServiceItem[] = [
       fr: ['Jets hydro-massants ergonomiques', 'Sauna sec aux effluves de pin', 'Détente musculaire totale', 'Inclus peignoir et serviettes'],
       en: ['Ergonomic hydro-jets', 'Dry sauna infused with cedar essence', 'Total body decompression', 'Plush robes and amenities included']
     },
-    image: getAssetUrl('images/sauna.jpg')
+    image: SPA_IMAGES.bluePoolJacuzzi
   },
   {
     id: 'gommage-soin-corps',
@@ -162,7 +163,7 @@ export const SERVICES: ServiceItem[] = [
       fr: ['Cristaux minéraux naturels', 'Texture peau de soie veloutée', 'Hydratation profonde', 'Senteur délicate'],
       en: ['Natural sea mineral crystals', 'Silky velvety skin texture', 'Intensive deep moisture', 'Subtle natural fragrance']
     },
-    image: getAssetUrl('images/scrub-care.jpg')
+    image: SPA_IMAGES.hammamBlueTiles
   }
 ];
 
@@ -463,45 +464,5 @@ export const FAQS: FAQItem[] = [
   }
 ];
 
-export const GALLERY_IMAGES = [
-  {
-    src: getAssetUrl('images/hammam-vault.jpg'),
-    title: { fr: 'Voûte Céleste en Briques de Sel', en: 'Starry Salt-Brick Hammam Vault' },
-    category: { fr: 'Hammam & Eau', en: 'Hammam & Water' }
-  },
-  {
-    src: getAssetUrl('images/lounge.jpg'),
-    title: { fr: 'Salon de Réception & Arbre Fleuri', en: 'Lounge & Blossom Sanctuary' },
-    category: { fr: 'Architecture & Accueil', en: 'Architecture & Lounge' }
-  },
-  {
-    src: getAssetUrl('images/hammam-blue.jpg'),
-    title: { fr: 'Sanctuaire Bleu & Niches Lumineuses', en: 'Blue Sanctuary & Light Niches' },
-    category: { fr: 'Hammam & Eau', en: 'Hammam & Water' }
-  },
-  {
-    src: getAssetUrl('images/sauna.jpg'),
-    title: { fr: 'Sauna Finlandais en Cèdre & Ambre', en: 'Finnish Cedar Sauna & Warm Glow' },
-    category: { fr: 'Hydrothérapie', en: 'Hydrotherapy' }
-  },
-  {
-    src: getAssetUrl('images/detail-massage.jpg'),
-    title: { fr: 'Soins Signatures & Huiles Précieuses', en: 'Signature Care & Precious Oils' },
-    category: { fr: 'Massages & Rituels', en: 'Massages & Rituals' }
-  },
-  {
-    src: getAssetUrl('images/facial-glow.jpg'),
-    title: { fr: 'Lifting Kobido & Soins du Visage', en: 'Kobido Facial Lift & Botanicals' },
-    category: { fr: 'Beauté & Éclat', en: 'Beauty & Glow' }
-  },
-  {
-    src: getAssetUrl('images/ritual-soak.jpg'),
-    title: { fr: 'Immersion & Rituels Hydro-relaxants', en: 'Immersion & Hydro-relaxing Rituals' },
-    category: { fr: 'Hydrothérapie', en: 'Hydrotherapy' }
-  },
-  {
-    src: getAssetUrl('images/treatment-candle.jpg'),
-    title: { fr: 'Ambiance Feutrée aux Bougies', en: 'Candlelit Serenity Suites' },
-    category: { fr: 'Massages & Rituels', en: 'Massages & Rituals' }
-  }
-];
+import { FULL_GALLERY } from './spaImages';
+export const GALLERY_IMAGES = FULL_GALLERY;

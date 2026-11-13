@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, HeartHandshake, MapPin, Award, Check } from 'lucide-react';
 import { Language } from '../../types';
+import { SPA_IMAGES } from '../../data/spaImages';
 
 interface WhySabonProps {
   lang: Language;
@@ -55,7 +56,17 @@ export const WhySabon: React.FC<WhySabonProps> = ({ lang }) => {
   ];
 
   return (
-    <section className="py-28 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 text-white relative overflow-hidden">
+    <section className="py-28 bg-navy-950 text-white relative overflow-hidden">
+      {/* Background Subtle Photo Ambiance */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <img
+          src={SPA_IMAGES.hammamPanorama}
+          alt="Sabon Spa Panoramic Sanctuary"
+          className="w-full h-full object-cover filter brightness-[0.5] contrast-[1.1]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/80 to-navy-950" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium mb-3">
@@ -85,7 +96,7 @@ export const WhySabon: React.FC<WhySabonProps> = ({ lang }) => {
           {pillars.map((p, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-2xl bg-navy-900/60 border border-aqua/15 hover:border-aqua/40 transition duration-300 hover:-translate-y-1 shadow-lg hover:shadow-glow-aqua"
+              className="p-8 rounded-2xl bg-navy-900/70 backdrop-blur-sm border border-aqua/15 hover:border-aqua/40 transition duration-300 hover:-translate-y-1 shadow-lg hover:shadow-glow-aqua"
             >
               <div className="w-12 h-12 rounded-xl bg-navy-800 border border-aqua/25 flex items-center justify-center mb-6">
                 {p.icon}
