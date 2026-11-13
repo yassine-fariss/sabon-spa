@@ -86,7 +86,10 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
             </span>
             <ul className="space-y-2 text-xs text-mist/75 font-light">
               <li>
-                <a href="#soins" className="hover:text-aqua transition">{lang === 'fr' ? 'Carte des Soins & Tarifs' : 'Treatment Menu & Prices'}</a>
+                <a href="#soins" className="hover:text-aqua transition">{lang === 'fr' ? 'Carte des Soins' : 'Treatments'}</a>
+              </li>
+              <li>
+                <a href="#packs" className="hover:text-aqua transition">{lang === 'fr' ? 'Packs & Forfaits' : 'Packages & Bundles'}</a>
               </li>
               <li>
                 <a href="#sanctuaire" className="hover:text-aqua transition">{lang === 'fr' ? 'Galerie du Sanctuaire' : 'Sanctuary Gallery'}</a>

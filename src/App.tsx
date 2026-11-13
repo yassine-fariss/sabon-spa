@@ -6,6 +6,7 @@ import { HeroSection } from './components/hero/HeroSection';
 import { ProofStrip } from './components/sections/ProofStrip';
 import { Introduction } from './components/sections/Introduction';
 import { Services } from './components/sections/Services';
+import { PacksSection } from './components/sections/PacksSection';
 import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
 import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
@@ -52,31 +53,37 @@ export const App: React.FC = () => {
           onOpenBooking={() => handleOpenBooking()}
         />
 
-        {/* 4. The Single Unified Services, Pricing & Experience Menu */}
+        {/* 4. The 6 Image-Focused Categories */}
         <Services
           lang={lang}
-          onSelectService={(id) => handleOpenBooking(id)}
+          onSelectService={(name) => handleOpenBooking(name)}
         />
 
-        {/* 5. Immersive Caustic Break */}
+        {/* 5. Separate Curated Packages Section */}
+        <PacksSection
+          lang={lang}
+          onSelectPack={(name) => handleOpenBooking(name)}
+        />
+
+        {/* 6. Immersive Caustic Break */}
         <ImmersiveBreak lang={lang} />
 
-        {/* 6. Authentic Photography Gallery & Lightbox */}
+        {/* 7. Authentic Photography Gallery & Lightbox */}
         <GallerySection lang={lang} />
 
-        {/* 7. Why Sabon Spa */}
+        {/* 8. Why Sabon Spa */}
         <WhySabon lang={lang} />
 
-        {/* 8. Master Team Section */}
+        {/* 9. Master Team Section */}
         <TeamSection lang={lang} />
 
-        {/* 9. Verified Google Reviews & Social Proof */}
+        {/* 10. Verified Google Reviews & Social Proof */}
         <ReviewsSection lang={lang} />
 
-        {/* 10. Booking & Practical Coordinates */}
+        {/* 11. Booking & Practical Coordinates */}
         <BookingSection lang={lang} />
 
-        {/* 11. FAQ Section */}
+        {/* 12. FAQ Section */}
         <FAQSection lang={lang} />
       </main>
 

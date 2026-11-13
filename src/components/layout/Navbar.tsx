@@ -27,7 +27,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const navLinks = [
-    { label: { fr: 'Carte des Soins', en: 'Treatment Menu' }, href: '#soins' },
+    { label: { fr: 'Soins', en: 'Treatments' }, href: '#soins' },
+    { label: { fr: 'Packs & Forfaits', en: 'Packages' }, href: '#packs' },
     { label: { fr: 'Le Sanctuaire', en: 'The Sanctuary' }, href: '#sanctuaire' },
     { label: { fr: 'Équipe', en: 'Team' }, href: '#equipe' },
     { label: { fr: 'Avis', en: 'Reviews' }, href: '#avis' },
