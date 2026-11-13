@@ -88,7 +88,7 @@ export const Services: React.FC<ServicesProps> = ({
         fr: 'Coupes signatures, brushings sur mesure, botox capillaire & protocoles régénérants.',
         en: 'Signature cuts, bespoke blowouts, hair botox & intensive restorative protocols.'
       },
-      image: SPA_IMAGES.socialAmberTreatment,
+      image: SPA_IMAGES.hairCareReference,
       filterFn: (s) => s.category === 'hair-services' || s.category === 'hair-treatments' || (s.category === 'organic-products' && s.subCategory === 'products'),
       subCategories: [
         { id: 'all', label: { fr: 'Tous les soins capillaires', en: 'All Hair Services' } },
