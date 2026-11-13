@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Camera, Maximize2, Sparkles, Filter } from 'lucide-react';
 import { Language } from '../../types';
 import { FULL_GALLERY, GalleryPhoto } from '../../data/spaImages';
@@ -7,6 +7,104 @@ import { Lightbox } from '../ui/Lightbox';
 interface GallerySectionProps {
   lang: Language;
 }
+
+// Single Gallery Photo Card with scroll-triggered pop-up spring animation
+const AnimatedGalleryCard: React.FC<{
+  img: GalleryPhoto;
+  idx: number;
+  lang: Language;
+  onClick: () => void;
+}> = ({ img, idx, lang, onClick }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [hasPopped, setHasPopped] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    // Reset when element mounts
+    setHasPopped(false);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasPopped(true);
+        }
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [img.src]);
+
+  const isWide = img.wide && (idx % 5 === 0);
+  const isTall = img.tall;
+  const delayMs = (idx % 4) * 90;
+
+  return (
+    <div
+      ref={cardRef}
+      style={{
+        transitionDuration: '750ms',
+        transitionTimingFunction: 'cubic-bezier(0.34, 1.35, 0.64, 1)',
+        transitionDelay: `${delayMs}ms`
+      }}
+      className={`transform transition-all ${
+        hasPopped
+          ? 'opacity-100 translate-y-0 scale-100'
+          : 'opacity-0 translate-y-20 scale-[0.91]'
+      } ${
+        isWide
+          ? 'sm:col-span-2 h-72 sm:h-88'
+          : isTall
+          ? 'sm:row-span-2 h-88 sm:h-[450px]'
+          : 'h-72 sm:h-80'
+      }`}
+    >
+      <div
+        onClick={onClick}
+        className="group relative w-full h-full overflow-hidden rounded-2xl border border-aqua/15 hover:border-aqua/50 bg-navy-900 cursor-pointer shadow-lg hover:shadow-glow-aqua transition-all duration-500"
+      >
+        <img
+          src={img.src}
+          alt={img.title[lang]}
+          loading="lazy"
+          className="w-full h-full object-cover filter contrast-[1.04] brightness-95 group-hover:scale-108 group-hover:brightness-105 transition duration-700 ease-out"
+        />
+
+        {/* Vignette Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/25 to-transparent opacity-85 group-hover:opacity-60 transition duration-500" />
+
+        {/* Subtle Top Accent */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-aqua/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+
+        {/* Top Floating Badge with Photo Index */}
+        <div className="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/20 text-aqua/90 text-[10px] font-mono tracking-wider opacity-0 group-hover:opacity-100 transition duration-300">
+          #{String(idx + 1).padStart(2, '0')}
+        </div>
+
+        {/* Hover overlay with zoom icon */}
+        <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/30 text-aqua flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 transition duration-300">
+          <Maximize2 size={15} />
+        </div>
+
+        {/* Caption at bottom */}
+        <div className="absolute bottom-4 left-4 right-4 transform translate-y-1 group-hover:translate-y-0 transition duration-300">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-aqua font-medium block">
+            {img.category[lang]}
+          </span>
+          <h4 className="text-sm sm:text-base font-serif text-white font-normal mt-0.5 leading-snug">
+            {img.title[lang]}
+          </h4>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const GallerySection: React.FC<GallerySectionProps> = ({ lang }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -90,57 +188,20 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ lang }) => {
           </div>
         </div>
 
-        {/* Editorial Masonry-style Grid */}
+        {/* Editorial Masonry-style Grid with Scroll Pop-Up Animations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {filteredPhotos.map((img, idx) => {
-            const isWide = img.wide && (idx % 5 === 0);
-            const isTall = img.tall;
-
-            return (
-              <div
-                key={idx}
-                onClick={() => {
-                  const originalIndex = FULL_GALLERY.findIndex(p => p.src === img.src);
-                  setSelectedImageIndex(originalIndex >= 0 ? originalIndex : idx);
-                }}
-                className={`group relative overflow-hidden rounded-2xl border border-aqua/15 hover:border-aqua/50 bg-navy-900 cursor-pointer shadow-lg hover:shadow-glow-aqua transition-all duration-500 ${
-                  isWide
-                    ? 'sm:col-span-2 h-72 sm:h-88'
-                    : isTall
-                    ? 'sm:row-span-2 h-88 sm:h-[450px]'
-                    : 'h-72 sm:h-80'
-                }`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.title[lang]}
-                  loading="lazy"
-                  className="w-full h-full object-cover filter contrast-[1.04] brightness-95 group-hover:scale-108 group-hover:brightness-105 transition duration-700 ease-out"
-                />
-                
-                {/* Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/25 to-transparent opacity-85 group-hover:opacity-60 transition duration-500" />
-
-                {/* Subtle Top Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-aqua/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
-
-                {/* Hover overlay with zoom icon */}
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-navy-950/80 backdrop-blur-md border border-aqua/30 text-aqua flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 transition duration-300">
-                  <Maximize2 size={15} />
-                </div>
-
-                {/* Caption at bottom */}
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-1 group-hover:translate-y-0 transition duration-300">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-aqua font-medium block">
-                    {img.category[lang]}
-                  </span>
-                  <h4 className="text-sm sm:text-base font-serif text-white font-normal mt-0.5 leading-snug">
-                    {img.title[lang]}
-                  </h4>
-                </div>
-              </div>
-            );
-          })}
+          {filteredPhotos.map((img, idx) => (
+            <AnimatedGalleryCard
+              key={`${img.src}-${activeFilter}`}
+              img={img}
+              idx={idx}
+              lang={lang}
+              onClick={() => {
+                const originalIndex = FULL_GALLERY.findIndex(p => p.src === img.src);
+                setSelectedImageIndex(originalIndex >= 0 ? originalIndex : idx);
+              }}
+            />
+          ))}
         </div>
 
         {/* Footer note & reassurance */}
