@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand: #1672B1;
+  --color-navy: #082B49;
+  --color-aqua: #63B9D1;
+  --color-mist: #EAF3F6;
+  --color-ivory: #F3EEE5;
+  --color-gold: #C9A16B;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #041627;
+}
+::-webkit-scrollbar-thumb {
+  background: #0A3357;
+  border-radius: 4px;
+  border: 1px solid rgba(99, 185, 209, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1672B1;
+}
+
+/* Glassmorphism Styles based on Brand Guidelines */
+.glass-dark {
+  background: rgba(234, 243, 246, 0.05);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(99, 185, 209, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.glass-dark-hover:hover {
+  background: rgba(234, 243, 246, 0.09);
+  border-color: rgba(99, 185, 209, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 25px 50px rgba(8, 43, 73, 0.5), 0 0 30px rgba(99, 185, 209, 0.15);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(8, 43, 73, 0.10);
+  box-shadow: 0 16px 40px rgba(8, 43, 73, 0.06);
+}
+
+.glass-card-navy {
+  background: linear-gradient(145deg, rgba(10, 51, 87, 0.75) 0%, rgba(6, 32, 55, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 185, 209, 0.2);
+}
+
+/* Moorish Arch Mask */
+.arch-top {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+/* Subtle Caustic Background Wave */
+.caustic-shimmer {
+  background: radial-gradient(circle at 50% 50%, rgba(99, 185, 209, 0.15) 0%, rgba(8, 43, 73, 0) 70%);
+  filter: blur(40px);
+}
+
+/* Zellige Pattern Overlay */
+.zellige-pattern {
+  background-image: radial-gradient(rgba(99, 185, 209, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Text glow */
+.text-glow-aqua {
+  text-shadow: 0 0 20px rgba(99, 185, 209, 0.4);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(201, 161, 107, 0.35);
+}
