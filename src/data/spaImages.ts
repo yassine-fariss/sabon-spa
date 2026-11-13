@@ -29,6 +29,7 @@ export const SPA_IMAGES = {
 
   // Treatments
   massageCandle:      spa('massage-candle.jpg'),        // Dark candlelit massage room
+  massageReference:   spa('massage-reference.jpg'),     // Official reference massage treatment photo
 
   // Fresha marketing shots
   freshaTreatment:    spa('fresha-treatment.jpg'),      // Pinkish, treatment-related

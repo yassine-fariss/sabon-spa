@@ -54,7 +54,7 @@ export const Services: React.FC<ServicesProps> = ({
         fr: 'Rituels aux pochons de sable chaud, pierres volcaniques, shiatsu & thérapies ciblées.',
         en: 'Heated sand Merzouga rituals, volcanic hot stones, shiatsu & targeted bodywork.'
       },
-      image: SPA_IMAGES.massageCandle,
+      image: SPA_IMAGES.massageReference,
       filterFn: (s) => s.category === 'massage',
       subCategories: [
         { id: 'all', label: { fr: 'Tous les massages', en: 'All Massages' } },
