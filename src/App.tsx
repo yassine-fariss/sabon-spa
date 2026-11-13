@@ -5,10 +5,8 @@ import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/hero/HeroSection';
 import { ProofStrip } from './components/sections/ProofStrip';
 import { Introduction } from './components/sections/Introduction';
-import { SignatureExperiences } from './components/sections/SignatureExperiences';
 import { Services } from './components/sections/Services';
 import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
-import { PacksSection } from './components/sections/PacksSection';
 import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
 import { TeamSection } from './components/sections/TeamSection';
@@ -39,7 +37,7 @@ export const App: React.FC = () => {
       />
 
       <main>
-        {/* 1. Cinematic 3D & Video Hero */}
+        {/* 1. Cinematic Video Hero */}
         <HeroSection
           lang={lang}
           onOpenBooking={() => handleOpenBooking()}
@@ -54,53 +52,41 @@ export const App: React.FC = () => {
           onOpenBooking={() => handleOpenBooking()}
         />
 
-        {/* 4. Flagship Signature Rituals */}
-        <SignatureExperiences
-          lang={lang}
-          onSelectService={(id) => handleOpenBooking(id)}
-        />
-
-        {/* 5. Complete Services Menu */}
+        {/* 4. The Single Unified Services, Pricing & Experience Menu */}
         <Services
           lang={lang}
           onSelectService={(id) => handleOpenBooking(id)}
         />
 
-        {/* 6. Immersive Caustic Break */}
+        {/* 5. Immersive Caustic Break */}
         <ImmersiveBreak lang={lang} />
 
-        {/* 7. Packs Sabon (Bronze, Silver, Gold) */}
-        <PacksSection
-          lang={lang}
-          onSelectPack={(id) => handleOpenBooking(id)}
-        />
-
-        {/* 8. Authentic Photography Gallery & Lightbox */}
+        {/* 6. Authentic Photography Gallery & Lightbox */}
         <GallerySection lang={lang} />
 
-        {/* 9. Why Sabon Spa */}
+        {/* 7. Why Sabon Spa */}
         <WhySabon lang={lang} />
 
-        {/* 10. Master Team Section */}
+        {/* 8. Master Team Section */}
         <TeamSection lang={lang} />
 
-        {/* 11. Verified Reviews & Social Proof */}
+        {/* 9. Verified Google Reviews & Social Proof */}
         <ReviewsSection lang={lang} />
 
-        {/* 12. Booking & Practical Coordinates */}
+        {/* 10. Booking & Practical Coordinates */}
         <BookingSection lang={lang} />
 
-        {/* 13. Accessible FAQ */}
+        {/* 11. FAQ Section */}
         <FAQSection lang={lang} />
       </main>
 
-      {/* Refined Footer */}
+      {/* Footer with Interactive Google Map & Hours */}
       <Footer
         lang={lang}
         onOpenBooking={() => handleOpenBooking()}
       />
 
-      {/* Interactive Global Booking Modal */}
+      {/* Global Booking Modal */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
@@ -108,23 +94,20 @@ export const App: React.FC = () => {
         preselectedServiceId={preselectedService}
       />
 
-      {/* Floating WhatsApp Quick Action (Bottom-right on mobile/desktop) */}
-      <aside aria-label="WhatsApp Contact" className="fixed bottom-6 right-6 z-40">
-        <a
-          href={BUSINESS_INFO.whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 active:scale-95 transition duration-300 border-2 border-white/20"
-          title="WhatsApp Sabon Spa"
-          aria-label="WhatsApp Sabon Spa"
-        >
-          <MessageSquare size={26} />
-          {/* Tooltip on hover for desktop */}
-          <span className="hidden sm:block absolute right-16 px-3 py-1.5 rounded-lg bg-navy-900/90 text-white text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow-lg border border-aqua/20 pointer-events-none">
-            {lang === 'fr' ? 'Écrivez-nous sur WhatsApp' : 'Chat with us on WhatsApp'}
-          </span>
-        </a>
-      </aside>
+      {/* Floating Instant WhatsApp Button */}
+      <a
+        href={BUSINESS_INFO.whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Direct WhatsApp Concierge"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+      >
+        <MessageSquare size={26} className="group-hover:scale-105 transition" />
+        <span className="sr-only">Contact Sabon Spa WhatsApp</span>
+        {/* Pulsing beacon */}
+        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-white animate-ping opacity-75" />
+        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-white" />
+      </a>
     </div>
   );
 };

@@ -89,18 +89,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
 
             <a
-              href="#rituels"
-              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua"
-            >
-              <span>{lang === 'fr' ? 'Découvrir les rituels' : 'Discover Rituals'}</span>
-              <ArrowRight size={14} />
-            </a>
-
-            <a
               href="#soins"
-              className="px-6 py-4 rounded-full bg-navy-900/50 hover:bg-navy-800/70 backdrop-blur-md border border-aqua/20 text-mist/80 hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition text-center"
+              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua text-center"
             >
-              {lang === 'fr' ? 'Soins & Tarifs' : 'Treatments'}
+              <span>{lang === 'fr' ? 'Consulter la carte & tarifs' : 'View Menu & Prices'}</span>
+              <ArrowRight size={14} />
             </a>
           </div>
 
