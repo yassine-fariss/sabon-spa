@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange }) => {
             href={getWhatsAppUrl(undefined, lang)}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.16em] font-medium shadow-lg transition active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white text-xs uppercase tracking-[0.16em] font-medium shadow-glow-aqua hover:shadow-lg transition transform hover:-translate-y-0.5 active:scale-95"
           >
             <MessageSquare size={14} />
             <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
@@ -202,10 +202,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.16em] font-medium flex items-center justify-center gap-2 transition"
+              className="w-full py-3.5 rounded-xl bg-brand hover:bg-brand-600 border border-aqua/40 text-white text-xs uppercase tracking-[0.16em] font-medium flex items-center justify-center gap-2 shadow-glow-aqua transition"
             >
               <MessageSquare size={16} />
-              <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+              <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
             </a>
 
             <div className="flex items-center justify-center gap-1.5 text-xs text-mist/50 pt-1">

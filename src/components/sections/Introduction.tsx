@@ -91,10 +91,10 @@ export const Introduction: React.FC<IntroductionProps> = ({ lang }) => {
                   href={getWhatsAppUrl(undefined, lang)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.16em] font-medium shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 duration-200"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white text-xs uppercase tracking-[0.16em] font-medium shadow-glow-aqua hover:shadow-xl transition transform hover:-translate-y-0.5 duration-200"
                 >
                   <MessageSquare size={15} />
-                  <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                  <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
                 </a>
 
                 <a

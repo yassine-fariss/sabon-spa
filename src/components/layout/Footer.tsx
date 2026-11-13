@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   href={BUSINESS_INFO.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-navy-900 border border-aqua/25 text-[#25D366] hover:bg-[#25D366] hover:text-white transition flex items-center justify-center shadow-sm"
+                  className="w-10 h-10 rounded-full bg-navy-900 border border-aqua/25 text-aqua hover:bg-brand hover:text-white transition flex items-center justify-center shadow-sm"
                   aria-label="WhatsApp Sabon Spa"
                 >
                   <MessageSquare size={17} />
@@ -76,10 +76,10 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   href={getWhatsAppUrl(undefined, lang)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-wider font-medium transition shadow-lg flex items-center gap-1.5"
+                  className="px-5 py-2.5 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white text-xs uppercase tracking-wider font-medium shadow-glow-aqua hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-1.5"
                 >
                   <MessageSquare size={14} />
-                  <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                  <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
                 </a>
               </div>
             </div>
@@ -135,7 +135,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   <span>{BUSINESS_INFO.phones.primary} / {BUSINESS_INFO.phones.landline}</span>
                 </li>
                 <li className="flex items-center gap-2.5">
-                  <MessageSquare size={15} className="text-[#25D366] shrink-0" />
+                  <MessageSquare size={15} className="text-aqua shrink-0" />
                   <span>WhatsApp : {BUSINESS_INFO.phones.whatsapp}</span>
                 </li>
               </ul>

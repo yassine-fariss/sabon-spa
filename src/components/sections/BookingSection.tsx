@@ -78,13 +78,13 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ lang }) => {
                 href={BUSINESS_INFO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition group"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-brand/10 border border-brand/30 hover:bg-brand/20 transition group"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition">
+                <div className="w-12 h-12 rounded-xl bg-brand text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition">
                   <MessageSquare size={22} />
                 </div>
                 <div>
-                  <span className="text-xs uppercase tracking-wider text-[#128C7E] font-semibold block">
+                  <span className="text-xs uppercase tracking-wider text-brand font-semibold block">
                     {lang === 'fr' ? 'WhatsApp Direct' : 'Direct WhatsApp'}
                   </span>
                   <span className="text-base font-semibold text-navy">
@@ -327,10 +327,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ lang }) => {
                     <button
                       type="button"
                       onClick={handleWhatsAppDirect}
-                      className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-medium text-xs sm:text-sm uppercase tracking-[0.14em] flex items-center justify-center gap-2.5 shadow-md transition active:scale-[0.98]"
+                      className="w-full py-3.5 px-4 rounded-xl bg-brand hover:bg-brand-600 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.14em] flex items-center justify-center gap-2.5 shadow-md transition active:scale-[0.98]"
                     >
                       <MessageSquare size={18} />
-                      <span>{lang === 'fr' ? 'Confirmer instantanément sur WhatsApp' : 'Instant WhatsApp Booking'}</span>
+                      <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
                     </button>
 
                     <button
@@ -358,10 +358,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ lang }) => {
                 <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={handleWhatsAppDirect}
-                    className="bg-[#25D366] text-white py-2.5 px-5 rounded-xl text-xs uppercase tracking-wider font-medium flex items-center justify-center gap-2"
+                    className="bg-brand hover:bg-brand-600 text-white py-2.5 px-5 rounded-xl text-xs uppercase tracking-wider font-medium flex items-center justify-center gap-2"
                   >
                     <MessageSquare size={15} />
-                    <span>{lang === 'fr' ? 'Envoyer aussi sur WhatsApp' : 'Open in WhatsApp'}</span>
+                    <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
                   </button>
                   <button
                     onClick={() => setSubmitted(false)}

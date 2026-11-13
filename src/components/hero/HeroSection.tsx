@@ -81,10 +81,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               href={getWhatsAppUrl(undefined, lang)}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition transform hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2 text-center"
+              className="px-8 py-4 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition transform hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2 text-center"
             >
               <MessageSquare size={16} />
-              <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+              <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
             </a>
 
             <a

@@ -219,11 +219,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <button
                   type="button"
                   onClick={handleWhatsAppBooking}
-                  className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white py-3 px-4 rounded-xl font-medium text-sm flex items-center justify-center gap-2.5 shadow-lg transition active:scale-[0.98]"
+                  className="w-full bg-brand hover:bg-brand-600 text-white py-3 px-4 rounded-xl font-medium text-sm flex items-center justify-center gap-2.5 shadow-lg border border-aqua/30 transition active:scale-[0.98]"
                 >
                   <MessageSquare size={17} />
                   <span>
-                    {lang === 'fr' ? 'Réserver immédiatement sur WhatsApp' : 'Book Instantly on WhatsApp'}
+                    {lang === 'fr' ? 'Réserver' : 'Book'}
                   </span>
                 </button>
 
@@ -254,10 +254,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={handleWhatsAppBooking}
-                className="bg-[#25D366] hover:bg-[#20BD5A] text-white py-2.5 px-5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition"
+                className="bg-brand hover:bg-brand-600 border border-aqua/30 text-white py-2.5 px-5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition"
               >
                 <MessageSquare size={16} />
-                <span>{lang === 'fr' ? 'Ouvrir sur WhatsApp' : 'Open in WhatsApp'}</span>
+                <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
               </button>
               <button
                 onClick={() => {

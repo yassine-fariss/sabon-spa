@@ -201,10 +201,10 @@ export const PacksSection: React.FC<PacksSectionProps> = ({
                     href={getWhatsAppUrl(pack.name[lang], lang)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-xs uppercase tracking-[0.16em] shadow-lg transition flex items-center justify-center gap-2"
+                    className="w-full py-3.5 px-6 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white font-medium text-xs uppercase tracking-[0.16em] shadow-glow-aqua hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
                     <MessageSquare size={14} />
-                    <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                    <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
                   </a>
                 </div>
               </div>
@@ -332,10 +332,10 @@ export const PacksSection: React.FC<PacksSectionProps> = ({
                       href={getWhatsAppUrl(pack.name[lang], lang)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-[0.14em] font-medium shadow-lg transition flex items-center gap-1.5"
+                      className="px-5 py-2 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white text-xs uppercase tracking-[0.14em] font-medium shadow-glow-aqua hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-1.5"
                     >
                       <MessageSquare size={13} />
-                      <span>{lang === 'fr' ? 'Réserver sur WhatsApp' : 'Book on WhatsApp'}</span>
+                      <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
                     </a>
                   </div>
                 </div>
