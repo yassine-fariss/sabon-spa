@@ -27,8 +27,8 @@ interface RevealProps {
 }
 
 const HIDDEN_STYLES: Record<RevealVariant, CSSProperties> = {
-  'fade-up':    { opacity: 0, transform: 'translateY(36px)' },
-  'fade-down':  { opacity: 0, transform: 'translateY(-36px)' },
+  'fade-up':    { opacity: 0, transform: 'translateY(32px) scale(0.97)' },
+  'fade-down':  { opacity: 0, transform: 'translateY(-32px)' },
   'fade-left':  { opacity: 0, transform: 'translateX(-40px)' },
   'fade-right': { opacity: 0, transform: 'translateX(40px)' },
   'fade-in':    { opacity: 0 },
@@ -37,7 +37,7 @@ const HIDDEN_STYLES: Record<RevealVariant, CSSProperties> = {
 };
 
 const VISIBLE_STYLES: Record<RevealVariant, CSSProperties> = {
-  'fade-up':    { opacity: 1, transform: 'translateY(0)' },
+  'fade-up':    { opacity: 1, transform: 'translateY(0) scale(1)' },
   'fade-down':  { opacity: 1, transform: 'translateY(0)' },
   'fade-left':  { opacity: 1, transform: 'translateX(0)' },
   'fade-right': { opacity: 1, transform: 'translateX(0)' },
@@ -61,8 +61,8 @@ export const Reveal: React.FC<RevealProps> = ({
   delay = 0,
   duration = 800,
   className = '',
-  threshold = 0.12,
-  rootMargin = '0px 0px -50px 0px',
+  threshold = 0.05,
+  rootMargin = '0px 0px -20px 0px',
   as: Tag = 'div',
 }) => {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold, rootMargin });
@@ -71,7 +71,7 @@ export const Reveal: React.FC<RevealProps> = ({
     ...(inView ? VISIBLE_STYLES[variant] : HIDDEN_STYLES[variant]),
     transitionProperty: 'opacity, transform, clip-path',
     transitionDuration: `${duration}ms`,
-    transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
     transitionDelay: `${delay}ms`,
     willChange: 'opacity, transform',
   };

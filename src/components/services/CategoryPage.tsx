@@ -5,6 +5,7 @@ import type { Lang } from '../../i18n';
 import { t } from '../../i18n';
 import { CategoryIcon } from './CategoryIcon';
 import { SubcategoryAccordion } from './SubcategoryAccordion';
+import { Reveal } from '../ui/Reveal';
 import { ArrowLeft } from 'lucide-react';
 
 interface CategoryPageProps {
@@ -80,19 +81,21 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
       </div>
 
       {/* Category Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl bg-navy-900/80 backdrop-blur-xl border border-aqua/20 shadow-luxury">
-        <div className="w-16 h-16 rounded-2xl bg-brand text-white flex items-center justify-center border border-aqua/40 shadow-glow-aqua flex-shrink-0">
-          <CategoryIcon icon={category.icon} className="w-8 h-8" />
+      <Reveal variant="fade-up" duration={650}>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl bg-navy-900/80 backdrop-blur-xl border border-aqua/20 shadow-luxury">
+          <div className="w-16 h-16 rounded-2xl bg-brand text-white flex items-center justify-center border border-aqua/40 shadow-glow-aqua flex-shrink-0">
+            <CategoryIcon icon={category.icon} className="w-8 h-8" />
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-4xl font-serif font-light text-white">
+              {name}
+            </h2>
+            <p className="mt-1.5 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
+              {tagline}
+            </p>
+          </div>
         </div>
-        <div>
-          <h2 className="text-2xl sm:text-4xl font-serif font-light text-white">
-            {name}
-          </h2>
-          <p className="mt-1.5 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
-            {tagline}
-          </p>
-        </div>
-      </div>
+      </Reveal>
 
       {/* Sticky horizontal subcategory chips */}
       {category.subcategories.length > 1 && (
@@ -146,14 +149,15 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
             if (subcatServices.length === 0) return null;
 
             return (
-              <SubcategoryAccordion
-                key={subcat.id}
-                subcategory={subcat}
-                services={subcatServices}
-                categoryId={category.id}
-                lang={lang}
-                defaultOpen={idx === 0}
-              />
+              <Reveal key={subcat.id} variant="fade-up" delay={idx * 60} duration={600}>
+                <SubcategoryAccordion
+                  subcategory={subcat}
+                  services={subcatServices}
+                  categoryId={category.id}
+                  lang={lang}
+                  defaultOpen={idx === 0}
+                />
+              </Reveal>
             );
           })}
         </div>

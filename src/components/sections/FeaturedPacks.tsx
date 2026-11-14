@@ -4,6 +4,7 @@ import { fetchCategory } from '../../lib/data';
 import type { Lang } from '../../i18n';
 import { t } from '../../i18n';
 import { PackCard } from '../services/PackCard';
+import { Reveal } from '../ui/Reveal';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface FeaturedPacksProps {
@@ -40,44 +41,56 @@ export const FeaturedPacks: React.FC<FeaturedPacksProps> = ({
       <div className="absolute top-1/4 -right-48 w-96 h-96 rounded-full bg-aqua/10 filter blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium">
-            <Sparkles size={13} />
-            <span>{lang === 'fr' ? 'Harmonie & Rituels Complets' : 'Complete Harmony & Rituals'}</span>
+        <Reveal variant="fade-up" duration={700}>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium">
+              <Sparkles size={13} />
+              <span>{lang === 'fr' ? 'Harmonie & Rituels Complets' : 'Complete Harmony & Rituals'}</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
+              {lang === 'fr' ? (
+                <>
+                  Nos Packs <span className="italic text-aqua">Signature</span>
+                </>
+              ) : (
+                <>
+                  Signature <span className="italic text-aqua">Packages</span>
+                </>
+              )}
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
+              {t(lang, 'packs.featuredSubtitle')}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
-            {lang === 'fr' ? (
-              <>
-                Nos Packs <span className="italic text-aqua">Signature</span>
-              </>
-            ) : (
-              <>
-                Signature <span className="italic text-aqua">Packages</span>
-              </>
-            )}
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
-            {t(lang, 'packs.featuredSubtitle')}
-          </p>
-        </div>
+        </Reveal>
 
-        {/* 4 featured cards */}
+        {/* 4 featured cards with staggered pop-up reveal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {featuredPacks.map((pack) => (
-            <PackCard key={pack.id} pack={pack} lang={lang} />
+          {featuredPacks.map((pack, idx) => (
+            <Reveal
+              key={pack.id}
+              variant="fade-up"
+              delay={idx * 110}
+              duration={650}
+              className="h-full"
+            >
+              <PackCard pack={pack} lang={lang} />
+            </Reveal>
           ))}
         </div>
 
         {onExploreAllPacks && (
-          <div className="text-center mt-12">
-            <button
-              onClick={onExploreAllPacks}
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-white hover:text-aqua bg-navy-900/80 hover:bg-navy-900 px-7 py-3.5 rounded-full border border-aqua/30 shadow-glow-aqua hover:border-aqua/60 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
-            >
-              <span>{t(lang, 'packs.viewAll')}</span>
-              <ArrowRight size={14} className="text-aqua" />
-            </button>
-          </div>
+          <Reveal variant="fade-up" delay={200} duration={600}>
+            <div className="text-center mt-12">
+              <button
+                onClick={onExploreAllPacks}
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-white hover:text-aqua bg-navy-900/80 hover:bg-navy-900 px-7 py-3.5 rounded-full border border-aqua/30 shadow-glow-aqua hover:border-aqua/60 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+              >
+                <span>{t(lang, 'packs.viewAll')}</span>
+                <ArrowRight size={14} className="text-aqua" />
+              </button>
+            </div>
+          </Reveal>
         )}
       </div>
     </section>

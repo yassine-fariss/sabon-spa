@@ -8,6 +8,7 @@ import { getWhatsAppUrl } from '../../utils/whatsapp';
 import { CategoryGrid } from './CategoryGrid';
 import { CategoryPage } from './CategoryPage';
 import { SearchBox } from './SearchBox';
+import { Reveal } from '../ui/Reveal';
 import { Sparkles, MessageSquare } from 'lucide-react';
 
 interface ServicesPageProps {
@@ -77,36 +78,38 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         {!activeCategory && (
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium">
-              <Sparkles size={13} />
-              <span>{lang === 'fr' ? 'Expériences & Bien-être' : 'Wellness & Sanctuary'}</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
-              {lang === 'fr' ? (
-                <>
-                  La Carte des <span className="italic text-aqua">Soins</span>
-                </>
-              ) : (
-                <>
-                  Treatment <span className="italic text-aqua">Menu</span>
-                </>
-              )}
-            </h2>
-            <p className="text-sm sm:text-base text-mist/75 font-light leading-relaxed max-w-2xl mx-auto">
-              {t(lang, 'services.subtitle')}
-            </p>
+          <Reveal variant="fade-up" duration={700}>
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-aqua font-medium">
+                <Sparkles size={13} />
+                <span>{lang === 'fr' ? 'Expériences & Bien-être' : 'Wellness & Sanctuary'}</span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-serif text-white font-light tracking-tight">
+                {lang === 'fr' ? (
+                  <>
+                    La Carte des <span className="italic text-aqua">Soins</span>
+                  </>
+                ) : (
+                  <>
+                    Treatment <span className="italic text-aqua">Menu</span>
+                  </>
+                )}
+              </h2>
+              <p className="text-sm sm:text-base text-mist/75 font-light leading-relaxed max-w-2xl mx-auto">
+                {t(lang, 'services.subtitle')}
+              </p>
 
-            {/* Search Box */}
-            <div className="pt-4">
-              <SearchBox
-                value={searchQuery}
-                onChange={setSearchQuery}
-                onFocus={handleSearchFocus}
-                lang={lang}
-              />
+              {/* Search Box */}
+              <div className="pt-4">
+                <SearchBox
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  onFocus={handleSearchFocus}
+                  lang={lang}
+                />
+              </div>
             </div>
-          </div>
+          </Reveal>
         )}
 
         {/* Search Results Mode */}
