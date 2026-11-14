@@ -19,7 +19,7 @@ export const TrustBar: React.FC<TrustBarProps> = ({ lang }) => {
 
   return (
     <div
-      className="w-full bg-sand text-ink text-xs sm:text-[13px] py-1.5 px-3 sm:px-4 max-h-[56px] sm:max-h-[44px] flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3 gap-y-0.5 overflow-hidden select-none relative z-30"
+      className="w-full bg-navy-900 border-b border-aqua/15 text-mist text-xs sm:text-[13px] py-1.5 px-3 sm:px-4 max-h-[56px] sm:max-h-[44px] flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3 gap-y-0.5 overflow-hidden select-none relative z-30"
     >
       {/* 1. Avatars: 5 overlapping round photos */}
       <div className="flex items-center -space-x-2.5 shrink-0" aria-hidden="true">
@@ -28,7 +28,7 @@ export const TrustBar: React.FC<TrustBarProps> = ({ lang }) => {
             key={idx}
             src={getAssetUrl(path)}
             alt=""
-            className="w-7 h-7 min-[480px]:w-8 min-[480px]:h-8 rounded-full border-2 border-cream object-cover shrink-0"
+            className="w-7 h-7 min-[480px]:w-8 min-[480px]:h-8 rounded-full border-2 border-navy-950 object-cover shrink-0 shadow-sm"
             loading="eager"
             width={32}
             height={32}
@@ -50,19 +50,19 @@ export const TrustBar: React.FC<TrustBarProps> = ({ lang }) => {
             </svg>
           ))}
         </div>
-        <span className="font-semibold text-ink text-xs sm:text-[13px] ml-0.5">
+        <span className="font-semibold text-white text-xs sm:text-[13px] ml-0.5">
           4.9
         </span>
       </div>
 
       {/* Thin vertical divider on screens >= 640px */}
       <span
-        className="hidden sm:inline-block w-px h-3.5 bg-ink/20 shrink-0"
+        className="hidden sm:inline-block w-px h-3.5 bg-aqua/25 shrink-0"
         aria-hidden="true"
       />
 
       {/* 3. Customer Count + Smiley Emoji */}
-      <div className="flex items-center gap-1.5 shrink-0 font-medium">
+      <div className="flex items-center gap-1.5 shrink-0 font-medium text-mist/90">
         <span>{satisfiedText}</span>
         <span role="img" aria-label="Visage souriant">😊</span>
       </div>
