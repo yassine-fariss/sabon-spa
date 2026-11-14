@@ -3,6 +3,7 @@ import type { Category } from '../../lib/data';
 import type { Lang } from '../../i18n';
 import { t } from '../../i18n';
 import { CategoryIcon } from './CategoryIcon';
+import { ChevronRight } from 'lucide-react';
 
 interface CategoryGridProps {
   categories: Category[];
@@ -25,32 +26,30 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           <button
             key={cat.id}
             onClick={() => onSelectCategory(cat.id)}
-            className="group text-left relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white/70 backdrop-blur-md border border-navy/10 hover:border-brand/40 shadow-sm hover:shadow-luxury transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand/40"
+            className="group text-left relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-navy-900/70 hover:bg-navy-900/95 backdrop-blur-xl border border-aqua/15 hover:border-aqua/45 shadow-luxury transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-aqua/40"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-mist flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-navy-800/80 border border-aqua/20 flex items-center justify-center text-aqua group-hover:bg-brand group-hover:text-white group-hover:border-aqua/40 transition-all duration-300 shadow-glow-aqua">
                 <CategoryIcon icon={cat.icon} className="w-6 h-6" />
               </div>
 
               <div>
-                <h3 className="text-xl font-serif font-semibold text-navy group-hover:text-brand transition-colors">
+                <h3 className="text-xl font-serif font-medium text-white group-hover:text-aqua transition-colors">
                   {name}
                 </h3>
-                <p className="mt-1 text-xs text-navy/70 line-clamp-2 leading-relaxed">
+                <p className="mt-1 text-xs text-mist/70 line-clamp-2 leading-relaxed font-light">
                   {tagline}
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-navy/5 flex items-center justify-between">
-              <span className="text-xs font-medium text-navy/60">
+            <div className="mt-6 pt-4 border-t border-aqua/10 flex items-center justify-between">
+              <span className="text-xs font-light text-mist/60">
                 {t(lang, 'services.serviceCount', { n: cat.count })}
               </span>
-              <span className="text-xs font-semibold text-brand flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span className="text-xs uppercase tracking-[0.16em] font-medium text-aqua flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 <span>{lang === 'fr' ? 'Découvrir' : 'Explore'}</span>
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                <ChevronRight size={14} className="text-aqua" />
               </span>
             </div>
           </button>
