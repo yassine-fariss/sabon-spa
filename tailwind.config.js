@@ -52,6 +52,21 @@ export default {
         rose: {
           DEFAULT: '#E9B7BE',
           light: '#F3D4D9',
+        },
+        sand: {
+          DEFAULT: '#F3E9DC',
+        },
+        cream: {
+          DEFAULT: '#FAF6F0',
+        },
+        ink: {
+          DEFAULT: '#3B2B20',
+        },
+        sage: {
+          DEFAULT: '#DDE8DA',
+        },
+        teal: {
+          DEFAULT: '#2F6F6A',
         }
       },
       fontFamily: {
