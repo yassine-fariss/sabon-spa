@@ -35,15 +35,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Main Hero Content Area - Minimalist Clean Layout */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-12">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Eyebrow */}
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 backdrop-blur-md border border-aqua/30 text-aqua text-xs uppercase tracking-[0.22em] font-medium mb-6 shadow-sm animate-fade-in-up"
-            style={{ animationDelay: '100ms' }}
-          >
-            <Sparkles size={12} className="text-aqua" />
-            <span>Tanger</span>
-          </div>
-
           {/* Main Headline */}
           <h1
             className="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.08] tracking-tight text-glow-aqua animate-fade-in-up"
