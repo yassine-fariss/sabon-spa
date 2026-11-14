@@ -15,7 +15,7 @@ const AVATARS = [
 ];
 
 export const TrustBar: React.FC<TrustBarProps> = ({ lang }) => {
-  const satisfiedText = lang === 'fr' ? '15K+ clients satisfaits' : '2K+ Satisfied Customers';
+  const satisfiedText = lang === 'fr' ? '2K+ clients satisfaits' : '2K+ Satisfied Customers';
 
   return (
     <div
