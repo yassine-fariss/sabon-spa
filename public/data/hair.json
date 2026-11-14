@@ -1,0 +1,262 @@
+{
+  "category": {
+    "id": "hair",
+    "order": 6,
+    "icon": "hair",
+    "name": {
+      "en": "Hair",
+      "fr": "Cheveux"
+    },
+    "tagline": {
+      "en": "Styling, colour and care",
+      "fr": "Coiffage, couleur et soins"
+    },
+    "subcategories": [
+      {
+        "id": "cut-style",
+        "order": 1,
+        "name": {
+          "en": "Cut & styling",
+          "fr": "Coupe & coiffage"
+        }
+      },
+      {
+        "id": "color",
+        "order": 2,
+        "name": {
+          "en": "Colour",
+          "fr": "Coloration"
+        }
+      },
+      {
+        "id": "care",
+        "order": 3,
+        "name": {
+          "en": "Treatments",
+          "fr": "Soins"
+        }
+      },
+      {
+        "id": "products",
+        "order": 4,
+        "name": {
+          "en": "Products",
+          "fr": "Produits"
+        }
+      }
+    ],
+    "count": 17
+  },
+  "services": [
+    {
+      "id": "hair-brushing",
+      "category": "hair",
+      "subcategory": "cut-style",
+      "name": "Brushing",
+      "variants": [
+        {
+          "label": "Short",
+          "price": 50,
+          "duration": 15
+        },
+        {
+          "label": "Medium",
+          "price": 100,
+          "duration": 20
+        },
+        {
+          "label": "Long",
+          "price": 120,
+          "duration": 30
+        }
+      ],
+      "price": 50,
+      "priceFrom": true,
+      "duration": 15
+    },
+    {
+      "id": "hair-haircut",
+      "category": "hair",
+      "subcategory": "cut-style",
+      "name": "Haircut",
+      "price": 120,
+      "duration": 30
+    },
+    {
+      "id": "hair-trim-coupe-des-pointes",
+      "category": "hair",
+      "subcategory": "cut-style",
+      "name": "Trim (coupe des pointes)",
+      "price": 80,
+      "duration": 25
+    },
+    {
+      "id": "hair-hair-wash-savonage",
+      "category": "hair",
+      "subcategory": "cut-style",
+      "name": "Hair wash (savonage)",
+      "price": 50,
+      "duration": 10
+    },
+    {
+      "id": "hair-touch-up-touching-cheveux",
+      "category": "hair",
+      "subcategory": "cut-style",
+      "name": "Touch-up (touching cheveux)",
+      "price": 50,
+      "duration": 20
+    },
+    {
+      "id": "hair-extension-removal-depot-d-extensions",
+      "category": "hair",
+      "subcategory": "cut-style",
+      "name": "Extension removal (dépôt d'extensions)",
+      "price": 80,
+      "duration": 20
+    },
+    {
+      "id": "hair-hair-colour",
+      "category": "hair",
+      "subcategory": "color",
+      "name": "Hair colour",
+      "price": 100,
+      "duration": 60
+    },
+    {
+      "id": "hair-hair-care-soin-du-cheveux",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Hair care (soin du cheveux)",
+      "price": 300,
+      "duration": 60
+    },
+    {
+      "id": "hair-hair-botox",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Hair botox",
+      "price": 300,
+      "duration": 90
+    },
+    {
+      "id": "hair-protein-goldery",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Protein Goldery",
+      "variants": [
+        {
+          "label": "Short",
+          "price": 300
+        },
+        {
+          "label": "Medium",
+          "price": 500
+        },
+        {
+          "label": "Long",
+          "price": 1000
+        }
+      ],
+      "price": 300,
+      "priceFrom": true,
+      "duration": 60
+    },
+    {
+      "id": "hair-soin-miracle-revitalisant",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Soin miracle revitalisant",
+      "variants": [
+        {
+          "label": "Short",
+          "price": 300
+        },
+        {
+          "label": "Medium",
+          "price": 400
+        },
+        {
+          "label": "Long",
+          "price": 500
+        }
+      ],
+      "price": 300,
+      "priceFrom": true,
+      "duration": 60
+    },
+    {
+      "id": "hair-soin-pure-filler-restructurant",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Soin pure filler restructurant",
+      "variants": [
+        {
+          "label": "Short",
+          "price": 600
+        },
+        {
+          "label": "Medium",
+          "price": 700
+        },
+        {
+          "label": "Long",
+          "price": 900
+        }
+      ],
+      "price": 600,
+      "priceFrom": true,
+      "duration": 90
+    },
+    {
+      "id": "hair-pro-keratin-treatment",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Pro keratin treatment",
+      "variants": [
+        {
+          "label": "Option A",
+          "price": 1500
+        },
+        {
+          "label": "Option B",
+          "price": 2000
+        }
+      ],
+      "price": 1500,
+      "priceFrom": true,
+      "duration": 60
+    },
+    {
+      "id": "hair-soin-protect-color-brushing",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Soin protect color + brushing",
+      "price": 150,
+      "duration": 60
+    },
+    {
+      "id": "hair-soin-keratine-pro-brushing",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Soin kératine pro + brushing",
+      "price": 150,
+      "duration": 60
+    },
+    {
+      "id": "hair-soin-reparateur-hydratant-brushing",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Soin réparateur hydratant + brushing",
+      "price": 150,
+      "duration": 60
+    },
+    {
+      "id": "hair-soin-reparateur-nourrissant-brushing",
+      "category": "hair",
+      "subcategory": "care",
+      "name": "Soin réparateur nourrissant + brushing",
+      "price": 150,
+      "duration": 60
+    }
+  ]
+}

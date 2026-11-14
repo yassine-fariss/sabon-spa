@@ -1,0 +1,186 @@
+{
+  "category": {
+    "id": "packs",
+    "order": 1,
+    "icon": "packs",
+    "name": {
+      "en": "Packs",
+      "fr": "Packs"
+    },
+    "tagline": {
+      "en": "Complete experiences",
+      "fr": "Expériences complètes"
+    },
+    "subcategories": [
+      {
+        "id": "signature",
+        "order": 1,
+        "name": {
+          "en": "Signature packs",
+          "fr": "Packs signature"
+        }
+      },
+      {
+        "id": "special",
+        "order": 2,
+        "name": {
+          "en": "Special occasions",
+          "fr": "Occasions spéciales"
+        }
+      },
+      {
+        "id": "kids",
+        "order": 3,
+        "name": {
+          "en": "Kids packs",
+          "fr": "Packs enfants"
+        }
+      }
+    ],
+    "count": 11
+  },
+  "services": [
+    {
+      "id": "packs-bronze-pack",
+      "category": "packs",
+      "subcategory": "signature",
+      "name": "Bronze Pack",
+      "price": 800,
+      "duration": 90,
+      "featured": true,
+      "includes": [
+        "Foot soak (10 min)",
+        "Foot massage (30 min)",
+        "Hammam Royal with jacuzzi and Turkish sauna (60 min)",
+        "Blow dry for women or haircut for men (45 min)"
+      ],
+      "description": "A perfect introduction to relaxation and authentic spa rituals."
+    },
+    {
+      "id": "packs-silver-pack",
+      "category": "packs",
+      "subcategory": "signature",
+      "name": "Silver Pack",
+      "price": 1500,
+      "duration": 210,
+      "featured": true,
+      "includes": [
+        "Foot soak (15 min)",
+        "Hammam, jacuzzi and Turkish sauna (60 min)",
+        "Mixed massage (60 min)",
+        "Women: manicure or pedicure with brushing (30 min)",
+        "Men: haircut with pedicure (45 min)"
+      ],
+      "description": "Your complete spa experience in one place."
+    },
+    {
+      "id": "packs-golden-pack",
+      "category": "packs",
+      "subcategory": "signature",
+      "name": "Golden Pack",
+      "price": 2000,
+      "duration": 255,
+      "featured": true,
+      "includes": [
+        "Foot soak (15 min)",
+        "Hammam Royal (60 min)",
+        "Wellness access (60 min): jacuzzi, cold plunge, Swedish sauna, Turkish hamam, herbal bath, indoor pool",
+        "Manicure and blow dry (45 min)",
+        "Haircut and pedicure (45 min)",
+        "Massage (60 min)"
+      ],
+      "description": "Complete wellness experience."
+    },
+    {
+      "id": "packs-royal-pack",
+      "category": "packs",
+      "subcategory": "signature",
+      "name": "Royal Pack",
+      "price": 2500,
+      "duration": 300,
+      "featured": true,
+      "includes": [
+        "Welcome drink",
+        "Foot soak (15 min)",
+        "Hamam Sabon Spa (60 min)",
+        "Soin Hydra Facial (60 min)",
+        "Full access wellness resort (60 min): jacuzzi, swimming pool, hamam and sauna, herbal bath, cold bath, watersauna",
+        "Massage (60 min)",
+        "Blow dry hair"
+      ],
+      "description": "The ultimate spa experience."
+    },
+    {
+      "id": "packs-forfait-mariee-bridal-package",
+      "category": "packs",
+      "subcategory": "special",
+      "name": "Forfait Mariée (Bridal package)",
+      "price": 5000,
+      "duration": 240
+    },
+    {
+      "id": "packs-resort-pack",
+      "category": "packs",
+      "subcategory": "special",
+      "name": "Resort Pack",
+      "price": 800,
+      "duration": 120
+    },
+    {
+      "id": "packs-rituel-cafe-deluxe-back-treatment",
+      "category": "packs",
+      "subcategory": "special",
+      "name": "Rituel Café Deluxe, back treatment",
+      "price": 800,
+      "duration": 60
+    },
+    {
+      "id": "packs-royal-pack-kids",
+      "category": "packs",
+      "subcategory": "kids",
+      "name": "Royal Pack (kids)",
+      "price": 1250,
+      "duration": 180,
+      "audience": [
+        "kids"
+      ],
+      "description": "For kids up to 14 years."
+    },
+    {
+      "id": "packs-golden-pack-kids",
+      "category": "packs",
+      "subcategory": "kids",
+      "name": "Golden Pack (kids)",
+      "price": 1000,
+      "duration": 150,
+      "audience": [
+        "kids"
+      ],
+      "description": "For kids up to 14 years."
+    },
+    {
+      "id": "packs-silver-pack-kids",
+      "category": "packs",
+      "subcategory": "kids",
+      "name": "Silver Pack (kids)",
+      "price": 750,
+      "duration": 120,
+      "audience": [
+        "kids"
+      ],
+      "description": "For kids up to 14 years."
+    },
+    {
+      "id": "packs-bronze-pack-kids",
+      "category": "packs",
+      "subcategory": "kids",
+      "name": "Bronze Pack (kids)",
+      "price": 400,
+      "duration": 60,
+      "audience": [
+        "kids"
+      ],
+      "description": "For kids up to 14 years."
+    }
+  ]
+}

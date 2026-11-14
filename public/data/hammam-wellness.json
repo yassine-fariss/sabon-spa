@@ -1,0 +1,171 @@
+{
+  "category": {
+    "id": "hammam-wellness",
+    "order": 2,
+    "icon": "hammam",
+    "name": {
+      "en": "Hammam & Wellness",
+      "fr": "Hammam & Bien-être"
+    },
+    "tagline": {
+      "en": "Rituals and wellness access",
+      "fr": "Rituels et accès bien-être"
+    },
+    "subcategories": [
+      {
+        "id": "hammam",
+        "order": 1,
+        "name": {
+          "en": "Hammam rituals",
+          "fr": "Rituels de hammam"
+        }
+      },
+      {
+        "id": "hammam-kids",
+        "order": 2,
+        "name": {
+          "en": "Kids hammam",
+          "fr": "Hammam enfants"
+        }
+      },
+      {
+        "id": "wellness-access",
+        "order": 3,
+        "name": {
+          "en": "Wellness access",
+          "fr": "Accès bien-être"
+        }
+      }
+    ],
+    "count": 9
+  },
+  "services": [
+    {
+      "id": "hammam-wellness-hammam-royal",
+      "category": "hammam-wellness",
+      "subcategory": "hammam",
+      "name": "Hammam Royal",
+      "price": 450,
+      "duration": 60,
+      "includes": [
+        "Steam room (10 min)",
+        "Black soap",
+        "Exfoliation",
+        "Foam massage",
+        "Warm rinse",
+        "Relaxation and mint tea"
+      ],
+      "description": "Deep cleansing, exfoliation and full body foam massage."
+    },
+    {
+      "id": "hammam-wellness-hammam-royal-oud",
+      "category": "hammam-wellness",
+      "subcategory": "hammam",
+      "name": "Hammam Royal Oud",
+      "price": 450,
+      "duration": 60,
+      "includes": [
+        "Steam room (10 min)",
+        "Black soap",
+        "Exfoliation",
+        "Foam massage",
+        "Warm rinse",
+        "Relaxation and mint tea"
+      ],
+      "description": "The royal ritual infused with warm oud oil."
+    },
+    {
+      "id": "hammam-wellness-hammam-sahraoui",
+      "category": "hammam-wellness",
+      "subcategory": "hammam",
+      "name": "Hammam Sahraoui",
+      "price": 500,
+      "duration": 60,
+      "includes": [
+        "Steam room (10 min)",
+        "Natural ghassoul with nilla",
+        "Aashaab exfoliation (Saharan scrub)",
+        "Foam massage",
+        "Argan oil nourishment",
+        "Relaxation and mint tea"
+      ],
+      "description": "Inspired by Saharan rituals."
+    },
+    {
+      "id": "hammam-wellness-hammam-turc",
+      "category": "hammam-wellness",
+      "subcategory": "hammam",
+      "name": "Hammam Turc",
+      "price": 600,
+      "duration": 60,
+      "includes": [
+        "Steam room (10 min)",
+        "Natural ghassoul with nilla",
+        "Aashaab exfoliation",
+        "Foam massage",
+        "Argan oil nourishment",
+        "Relaxation and mint tea"
+      ],
+      "description": "Authentic Turkish tradition."
+    },
+    {
+      "id": "hammam-wellness-hammam-royal-kids",
+      "category": "hammam-wellness",
+      "subcategory": "hammam-kids",
+      "name": "Hammam Royal (kids)",
+      "price": 200,
+      "duration": 60,
+      "audience": [
+        "kids"
+      ]
+    },
+    {
+      "id": "hammam-wellness-hammam-sahraoui-kids",
+      "category": "hammam-wellness",
+      "subcategory": "hammam-kids",
+      "name": "Hammam Sahraoui (kids)",
+      "price": 250,
+      "duration": 60,
+      "audience": [
+        "kids"
+      ]
+    },
+    {
+      "id": "hammam-wellness-hammam-turc-kids",
+      "category": "hammam-wellness",
+      "subcategory": "hammam-kids",
+      "name": "Hammam Turc (kids)",
+      "price": 300,
+      "duration": 60,
+      "audience": [
+        "kids"
+      ]
+    },
+    {
+      "id": "hammam-wellness-wellness-package",
+      "category": "hammam-wellness",
+      "subcategory": "wellness-access",
+      "name": "Wellness package",
+      "price": 800,
+      "duration": 90,
+      "includes": [
+        "Turkish sauna",
+        "Dry sauna",
+        "Cold bath",
+        "Herbal bath",
+        "Jacuzzi",
+        "Swimming pool",
+        "Towels provided"
+      ],
+      "description": "Full resort access, per person."
+    },
+    {
+      "id": "hammam-wellness-jacuzzi",
+      "category": "hammam-wellness",
+      "subcategory": "wellness-access",
+      "name": "Jacuzzi",
+      "price": 300,
+      "duration": 60
+    }
+  ]
+}

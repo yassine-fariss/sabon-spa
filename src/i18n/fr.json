@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "services": "Soins & Rituels",
+    "about": "À Propos",
+    "spaces": "Nos Espaces",
+    "reviews": "Avis Clients",
+    "book": "Réserver"
+  },
+  "cta": {
+    "book": "Réserver",
+    "bookNow": "Réserver un soin",
+    "discoverServices": "Découvrir nos services",
+    "seeAll": "Voir tous les soins",
+    "seeMore": "Voir plus de résultats",
+    "backToCategories": "Toutes les catégories",
+    "expand": "Détails",
+    "collapse": "Fermer"
+  },
+  "services": {
+    "title": "La Carte des Soins",
+    "subtitle": "Explorez nos 8 univers d'exception, conçus pour éveiller vos sens et restaurer votre équilibre.",
+    "from": "À partir de",
+    "duration": "Durée",
+    "includes": "Ce soin comprend :",
+    "variants": "Options disponibles :",
+    "serviceCount": "{n} soins",
+    "searchPlaceholder": "Rechercher un soin, un hammam, un massage...",
+    "noResults": "Aucun soin ne correspond à votre recherche.",
+    "activeFilters": "Filtres actifs :",
+    "clearFilters": "Effacer les filtres",
+    "filterTitle": "Filtrer par public ou durée :"
+  },
+  "filters": {
+    "all": "Tous",
+    "women": "Femmes",
+    "men": "Hommes",
+    "kids": "Enfants",
+    "pregnancy": "Grossesse",
+    "under1h": "Moins d'1h"
+  },
+  "packs": {
+    "badge": "Expérience Complète",
+    "featuredTitle": "Nos Packs Signature",
+    "featuredSubtitle": "Des rituels harmonieux alliant hammam, massage et soins pour une parenthèse inoubliable.",
+    "viewAll": "Découvrir tous nos packs"
+  }
+}

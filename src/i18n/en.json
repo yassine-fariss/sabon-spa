@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "services": "Treatments & Rituals",
+    "about": "About",
+    "spaces": "Our Sanctuary",
+    "reviews": "Guest Reviews",
+    "book": "Book"
+  },
+  "cta": {
+    "book": "Book",
+    "bookNow": "Book a treatment",
+    "discoverServices": "Discover our services",
+    "seeAll": "View all treatments",
+    "seeMore": "Show more results",
+    "backToCategories": "All categories",
+    "expand": "Details",
+    "collapse": "Close"
+  },
+  "services": {
+    "title": "Treatment Menu",
+    "subtitle": "Explore our 8 signature worlds, created to awaken your senses and restore harmony.",
+    "from": "From",
+    "duration": "Duration",
+    "includes": "This treatment includes:",
+    "variants": "Available options:",
+    "serviceCount": "{n} treatments",
+    "searchPlaceholder": "Search a massage, hammam ritual, facial...",
+    "noResults": "No treatments found matching your criteria.",
+    "activeFilters": "Active filters:",
+    "clearFilters": "Clear filters",
+    "filterTitle": "Filter by audience or duration:"
+  },
+  "filters": {
+    "all": "All",
+    "women": "Women",
+    "men": "Men",
+    "kids": "Kids",
+    "pregnancy": "Pregnancy",
+    "under1h": "Under 1 hr"
+  },
+  "packs": {
+    "badge": "Complete Experience",
+    "featuredTitle": "Signature Packages",
+    "featuredSubtitle": "Harmonious rituals combining hammam, massage, and bespoke therapies for pure bliss.",
+    "viewAll": "Explore all packages"
+  }
+}

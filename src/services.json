@@ -1,0 +1,2013 @@
+{
+ "meta": {
+  "business": "Sabon Spa & Hammam",
+  "currency": "MAD",
+  "version": "1.0",
+  "generated": "2026-11-14",
+  "source": "Photos of the booking system and printed screens, 13 Nov 2026",
+  "durationUnit": "minutes",
+  "notes": "Items with a 'review' field need confirmation from the spa. Prices on printed menus win over booking-system prices when they differ."
+ },
+ "categories": [
+  {
+   "id": "packs",
+   "order": 1,
+   "icon": "packs",
+   "name": {
+    "en": "Packs",
+    "fr": "Packs"
+   },
+   "tagline": {
+    "en": "Complete experiences",
+    "fr": "Expériences complètes"
+   },
+   "subcategories": [
+    {
+     "id": "signature",
+     "order": 1,
+     "name": {
+      "en": "Signature packs",
+      "fr": "Packs signature"
+     }
+    },
+    {
+     "id": "special",
+     "order": 2,
+     "name": {
+      "en": "Special occasions",
+      "fr": "Occasions spéciales"
+     }
+    },
+    {
+     "id": "kids",
+     "order": 3,
+     "name": {
+      "en": "Kids packs",
+      "fr": "Packs enfants"
+     }
+    }
+   ],
+   "count": 11
+  },
+  {
+   "id": "hammam-wellness",
+   "order": 2,
+   "icon": "hammam",
+   "name": {
+    "en": "Hammam & Wellness",
+    "fr": "Hammam & Bien-être"
+   },
+   "tagline": {
+    "en": "Rituals and wellness access",
+    "fr": "Rituels et accès bien-être"
+   },
+   "subcategories": [
+    {
+     "id": "hammam",
+     "order": 1,
+     "name": {
+      "en": "Hammam rituals",
+      "fr": "Rituels de hammam"
+     }
+    },
+    {
+     "id": "hammam-kids",
+     "order": 2,
+     "name": {
+      "en": "Kids hammam",
+      "fr": "Hammam enfants"
+     }
+    },
+    {
+     "id": "wellness-access",
+     "order": 3,
+     "name": {
+      "en": "Wellness access",
+      "fr": "Accès bien-être"
+     }
+    }
+   ],
+   "count": 9
+  },
+  {
+   "id": "massage",
+   "order": 3,
+   "icon": "massage",
+   "name": {
+    "en": "Massage",
+    "fr": "Massages"
+   },
+   "tagline": {
+    "en": "Relax, release, rebalance",
+    "fr": "Détente et rééquilibrage"
+   },
+   "subcategories": [
+    {
+     "id": "relaxation",
+     "order": 1,
+     "name": {
+      "en": "Relaxation",
+      "fr": "Relaxation"
+     }
+    },
+    {
+     "id": "thai",
+     "order": 2,
+     "name": {
+      "en": "Thai",
+      "fr": "Thaï"
+     }
+    },
+    {
+     "id": "therapeutic",
+     "order": 3,
+     "name": {
+      "en": "Therapeutic",
+      "fr": "Thérapeutiques"
+     }
+    },
+    {
+     "id": "signature",
+     "order": 4,
+     "name": {
+      "en": "Signature",
+      "fr": "Signature"
+     }
+    },
+    {
+     "id": "mother-child",
+     "order": 5,
+     "name": {
+      "en": "Mother & child",
+      "fr": "Mère & enfant"
+     }
+    }
+   ],
+   "count": 23
+  },
+  {
+   "id": "face-lashes",
+   "order": 4,
+   "icon": "face",
+   "name": {
+    "en": "Face, Lashes & Brows",
+    "fr": "Visage, Cils & Sourcils"
+   },
+   "tagline": {
+    "en": "Glow and definition",
+    "fr": "Éclat et définition"
+   },
+   "subcategories": [
+    {
+     "id": "facials",
+     "order": 1,
+     "name": {
+      "en": "Facials",
+      "fr": "Soins du visage"
+     }
+    },
+    {
+     "id": "lashes",
+     "order": 2,
+     "name": {
+      "en": "Lashes",
+      "fr": "Cils"
+     }
+    },
+    {
+     "id": "brows",
+     "order": 3,
+     "name": {
+      "en": "Brows",
+      "fr": "Sourcils"
+     }
+    }
+   ],
+   "count": 9
+  },
+  {
+   "id": "hands-feet",
+   "order": 5,
+   "icon": "nails",
+   "name": {
+    "en": "Hands & Feet",
+    "fr": "Mains & Pieds"
+   },
+   "tagline": {
+    "en": "Manicure, pedicure, nail art",
+    "fr": "Manucure, pédicure, nail art"
+   },
+   "subcategories": [
+    {
+     "id": "manicure",
+     "order": 1,
+     "name": {
+      "en": "Manicure",
+      "fr": "Manucure"
+     }
+    },
+    {
+     "id": "pedicure",
+     "order": 2,
+     "name": {
+      "en": "Pedicure",
+      "fr": "Pédicure"
+     }
+    },
+    {
+     "id": "gel-extensions",
+     "order": 3,
+     "name": {
+      "en": "Gel & extensions",
+      "fr": "Gel & extensions"
+     }
+    },
+    {
+     "id": "nail-art",
+     "order": 4,
+     "name": {
+      "en": "Polish & nail art",
+      "fr": "Vernis & nail art"
+     }
+    },
+    {
+     "id": "care",
+     "order": 5,
+     "name": {
+      "en": "Care",
+      "fr": "Soins"
+     }
+    },
+    {
+     "id": "removal",
+     "order": 6,
+     "name": {
+      "en": "Removal",
+      "fr": "Dépose"
+     }
+    }
+   ],
+   "count": 34
+  },
+  {
+   "id": "hair",
+   "order": 6,
+   "icon": "hair",
+   "name": {
+    "en": "Hair",
+    "fr": "Cheveux"
+   },
+   "tagline": {
+    "en": "Styling, colour and care",
+    "fr": "Coiffage, couleur et soins"
+   },
+   "subcategories": [
+    {
+     "id": "cut-style",
+     "order": 1,
+     "name": {
+      "en": "Cut & styling",
+      "fr": "Coupe & coiffage"
+     }
+    },
+    {
+     "id": "color",
+     "order": 2,
+     "name": {
+      "en": "Colour",
+      "fr": "Coloration"
+     }
+    },
+    {
+     "id": "care",
+     "order": 3,
+     "name": {
+      "en": "Treatments",
+      "fr": "Soins"
+     }
+    },
+    {
+     "id": "products",
+     "order": 4,
+     "name": {
+      "en": "Products",
+      "fr": "Produits"
+     }
+    }
+   ],
+   "count": 17
+  },
+  {
+   "id": "waxing",
+   "order": 7,
+   "icon": "waxing",
+   "name": {
+    "en": "Waxing",
+    "fr": "Épilation"
+   },
+   "tagline": {
+    "en": "Smooth and precise",
+    "fr": "Lisse et précise"
+   },
+   "subcategories": [
+    {
+     "id": "face",
+     "order": 1,
+     "name": {
+      "en": "Face",
+      "fr": "Visage"
+     }
+    },
+    {
+     "id": "body",
+     "order": 2,
+     "name": {
+      "en": "Body",
+      "fr": "Corps"
+     }
+    },
+    {
+     "id": "bikini",
+     "order": 3,
+     "name": {
+      "en": "Bikini",
+      "fr": "Maillot"
+     }
+    },
+    {
+     "id": "full-body",
+     "order": 4,
+     "name": {
+      "en": "Full body",
+      "fr": "Corps complet"
+     }
+    }
+   ],
+   "count": 10
+  },
+  {
+   "id": "barber",
+   "order": 8,
+   "icon": "barber",
+   "name": {
+    "en": "Barber (Men)",
+    "fr": "Barber (Hommes)"
+   },
+   "tagline": {
+    "en": "Barber Senses",
+    "fr": "Barber Senses"
+   },
+   "subcategories": [
+    {
+     "id": "cut-beard",
+     "order": 1,
+     "name": {
+      "en": "Cut & beard",
+      "fr": "Coupe & barbe"
+     }
+    },
+    {
+     "id": "color",
+     "order": 2,
+     "name": {
+      "en": "Colour",
+      "fr": "Coloration"
+     }
+    },
+    {
+     "id": "face-care",
+     "order": 3,
+     "name": {
+      "en": "Face & care",
+      "fr": "Visage & soins"
+     }
+    },
+    {
+     "id": "hands-feet",
+     "order": 4,
+     "name": {
+      "en": "Hands & feet",
+      "fr": "Mains & pieds"
+     }
+    }
+   ],
+   "count": 19
+  }
+ ],
+ "services": [
+  {
+   "id": "packs-bronze-pack",
+   "category": "packs",
+   "subcategory": "signature",
+   "name": "Bronze Pack",
+   "price": 800,
+   "duration": 90,
+   "featured": true,
+   "includes": [
+    "Foot soak (10 min)",
+    "Foot massage (30 min)",
+    "Hammam Royal with jacuzzi and Turkish sauna (60 min)",
+    "Blow dry for women or haircut for men (45 min)"
+   ],
+   "description": "A perfect introduction to relaxation and authentic spa rituals.",
+   "review": "Poster says 90 min; booking system says 2h."
+  },
+  {
+   "id": "packs-silver-pack",
+   "category": "packs",
+   "subcategory": "signature",
+   "name": "Silver Pack",
+   "price": 1500,
+   "duration": 210,
+   "featured": true,
+   "includes": [
+    "Foot soak (15 min)",
+    "Hammam, jacuzzi and Turkish sauna (60 min)",
+    "Mixed massage (60 min)",
+    "Women: manicure or pedicure with brushing (30 min)",
+    "Men: haircut with pedicure (45 min)"
+   ],
+   "description": "Your complete spa experience in one place.",
+   "review": "Poster says 3h30; booking system says 2h30."
+  },
+  {
+   "id": "packs-golden-pack",
+   "category": "packs",
+   "subcategory": "signature",
+   "name": "Golden Pack",
+   "price": 2000,
+   "duration": 255,
+   "featured": true,
+   "includes": [
+    "Foot soak (15 min)",
+    "Hammam Royal (60 min)",
+    "Wellness access (60 min): jacuzzi, cold plunge, Swedish sauna, Turkish hamam, herbal bath, indoor pool",
+    "Manicure and blow dry (45 min)",
+    "Haircut and pedicure (45 min)",
+    "Massage (60 min)"
+   ],
+   "description": "Complete wellness experience.",
+   "review": "Poster says 4h15; booking system says 4h."
+  },
+  {
+   "id": "packs-royal-pack",
+   "category": "packs",
+   "subcategory": "signature",
+   "name": "Royal Pack",
+   "price": 2500,
+   "duration": 300,
+   "featured": true,
+   "includes": [
+    "Welcome drink",
+    "Foot soak (15 min)",
+    "Hamam Sabon Spa (60 min)",
+    "Soin Hydra Facial (60 min)",
+    "Full access wellness resort (60 min): jacuzzi, swimming pool, hamam and sauna, herbal bath, cold bath, watersauna",
+    "Massage (60 min)",
+    "Blow dry hair"
+   ],
+   "description": "The ultimate spa experience."
+  },
+  {
+   "id": "packs-forfait-mariee-bridal-package",
+   "category": "packs",
+   "subcategory": "special",
+   "name": "Forfait Mariée (Bridal package)",
+   "price": 5000,
+   "duration": 240
+  },
+  {
+   "id": "packs-resort-pack",
+   "category": "packs",
+   "subcategory": "special",
+   "name": "Resort Pack",
+   "price": 800,
+   "duration": 120,
+   "review": "Unclear how it differs from the Wellness package (800, 90 min). Confirm with the spa."
+  },
+  {
+   "id": "packs-rituel-cafe-deluxe-back-treatment",
+   "category": "packs",
+   "subcategory": "special",
+   "name": "Rituel Café Deluxe, back treatment",
+   "price": 800,
+   "duration": 60
+  },
+  {
+   "id": "packs-royal-pack-kids",
+   "category": "packs",
+   "subcategory": "kids",
+   "name": "Royal Pack (kids)",
+   "price": 1250,
+   "duration": 180,
+   "audience": [
+    "kids"
+   ],
+   "description": "For kids up to 14 years."
+  },
+  {
+   "id": "packs-golden-pack-kids",
+   "category": "packs",
+   "subcategory": "kids",
+   "name": "Golden Pack (kids)",
+   "price": 1000,
+   "duration": 150,
+   "audience": [
+    "kids"
+   ],
+   "description": "For kids up to 14 years."
+  },
+  {
+   "id": "packs-silver-pack-kids",
+   "category": "packs",
+   "subcategory": "kids",
+   "name": "Silver Pack (kids)",
+   "price": 750,
+   "duration": 120,
+   "audience": [
+    "kids"
+   ],
+   "description": "For kids up to 14 years."
+  },
+  {
+   "id": "packs-bronze-pack-kids",
+   "category": "packs",
+   "subcategory": "kids",
+   "name": "Bronze Pack (kids)",
+   "price": 400,
+   "duration": 60,
+   "audience": [
+    "kids"
+   ],
+   "description": "For kids up to 14 years."
+  },
+  {
+   "id": "hammam-wellness-hammam-royal",
+   "category": "hammam-wellness",
+   "subcategory": "hammam",
+   "name": "Hammam Royal",
+   "price": 450,
+   "duration": 60,
+   "includes": [
+    "Steam room (10 min)",
+    "Black soap",
+    "Exfoliation",
+    "Foam massage",
+    "Warm rinse",
+    "Relaxation and mint tea"
+   ],
+   "description": "Deep cleansing, exfoliation and full body foam massage."
+  },
+  {
+   "id": "hammam-wellness-hammam-royal-oud",
+   "category": "hammam-wellness",
+   "subcategory": "hammam",
+   "name": "Hammam Royal Oud",
+   "price": 450,
+   "duration": 60,
+   "includes": [
+    "Steam room (10 min)",
+    "Black soap",
+    "Exfoliation",
+    "Foam massage",
+    "Warm rinse",
+    "Relaxation and mint tea"
+   ],
+   "description": "The royal ritual infused with warm oud oil."
+  },
+  {
+   "id": "hammam-wellness-hammam-sahraoui",
+   "category": "hammam-wellness",
+   "subcategory": "hammam",
+   "name": "Hammam Sahraoui",
+   "price": 500,
+   "duration": 60,
+   "includes": [
+    "Steam room (10 min)",
+    "Natural ghassoul with nilla",
+    "Aashaab exfoliation (Saharan scrub)",
+    "Foam massage",
+    "Argan oil nourishment",
+    "Relaxation and mint tea"
+   ],
+   "description": "Inspired by Saharan rituals."
+  },
+  {
+   "id": "hammam-wellness-hammam-turc",
+   "category": "hammam-wellness",
+   "subcategory": "hammam",
+   "name": "Hammam Turc",
+   "price": 600,
+   "duration": 60,
+   "includes": [
+    "Steam room (10 min)",
+    "Natural ghassoul with nilla",
+    "Aashaab exfoliation",
+    "Foam massage",
+    "Argan oil nourishment",
+    "Relaxation and mint tea"
+   ],
+   "description": "Authentic Turkish tradition."
+  },
+  {
+   "id": "hammam-wellness-hammam-royal-kids",
+   "category": "hammam-wellness",
+   "subcategory": "hammam-kids",
+   "name": "Hammam Royal (kids)",
+   "price": 200,
+   "duration": 60,
+   "audience": [
+    "kids"
+   ]
+  },
+  {
+   "id": "hammam-wellness-hammam-sahraoui-kids",
+   "category": "hammam-wellness",
+   "subcategory": "hammam-kids",
+   "name": "Hammam Sahraoui (kids)",
+   "price": 250,
+   "duration": 60,
+   "audience": [
+    "kids"
+   ]
+  },
+  {
+   "id": "hammam-wellness-hammam-turc-kids",
+   "category": "hammam-wellness",
+   "subcategory": "hammam-kids",
+   "name": "Hammam Turc (kids)",
+   "price": 300,
+   "duration": 60,
+   "audience": [
+    "kids"
+   ]
+  },
+  {
+   "id": "hammam-wellness-wellness-package",
+   "category": "hammam-wellness",
+   "subcategory": "wellness-access",
+   "name": "Wellness package",
+   "price": 800,
+   "duration": 90,
+   "includes": [
+    "Turkish sauna",
+    "Dry sauna",
+    "Cold bath",
+    "Herbal bath",
+    "Jacuzzi",
+    "Swimming pool",
+    "Towels provided"
+   ],
+   "description": "Full resort access, per person."
+  },
+  {
+   "id": "hammam-wellness-jacuzzi",
+   "category": "hammam-wellness",
+   "subcategory": "wellness-access",
+   "name": "Jacuzzi",
+   "price": 300,
+   "duration": 60
+  },
+  {
+   "id": "massage-swedish-massage",
+   "category": "massage",
+   "subcategory": "relaxation",
+   "name": "Swedish massage",
+   "price": 500,
+   "duration": 60,
+   "description": "Classic relaxing massage that improves circulation and releases muscle tension."
+  },
+  {
+   "id": "massage-swedish-massage-extended",
+   "category": "massage",
+   "subcategory": "relaxation",
+   "name": "Swedish massage (extended)",
+   "price": 750,
+   "duration": 90
+  },
+  {
+   "id": "massage-shiatsu-massage",
+   "category": "massage",
+   "subcategory": "relaxation",
+   "name": "Shiatsu massage",
+   "price": 500,
+   "duration": 60,
+   "description": "Japanese finger-pressure technique to restore balance and reduce stress."
+  },
+  {
+   "id": "massage-custom-massage-sur-mesure",
+   "category": "massage",
+   "subcategory": "relaxation",
+   "name": "Custom massage (sur mesure)",
+   "price": 300,
+   "duration": 30
+  },
+  {
+   "id": "massage-massage-amasismo",
+   "category": "massage",
+   "subcategory": "relaxation",
+   "name": "Massage Amasismo",
+   "price": 600,
+   "duration": 60,
+   "review": "Spelling unconfirmed (booking system only)."
+  },
+  {
+   "id": "massage-massage-merzouga",
+   "category": "massage",
+   "subcategory": "relaxation",
+   "name": "Massage Merzouga",
+   "price": 800,
+   "duration": 60
+  },
+  {
+   "id": "massage-thai-traditional-massage",
+   "category": "massage",
+   "subcategory": "thai",
+   "name": "Thai traditional massage",
+   "price": 600,
+   "duration": 60,
+   "description": "Stretching and pressure points for deep relaxation."
+  },
+  {
+   "id": "massage-mixed-thai-massage",
+   "category": "massage",
+   "subcategory": "thai",
+   "name": "Mixed Thai massage",
+   "price": 700,
+   "duration": 60,
+   "description": "Thai techniques combined with oil massage."
+  },
+  {
+   "id": "massage-mixed-thai-massage-extended",
+   "category": "massage",
+   "subcategory": "thai",
+   "name": "Mixed Thai massage (extended)",
+   "price": 1050,
+   "duration": 90
+  },
+  {
+   "id": "massage-deep-tissue-massage",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Deep tissue massage",
+   "price": 650,
+   "duration": 60,
+   "description": "Targets the deeper layers of the muscles to release chronic tension."
+  },
+  {
+   "id": "massage-hot-stone-massage",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Hot stone massage",
+   "price": 650,
+   "duration": 60,
+   "description": "Warm stones that soothe the muscles."
+  },
+  {
+   "id": "massage-lymphatic-drainage",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Lymphatic drainage",
+   "price": 650,
+   "duration": 60,
+   "description": "Gentle rhythmic massage that helps detoxify and reduce water retention."
+  },
+  {
+   "id": "massage-madero-therapy",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Madero therapy",
+   "price": 300,
+   "duration": 30,
+   "description": "Wood therapy that reduces cellulite, stimulates circulation and shapes the body."
+  },
+  {
+   "id": "massage-foot-reflexology",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Foot reflexology",
+   "price": 350,
+   "duration": 30,
+   "description": "Stimulation of reflex points on the feet."
+  },
+  {
+   "id": "massage-back-head-neck-and-shoulder",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Back, head, neck and shoulder",
+   "price": 350,
+   "duration": 30
+  },
+  {
+   "id": "massage-cupping-therapy",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Cupping therapy",
+   "price": 800,
+   "duration": 60,
+   "description": "Ancient healing tradition using suction cups."
+  },
+  {
+   "id": "massage-glass-cupping-therapy-traditional",
+   "category": "massage",
+   "subcategory": "therapeutic",
+   "name": "Glass cupping therapy (traditional)",
+   "price": 600,
+   "duration": 60,
+   "description": "Traditional glass cups, suction created with heat."
+  },
+  {
+   "id": "massage-4-hand-massage",
+   "category": "massage",
+   "subcategory": "signature",
+   "name": "4-hand massage",
+   "price": 1000,
+   "duration": 60,
+   "description": "Two therapists work in harmony."
+  },
+  {
+   "id": "massage-head-spa",
+   "category": "massage",
+   "subcategory": "signature",
+   "name": "Head Spa",
+   "price": 500,
+   "duration": 60
+  },
+  {
+   "id": "massage-head-spa-mini-hydrafacial",
+   "category": "massage",
+   "subcategory": "signature",
+   "name": "Head Spa + mini Hydrafacial",
+   "price": 800,
+   "duration": 60,
+   "description": "Scalp and facial treatment: cleansing, hydration and relaxation."
+  },
+  {
+   "id": "massage-back-spa",
+   "category": "massage",
+   "subcategory": "signature",
+   "name": "Back Spa",
+   "price": 800,
+   "duration": 60,
+   "description": "Complete back ritual to exfoliate, purify and nourish."
+  },
+  {
+   "id": "massage-pregnancy-massage",
+   "category": "massage",
+   "subcategory": "mother-child",
+   "name": "Pregnancy massage",
+   "price": 600,
+   "duration": 60,
+   "audience": [
+    "pregnancy"
+   ],
+   "description": "Gentle massage for expectant mothers."
+  },
+  {
+   "id": "massage-kids-massage",
+   "category": "massage",
+   "subcategory": "mother-child",
+   "name": "Kids massage",
+   "price": 300,
+   "duration": 45,
+   "audience": [
+    "kids"
+   ]
+  },
+  {
+   "id": "face-lashes-soin-hydra-facial",
+   "category": "face-lashes",
+   "subcategory": "facials",
+   "name": "Soin Hydra Facial",
+   "price": 700,
+   "duration": 90,
+   "review": "Merged with 'Hydra facial eght senses' (also 700). Confirm they are the same service."
+  },
+  {
+   "id": "face-lashes-hydra-facial-five-senses",
+   "category": "face-lashes",
+   "subcategory": "facials",
+   "name": "Hydra Facial Five Senses",
+   "price": 500,
+   "duration": 90
+  },
+  {
+   "id": "face-lashes-men-s-facial",
+   "category": "face-lashes",
+   "subcategory": "facials",
+   "name": "Men's facial",
+   "price": 300,
+   "duration": 30,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "face-lashes-eyelash-extensions",
+   "category": "face-lashes",
+   "subcategory": "lashes",
+   "name": "Eyelash extensions",
+   "variants": [
+    {
+     "label": "Classic",
+     "price": 250,
+     "duration": 30
+    },
+    {
+     "label": "Russian volume",
+     "price": 350,
+     "duration": 30
+    },
+    {
+     "label": "Volume 2D",
+     "price": 450,
+     "duration": 30
+    },
+    {
+     "label": "Volume 3D",
+     "price": 550,
+     "duration": 60
+    }
+   ],
+   "price": 250,
+   "priceFrom": true,
+   "duration": 30,
+   "review": "Durations differ between volumes in the booking system (30 min vs 1h). Confirm."
+  },
+  {
+   "id": "face-lashes-lash-lift-rehaussement-de-cils",
+   "category": "face-lashes",
+   "subcategory": "lashes",
+   "name": "Lash lift (rehaussement de cils)",
+   "price": 200,
+   "duration": 60
+  },
+  {
+   "id": "face-lashes-lash-tint",
+   "category": "face-lashes",
+   "subcategory": "lashes",
+   "name": "Lash tint",
+   "price": 100,
+   "duration": 60
+  },
+  {
+   "id": "face-lashes-brow-lift-tint",
+   "category": "face-lashes",
+   "subcategory": "brows",
+   "name": "Brow lift + tint",
+   "price": 250,
+   "duration": 60
+  },
+  {
+   "id": "face-lashes-brow-design-henna",
+   "category": "face-lashes",
+   "subcategory": "brows",
+   "name": "Brow design (henna)",
+   "price": 150,
+   "duration": 45
+  },
+  {
+   "id": "face-lashes-brow-threading",
+   "category": "face-lashes",
+   "subcategory": "brows",
+   "name": "Brow threading",
+   "price": 80,
+   "duration": 30
+  },
+  {
+   "id": "hands-feet-classic-manicure",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Classic manicure",
+   "price": 150,
+   "duration": 60,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "hands-feet-spa-manicure",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Spa manicure",
+   "price": 200,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-russian-manicure",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Russian manicure",
+   "price": 250,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-sabon-spa-manicure",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Sabon Spa manicure",
+   "price": 300,
+   "duration": 90
+  },
+  {
+   "id": "hands-feet-russian-manicure-semi-permanent",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Russian manicure, semi-permanent",
+   "price": 300,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-semi-permanent-semilac",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Semi-permanent (Semilac)",
+   "price": 200,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-semi-permanent-gel-bottle",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Semi-permanent (gel bottle)",
+   "price": 250,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-manicure-semi-permanent",
+   "category": "hands-feet",
+   "subcategory": "manicure",
+   "name": "Manicure + semi-permanent",
+   "price": 450,
+   "review": "Printed menu only. Booking system shows semi-permanent at 200 and 250. Confirm."
+  },
+  {
+   "id": "hands-feet-classic-pedicure",
+   "category": "hands-feet",
+   "subcategory": "pedicure",
+   "name": "Classic pedicure",
+   "price": 200,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-spa-pedicure",
+   "category": "hands-feet",
+   "subcategory": "pedicure",
+   "name": "Spa pedicure",
+   "price": 350,
+   "duration": 60,
+   "review": "Printed menu says 350; booking system says 300."
+  },
+  {
+   "id": "hands-feet-sabon-spa-pedicure",
+   "category": "hands-feet",
+   "subcategory": "pedicure",
+   "name": "Sabon Spa pedicure",
+   "price": 500,
+   "duration": 90
+  },
+  {
+   "id": "hands-feet-pedicure-semi-permanent",
+   "category": "hands-feet",
+   "subcategory": "pedicure",
+   "name": "Pedicure + semi-permanent",
+   "price": 500,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-pedicure-gel-bottle",
+   "category": "hands-feet",
+   "subcategory": "pedicure",
+   "name": "Pedicure gel bottle",
+   "price": 400,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-paraffin-pedicure",
+   "category": "hands-feet",
+   "subcategory": "pedicure",
+   "name": "Paraffin pedicure",
+   "price": 350,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-permanent-false-nails",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "Permanent false nails",
+   "price": 300,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-biab-gel-overlay-hands",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "BIAB gel overlay (hands)",
+   "price": 550,
+   "duration": 120,
+   "review": "Printed menu says 550; booking system says 350."
+  },
+  {
+   "id": "hands-feet-biab-gel-overlay-feet",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "BIAB gel overlay (feet)",
+   "price": 350,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-biab-normal",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "BIAB normal",
+   "price": 550
+  },
+  {
+   "id": "hands-feet-biab-extension",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "BIAB extension",
+   "price": 650,
+   "duration": 60,
+   "review": "Printed menu says 650; booking system says 450."
+  },
+  {
+   "id": "hands-feet-biab-extension-french",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "BIAB extension, French",
+   "price": 500,
+   "duration": 120
+  },
+  {
+   "id": "hands-feet-acrylic-extension",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "Acrylic extension",
+   "price": 500,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-gel-application-pose-de-gel",
+   "category": "hands-feet",
+   "subcategory": "gel-extensions",
+   "name": "Gel application (pose de gel)",
+   "price": 550,
+   "duration": 120
+  },
+  {
+   "id": "hands-feet-regular-polish-opi",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "Regular polish (OPI)",
+   "price": 80
+  },
+  {
+   "id": "hands-feet-semi-permanent-polish",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "Semi-permanent polish",
+   "price": 300
+  },
+  {
+   "id": "hands-feet-french",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "French",
+   "price": 50,
+   "duration": 10
+  },
+  {
+   "id": "hands-feet-nail-chrome",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "Nail chrome",
+   "price": 100,
+   "duration": 30
+  },
+  {
+   "id": "hands-feet-nail-ombre",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "Nail ombré",
+   "price": 100,
+   "duration": 30
+  },
+  {
+   "id": "hands-feet-nail-art",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "Nail art",
+   "price": 50,
+   "duration": 10
+  },
+  {
+   "id": "hands-feet-gel-nail-per-nail",
+   "category": "hands-feet",
+   "subcategory": "nail-art",
+   "name": "Gel nail (per nail)",
+   "price": 50,
+   "duration": 15
+  },
+  {
+   "id": "hands-feet-paraffin-treatment-hands",
+   "category": "hands-feet",
+   "subcategory": "care",
+   "name": "Paraffin treatment (hands)",
+   "price": 150,
+   "duration": 60,
+   "review": "Listed as 'Parfine'. Confirm it is hands."
+  },
+  {
+   "id": "hands-feet-callus-treatment",
+   "category": "hands-feet",
+   "subcategory": "care",
+   "name": "Callus treatment",
+   "price": 150,
+   "duration": 60
+  },
+  {
+   "id": "hands-feet-relaxing-treatment",
+   "category": "hands-feet",
+   "subcategory": "care",
+   "name": "Relaxing treatment",
+   "price": 300,
+   "duration": 60,
+   "review": "Hands or feet not specified. Confirm."
+  },
+  {
+   "id": "hands-feet-removal-biab-extension",
+   "category": "hands-feet",
+   "subcategory": "removal",
+   "name": "Removal: BIAB / extension",
+   "price": 150,
+   "duration": 15,
+   "review": "Printed menu says 150; booking system says 100."
+  },
+  {
+   "id": "hands-feet-removal-semi-permanent",
+   "category": "hands-feet",
+   "subcategory": "removal",
+   "name": "Removal: semi-permanent",
+   "price": 100,
+   "duration": 30,
+   "review": "Printed menu says 100; booking system says 80."
+  },
+  {
+   "id": "hair-brushing",
+   "category": "hair",
+   "subcategory": "cut-style",
+   "name": "Brushing",
+   "variants": [
+    {
+     "label": "Short",
+     "price": 50,
+     "duration": 15
+    },
+    {
+     "label": "Medium",
+     "price": 100,
+     "duration": 20
+    },
+    {
+     "label": "Long",
+     "price": 120,
+     "duration": 30
+    }
+   ],
+   "price": 50,
+   "priceFrom": true,
+   "duration": 15
+  },
+  {
+   "id": "hair-haircut",
+   "category": "hair",
+   "subcategory": "cut-style",
+   "name": "Haircut",
+   "price": 120,
+   "duration": 30
+  },
+  {
+   "id": "hair-trim-coupe-des-pointes",
+   "category": "hair",
+   "subcategory": "cut-style",
+   "name": "Trim (coupe des pointes)",
+   "price": 80,
+   "duration": 25
+  },
+  {
+   "id": "hair-hair-wash-savonage",
+   "category": "hair",
+   "subcategory": "cut-style",
+   "name": "Hair wash (savonage)",
+   "price": 50,
+   "duration": 10
+  },
+  {
+   "id": "hair-touch-up-touching-cheveux",
+   "category": "hair",
+   "subcategory": "cut-style",
+   "name": "Touch-up (touching cheveux)",
+   "price": 50,
+   "duration": 20
+  },
+  {
+   "id": "hair-extension-removal-depot-d-extensions",
+   "category": "hair",
+   "subcategory": "cut-style",
+   "name": "Extension removal (dépôt d'extensions)",
+   "price": 80,
+   "duration": 20
+  },
+  {
+   "id": "hair-hair-colour",
+   "category": "hair",
+   "subcategory": "color",
+   "name": "Hair colour",
+   "price": 100,
+   "duration": 60,
+   "review": "Booking system price of 100 looks low. Women's colour prices were not seen. Confirm."
+  },
+  {
+   "id": "hair-hair-care-soin-du-cheveux",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Hair care (soin du cheveux)",
+   "price": 300,
+   "duration": 60
+  },
+  {
+   "id": "hair-hair-botox",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Hair botox",
+   "price": 300,
+   "duration": 90
+  },
+  {
+   "id": "hair-protein-goldery",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Protein Goldery",
+   "variants": [
+    {
+     "label": "Short",
+     "price": 300
+    },
+    {
+     "label": "Medium",
+     "price": 500
+    },
+    {
+     "label": "Long",
+     "price": 1000
+    }
+   ],
+   "price": 300,
+   "priceFrom": true,
+   "duration": 60
+  },
+  {
+   "id": "hair-soin-miracle-revitalisant",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Soin miracle revitalisant",
+   "variants": [
+    {
+     "label": "Short",
+     "price": 300
+    },
+    {
+     "label": "Medium",
+     "price": 400
+    },
+    {
+     "label": "Long",
+     "price": 500
+    }
+   ],
+   "price": 300,
+   "priceFrom": true,
+   "duration": 60
+  },
+  {
+   "id": "hair-soin-pure-filler-restructurant",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Soin pure filler restructurant",
+   "variants": [
+    {
+     "label": "Short",
+     "price": 600
+    },
+    {
+     "label": "Medium",
+     "price": 700
+    },
+    {
+     "label": "Long",
+     "price": 900
+    }
+   ],
+   "price": 600,
+   "priceFrom": true,
+   "duration": 90
+  },
+  {
+   "id": "hair-pro-keratin-treatment",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Pro keratin treatment",
+   "variants": [
+    {
+     "label": "Option A",
+     "price": 1500
+    },
+    {
+     "label": "Option B",
+     "price": 2000
+    }
+   ],
+   "price": 1500,
+   "priceFrom": true,
+   "duration": 60,
+   "review": "Two entries with the same name (1,500 and 2,000). Ask what differs (hair length?)."
+  },
+  {
+   "id": "hair-soin-protect-color-brushing",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Soin protect color + brushing",
+   "price": 150,
+   "duration": 60
+  },
+  {
+   "id": "hair-soin-keratine-pro-brushing",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Soin kératine pro + brushing",
+   "price": 150,
+   "duration": 60
+  },
+  {
+   "id": "hair-soin-reparateur-hydratant-brushing",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Soin réparateur hydratant + brushing",
+   "price": 150,
+   "duration": 60
+  },
+  {
+   "id": "hair-soin-reparateur-nourrissant-brushing",
+   "category": "hair",
+   "subcategory": "care",
+   "name": "Soin réparateur nourrissant + brushing",
+   "price": 150,
+   "duration": 60
+  },
+  {
+   "id": "hair-thickening-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Thickening shampoo",
+   "price": 270,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-thickening-conditioner",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Thickening conditioner",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-pro-keratin-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Pro-keratin shampoo",
+   "price": 270,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-pro-keratin-conditioner",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Pro-keratin conditioner",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-supreme-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Supreme shampoo",
+   "price": 270,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-hydrating-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Hydrating shampoo",
+   "price": 270,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-hydrating-conditioner",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Hydrating conditioner",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-purify-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Purify shampoo",
+   "price": 270,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-purify-conditioner",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Purify conditioner",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-restructuring-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Restructuring shampoo",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-restructuring-conditioner",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Restructuring conditioner",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-miracle-mask",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Miracle mask",
+   "price": 280,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-angel-potion",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Angel potion",
+   "price": 290,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-hydrating-serum",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Hydrating serum",
+   "price": 340,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-goldery-shampoo",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Goldery shampoo",
+   "price": 600,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "hair-goldery-pack",
+   "category": "hair",
+   "subcategory": "products",
+   "name": "Goldery pack",
+   "price": 850,
+   "duration": 5,
+   "type": "product"
+  },
+  {
+   "id": "waxing-eyebrows-waxing",
+   "category": "waxing",
+   "subcategory": "face",
+   "name": "Eyebrows (waxing)",
+   "price": 70,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-upper-lip",
+   "category": "waxing",
+   "subcategory": "face",
+   "name": "Upper lip",
+   "price": 50,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-chin",
+   "category": "waxing",
+   "subcategory": "face",
+   "name": "Chin",
+   "price": 50,
+   "duration": 10,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-full-face",
+   "category": "waxing",
+   "subcategory": "face",
+   "name": "Full face",
+   "price": 250,
+   "duration": 20,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-nose-and-ears",
+   "category": "waxing",
+   "subcategory": "face",
+   "name": "Nose and ears",
+   "price": 70,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-underarms",
+   "category": "waxing",
+   "subcategory": "body",
+   "name": "Underarms",
+   "price": 80,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-arms",
+   "category": "waxing",
+   "subcategory": "body",
+   "name": "Arms",
+   "variants": [
+    {
+     "label": "Half arms",
+     "price": 100,
+     "duration": 15
+    },
+    {
+     "label": "Full arms",
+     "price": 150,
+     "duration": 20
+    }
+   ],
+   "price": 100,
+   "priceFrom": true,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-legs",
+   "category": "waxing",
+   "subcategory": "body",
+   "name": "Legs",
+   "variants": [
+    {
+     "label": "Half legs",
+     "price": 100,
+     "duration": 15
+    },
+    {
+     "label": "Full legs",
+     "price": 180,
+     "duration": 30
+    }
+   ],
+   "price": 100,
+   "priceFrom": true,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-bikini",
+   "category": "waxing",
+   "subcategory": "bikini",
+   "name": "Bikini",
+   "variants": [
+    {
+     "label": "Classic",
+     "price": 150,
+     "duration": 20
+    },
+    {
+     "label": "Brazilian cut (échancré)",
+     "price": 200,
+     "duration": 15
+    },
+    {
+     "label": "Full (intégral)",
+     "price": 200,
+     "duration": 20
+    }
+   ],
+   "price": 150,
+   "priceFrom": true,
+   "duration": 15,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "waxing-full-body-waxing",
+   "category": "waxing",
+   "subcategory": "full-body",
+   "name": "Full body waxing",
+   "price": 700,
+   "duration": 60,
+   "audience": [
+    "women"
+   ]
+  },
+  {
+   "id": "barber-haircut",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Haircut",
+   "price": 100,
+   "duration": 50,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-haircut-beard-steam",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Haircut + beard + steam",
+   "price": 200,
+   "duration": 80,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-haircut-and-beard",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Haircut and beard",
+   "price": 100,
+   "duration": 60,
+   "audience": [
+    "men"
+   ],
+   "review": "Name cut off in the booking screen ('Barber cheveux et barber &...')."
+  },
+  {
+   "id": "barber-beard-trim",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Beard trim",
+   "price": 100,
+   "duration": 30,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-beard-colouring",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Beard colouring",
+   "price": 100,
+   "duration": 30,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-kids-haircut",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Kids haircut",
+   "price": 70,
+   "duration": 30,
+   "audience": [
+    "kids"
+   ]
+  },
+  {
+   "id": "barber-brushing",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Brushing",
+   "price": 50,
+   "duration": 30,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-brushing-express",
+   "category": "barber",
+   "subcategory": "cut-beard",
+   "name": "Brushing (express)",
+   "price": 50,
+   "duration": 10,
+   "audience": [
+    "men"
+   ],
+   "review": "Listed as 'Bruching' (10 min). Confirm it is separate from the 30 min brushing."
+  },
+  {
+   "id": "barber-hair-colour",
+   "category": "barber",
+   "subcategory": "color",
+   "name": "Hair colour",
+   "variants": [
+    {
+     "label": "Option 1 (1h, from)",
+     "price": 500,
+     "duration": 60
+    },
+    {
+     "label": "Option 2 (2h)",
+     "price": 700,
+     "duration": 120
+    },
+    {
+     "label": "Option 3 (2h)",
+     "price": 900,
+     "duration": 120
+    }
+   ],
+   "price": 500,
+   "priceFrom": true,
+   "duration": 60,
+   "audience": [
+    "men"
+   ],
+   "review": "Three entries with the same name. Confirm what differentiates them."
+  },
+  {
+   "id": "barber-hair-colour-beard",
+   "category": "barber",
+   "subcategory": "color",
+   "name": "Hair colour + beard",
+   "price": 300,
+   "duration": 60,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-highlights-meches",
+   "category": "barber",
+   "subcategory": "color",
+   "name": "Highlights (mèches)",
+   "price": 500,
+   "duration": 120,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-facial-care",
+   "category": "barber",
+   "subcategory": "face-care",
+   "name": "Facial care",
+   "price": 300,
+   "duration": 45,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-head-massage",
+   "category": "barber",
+   "subcategory": "face-care",
+   "name": "Head massage",
+   "price": 300,
+   "duration": 20,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-face-waxing",
+   "category": "barber",
+   "subcategory": "face-care",
+   "name": "Face waxing",
+   "price": 100,
+   "duration": 10,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-full-face-waxing",
+   "category": "barber",
+   "subcategory": "face-care",
+   "name": "Full face waxing",
+   "price": 100,
+   "duration": 30,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-nose-and-ears-waxing",
+   "category": "barber",
+   "subcategory": "face-care",
+   "name": "Nose and ears waxing",
+   "price": 70,
+   "duration": 15,
+   "audience": [
+    "men"
+   ],
+   "review": "Men's category shows 50 for 'nez et oreille'. Confirm."
+  },
+  {
+   "id": "barber-men-s-manicure",
+   "category": "barber",
+   "subcategory": "hands-feet",
+   "name": "Men's manicure",
+   "price": 250,
+   "duration": 30,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-men-s-pedicure",
+   "category": "barber",
+   "subcategory": "hands-feet",
+   "name": "Men's pedicure",
+   "price": 350,
+   "duration": 45,
+   "audience": [
+    "men"
+   ]
+  },
+  {
+   "id": "barber-classic-manicure-men",
+   "category": "barber",
+   "subcategory": "hands-feet",
+   "name": "Classic manicure (men)",
+   "price": 100,
+   "duration": 60,
+   "audience": [
+    "men"
+   ]
+  }
+ ],
+ "unassigned": [
+  {
+   "name": "Wax",
+   "duration": 5,
+   "price": 100,
+   "note": "Listed under Extra. Probably an add-on for waxing."
+  },
+  {
+   "name": "Design",
+   "duration": 60,
+   "price": 10,
+   "priceFrom": true,
+   "note": "Listed under Extra. Probably nail design."
+  }
+ ]
+}

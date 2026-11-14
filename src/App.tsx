@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Language } from './types';
+import React from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/hero/HeroSection';
 import { ProofStrip } from './components/sections/ProofStrip';
 import { Introduction } from './components/sections/Introduction';
-import { Services } from './components/sections/Services';
-import { PacksSection } from './components/sections/PacksSection';
+import { FeaturedPacks } from './components/sections/FeaturedPacks';
+import { ServicesPage } from './components/services/ServicesPage';
 import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
 import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
@@ -14,16 +13,24 @@ import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
+import { useLang } from './hooks/useLang';
 
 export const App: React.FC = () => {
-  const [lang, setLang] = useState<Language>('fr');
+  const { lang, switchLang } = useLang();
+
+  const handleScrollToServices = () => {
+    const el = document.getElementById('soins');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-navy-950 text-white font-sans selection:bg-brand selection:text-white">
       {/* Refined Floating Navbar */}
       <Navbar
         lang={lang}
-        onLanguageChange={setLang}
+        onLanguageChange={switchLang}
       />
 
       <main>
@@ -36,11 +43,11 @@ export const App: React.FC = () => {
         {/* 3. Brand Story & Architecture */}
         <Introduction lang={lang} />
 
-        {/* 4. The 6 Image-Focused Categories */}
-        <Services lang={lang} />
+        {/* 4. Signature Featured Packs (Bronze, Silver, Golden, Royal) */}
+        <FeaturedPacks lang={lang} onExploreAllPacks={handleScrollToServices} />
 
-        {/* 5. Separate Curated Packages Section */}
-        <PacksSection lang={lang} />
+        {/* 5. Complete Data-Driven Services & Category Catalog */}
+        <ServicesPage lang={lang} />
 
         {/* 6. Immersive Caustic Break */}
         <ImmersiveBreak lang={lang} />
@@ -54,7 +61,7 @@ export const App: React.FC = () => {
         {/* 9. Verified Google Reviews & Social Proof */}
         <ReviewsSection lang={lang} />
 
-        {/* 11. FAQ Section */}
+        {/* 10. FAQ Section */}
         <FAQSection lang={lang} />
       </main>
 

@@ -1,0 +1,279 @@
+{
+  "category": {
+    "id": "barber",
+    "order": 8,
+    "icon": "barber",
+    "name": {
+      "en": "Barber (Men)",
+      "fr": "Barber (Hommes)"
+    },
+    "tagline": {
+      "en": "Barber Senses",
+      "fr": "Barber Senses"
+    },
+    "subcategories": [
+      {
+        "id": "cut-beard",
+        "order": 1,
+        "name": {
+          "en": "Cut & beard",
+          "fr": "Coupe & barbe"
+        }
+      },
+      {
+        "id": "color",
+        "order": 2,
+        "name": {
+          "en": "Colour",
+          "fr": "Coloration"
+        }
+      },
+      {
+        "id": "face-care",
+        "order": 3,
+        "name": {
+          "en": "Face & care",
+          "fr": "Visage & soins"
+        }
+      },
+      {
+        "id": "hands-feet",
+        "order": 4,
+        "name": {
+          "en": "Hands & feet",
+          "fr": "Mains & pieds"
+        }
+      }
+    ],
+    "count": 19
+  },
+  "services": [
+    {
+      "id": "barber-haircut",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Haircut",
+      "price": 100,
+      "duration": 50,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-haircut-beard-steam",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Haircut + beard + steam",
+      "price": 200,
+      "duration": 80,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-haircut-and-beard",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Haircut and beard",
+      "price": 100,
+      "duration": 60,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-beard-trim",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Beard trim",
+      "price": 100,
+      "duration": 30,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-beard-colouring",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Beard colouring",
+      "price": 100,
+      "duration": 30,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-kids-haircut",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Kids haircut",
+      "price": 70,
+      "duration": 30,
+      "audience": [
+        "kids"
+      ]
+    },
+    {
+      "id": "barber-brushing",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Brushing",
+      "price": 50,
+      "duration": 30,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-brushing-express",
+      "category": "barber",
+      "subcategory": "cut-beard",
+      "name": "Brushing (express)",
+      "price": 50,
+      "duration": 10,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-hair-colour",
+      "category": "barber",
+      "subcategory": "color",
+      "name": "Hair colour",
+      "variants": [
+        {
+          "label": "Option 1 (1h, from)",
+          "price": 500,
+          "duration": 60
+        },
+        {
+          "label": "Option 2 (2h)",
+          "price": 700,
+          "duration": 120
+        },
+        {
+          "label": "Option 3 (2h)",
+          "price": 900,
+          "duration": 120
+        }
+      ],
+      "price": 500,
+      "priceFrom": true,
+      "duration": 60,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-hair-colour-beard",
+      "category": "barber",
+      "subcategory": "color",
+      "name": "Hair colour + beard",
+      "price": 300,
+      "duration": 60,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-highlights-meches",
+      "category": "barber",
+      "subcategory": "color",
+      "name": "Highlights (mèches)",
+      "price": 500,
+      "duration": 120,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-facial-care",
+      "category": "barber",
+      "subcategory": "face-care",
+      "name": "Facial care",
+      "price": 300,
+      "duration": 45,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-head-massage",
+      "category": "barber",
+      "subcategory": "face-care",
+      "name": "Head massage",
+      "price": 300,
+      "duration": 20,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-face-waxing",
+      "category": "barber",
+      "subcategory": "face-care",
+      "name": "Face waxing",
+      "price": 100,
+      "duration": 10,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-full-face-waxing",
+      "category": "barber",
+      "subcategory": "face-care",
+      "name": "Full face waxing",
+      "price": 100,
+      "duration": 30,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-nose-and-ears-waxing",
+      "category": "barber",
+      "subcategory": "face-care",
+      "name": "Nose and ears waxing",
+      "price": 70,
+      "duration": 15,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-men-s-manicure",
+      "category": "barber",
+      "subcategory": "hands-feet",
+      "name": "Men's manicure",
+      "price": 250,
+      "duration": 30,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-men-s-pedicure",
+      "category": "barber",
+      "subcategory": "hands-feet",
+      "name": "Men's pedicure",
+      "price": 350,
+      "duration": 45,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "barber-classic-manicure-men",
+      "category": "barber",
+      "subcategory": "hands-feet",
+      "name": "Classic manicure (men)",
+      "price": 100,
+      "duration": 60,
+      "audience": [
+        "men"
+      ]
+    }
+  ]
+}

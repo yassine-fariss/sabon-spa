@@ -1,0 +1,265 @@
+{
+  "category": {
+    "id": "massage",
+    "order": 3,
+    "icon": "massage",
+    "name": {
+      "en": "Massage",
+      "fr": "Massages"
+    },
+    "tagline": {
+      "en": "Relax, release, rebalance",
+      "fr": "Détente et rééquilibrage"
+    },
+    "subcategories": [
+      {
+        "id": "relaxation",
+        "order": 1,
+        "name": {
+          "en": "Relaxation",
+          "fr": "Relaxation"
+        }
+      },
+      {
+        "id": "thai",
+        "order": 2,
+        "name": {
+          "en": "Thai",
+          "fr": "Thaï"
+        }
+      },
+      {
+        "id": "therapeutic",
+        "order": 3,
+        "name": {
+          "en": "Therapeutic",
+          "fr": "Thérapeutiques"
+        }
+      },
+      {
+        "id": "signature",
+        "order": 4,
+        "name": {
+          "en": "Signature",
+          "fr": "Signature"
+        }
+      },
+      {
+        "id": "mother-child",
+        "order": 5,
+        "name": {
+          "en": "Mother & child",
+          "fr": "Mère & enfant"
+        }
+      }
+    ],
+    "count": 23
+  },
+  "services": [
+    {
+      "id": "massage-swedish-massage",
+      "category": "massage",
+      "subcategory": "relaxation",
+      "name": "Swedish massage",
+      "price": 500,
+      "duration": 60,
+      "description": "Classic relaxing massage that improves circulation and releases muscle tension."
+    },
+    {
+      "id": "massage-swedish-massage-extended",
+      "category": "massage",
+      "subcategory": "relaxation",
+      "name": "Swedish massage (extended)",
+      "price": 750,
+      "duration": 90
+    },
+    {
+      "id": "massage-shiatsu-massage",
+      "category": "massage",
+      "subcategory": "relaxation",
+      "name": "Shiatsu massage",
+      "price": 500,
+      "duration": 60,
+      "description": "Japanese finger-pressure technique to restore balance and reduce stress."
+    },
+    {
+      "id": "massage-custom-massage-sur-mesure",
+      "category": "massage",
+      "subcategory": "relaxation",
+      "name": "Custom massage (sur mesure)",
+      "price": 300,
+      "duration": 30
+    },
+    {
+      "id": "massage-massage-amasismo",
+      "category": "massage",
+      "subcategory": "relaxation",
+      "name": "Massage Amasismo",
+      "price": 600,
+      "duration": 60
+    },
+    {
+      "id": "massage-massage-merzouga",
+      "category": "massage",
+      "subcategory": "relaxation",
+      "name": "Massage Merzouga",
+      "price": 800,
+      "duration": 60
+    },
+    {
+      "id": "massage-thai-traditional-massage",
+      "category": "massage",
+      "subcategory": "thai",
+      "name": "Thai traditional massage",
+      "price": 600,
+      "duration": 60,
+      "description": "Stretching and pressure points for deep relaxation."
+    },
+    {
+      "id": "massage-mixed-thai-massage",
+      "category": "massage",
+      "subcategory": "thai",
+      "name": "Mixed Thai massage",
+      "price": 700,
+      "duration": 60,
+      "description": "Thai techniques combined with oil massage."
+    },
+    {
+      "id": "massage-mixed-thai-massage-extended",
+      "category": "massage",
+      "subcategory": "thai",
+      "name": "Mixed Thai massage (extended)",
+      "price": 1050,
+      "duration": 90
+    },
+    {
+      "id": "massage-deep-tissue-massage",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Deep tissue massage",
+      "price": 650,
+      "duration": 60,
+      "description": "Targets the deeper layers of the muscles to release chronic tension."
+    },
+    {
+      "id": "massage-hot-stone-massage",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Hot stone massage",
+      "price": 650,
+      "duration": 60,
+      "description": "Warm stones that soothe the muscles."
+    },
+    {
+      "id": "massage-lymphatic-drainage",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Lymphatic drainage",
+      "price": 650,
+      "duration": 60,
+      "description": "Gentle rhythmic massage that helps detoxify and reduce water retention."
+    },
+    {
+      "id": "massage-madero-therapy",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Madero therapy",
+      "price": 300,
+      "duration": 30,
+      "description": "Wood therapy that reduces cellulite, stimulates circulation and shapes the body."
+    },
+    {
+      "id": "massage-foot-reflexology",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Foot reflexology",
+      "price": 350,
+      "duration": 30,
+      "description": "Stimulation of reflex points on the feet."
+    },
+    {
+      "id": "massage-back-head-neck-and-shoulder",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Back, head, neck and shoulder",
+      "price": 350,
+      "duration": 30
+    },
+    {
+      "id": "massage-cupping-therapy",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Cupping therapy",
+      "price": 800,
+      "duration": 60,
+      "description": "Ancient healing tradition using suction cups."
+    },
+    {
+      "id": "massage-glass-cupping-therapy-traditional",
+      "category": "massage",
+      "subcategory": "therapeutic",
+      "name": "Glass cupping therapy (traditional)",
+      "price": 600,
+      "duration": 60,
+      "description": "Traditional glass cups, suction created with heat."
+    },
+    {
+      "id": "massage-4-hand-massage",
+      "category": "massage",
+      "subcategory": "signature",
+      "name": "4-hand massage",
+      "price": 1000,
+      "duration": 60,
+      "description": "Two therapists work in harmony."
+    },
+    {
+      "id": "massage-head-spa",
+      "category": "massage",
+      "subcategory": "signature",
+      "name": "Head Spa",
+      "price": 500,
+      "duration": 60
+    },
+    {
+      "id": "massage-head-spa-mini-hydrafacial",
+      "category": "massage",
+      "subcategory": "signature",
+      "name": "Head Spa + mini Hydrafacial",
+      "price": 800,
+      "duration": 60,
+      "description": "Scalp and facial treatment: cleansing, hydration and relaxation."
+    },
+    {
+      "id": "massage-back-spa",
+      "category": "massage",
+      "subcategory": "signature",
+      "name": "Back Spa",
+      "price": 800,
+      "duration": 60,
+      "description": "Complete back ritual to exfoliate, purify and nourish."
+    },
+    {
+      "id": "massage-pregnancy-massage",
+      "category": "massage",
+      "subcategory": "mother-child",
+      "name": "Pregnancy massage",
+      "price": 600,
+      "duration": 60,
+      "audience": [
+        "pregnancy"
+      ],
+      "description": "Gentle massage for expectant mothers."
+    },
+    {
+      "id": "massage-kids-massage",
+      "category": "massage",
+      "subcategory": "mother-child",
+      "name": "Kids massage",
+      "price": 300,
+      "duration": 45,
+      "audience": [
+        "kids"
+      ]
+    }
+  ]
+}

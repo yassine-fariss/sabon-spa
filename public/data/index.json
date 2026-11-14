@@ -1,0 +1,397 @@
+{
+  "meta": {
+    "business": "Sabon Spa & Hammam",
+    "currency": "MAD",
+    "version": "1.0",
+    "generated": "2026-11-14",
+    "source": "Photos of the booking system and printed screens, 13 Nov 2026",
+    "durationUnit": "minutes",
+    "notes": "Items with a 'review' field need confirmation from the spa. Prices on printed menus win over booking-system prices when they differ."
+  },
+  "categories": [
+    {
+      "id": "packs",
+      "order": 1,
+      "icon": "packs",
+      "name": {
+        "en": "Packs",
+        "fr": "Packs"
+      },
+      "tagline": {
+        "en": "Complete experiences",
+        "fr": "Expériences complètes"
+      },
+      "subcategories": [
+        {
+          "id": "signature",
+          "order": 1,
+          "name": {
+            "en": "Signature packs",
+            "fr": "Packs signature"
+          }
+        },
+        {
+          "id": "special",
+          "order": 2,
+          "name": {
+            "en": "Special occasions",
+            "fr": "Occasions spéciales"
+          }
+        },
+        {
+          "id": "kids",
+          "order": 3,
+          "name": {
+            "en": "Kids packs",
+            "fr": "Packs enfants"
+          }
+        }
+      ],
+      "count": 11
+    },
+    {
+      "id": "hammam-wellness",
+      "order": 2,
+      "icon": "hammam",
+      "name": {
+        "en": "Hammam & Wellness",
+        "fr": "Hammam & Bien-être"
+      },
+      "tagline": {
+        "en": "Rituals and wellness access",
+        "fr": "Rituels et accès bien-être"
+      },
+      "subcategories": [
+        {
+          "id": "hammam",
+          "order": 1,
+          "name": {
+            "en": "Hammam rituals",
+            "fr": "Rituels de hammam"
+          }
+        },
+        {
+          "id": "hammam-kids",
+          "order": 2,
+          "name": {
+            "en": "Kids hammam",
+            "fr": "Hammam enfants"
+          }
+        },
+        {
+          "id": "wellness-access",
+          "order": 3,
+          "name": {
+            "en": "Wellness access",
+            "fr": "Accès bien-être"
+          }
+        }
+      ],
+      "count": 9
+    },
+    {
+      "id": "massage",
+      "order": 3,
+      "icon": "massage",
+      "name": {
+        "en": "Massage",
+        "fr": "Massages"
+      },
+      "tagline": {
+        "en": "Relax, release, rebalance",
+        "fr": "Détente et rééquilibrage"
+      },
+      "subcategories": [
+        {
+          "id": "relaxation",
+          "order": 1,
+          "name": {
+            "en": "Relaxation",
+            "fr": "Relaxation"
+          }
+        },
+        {
+          "id": "thai",
+          "order": 2,
+          "name": {
+            "en": "Thai",
+            "fr": "Thaï"
+          }
+        },
+        {
+          "id": "therapeutic",
+          "order": 3,
+          "name": {
+            "en": "Therapeutic",
+            "fr": "Thérapeutiques"
+          }
+        },
+        {
+          "id": "signature",
+          "order": 4,
+          "name": {
+            "en": "Signature",
+            "fr": "Signature"
+          }
+        },
+        {
+          "id": "mother-child",
+          "order": 5,
+          "name": {
+            "en": "Mother & child",
+            "fr": "Mère & enfant"
+          }
+        }
+      ],
+      "count": 23
+    },
+    {
+      "id": "face-lashes",
+      "order": 4,
+      "icon": "face",
+      "name": {
+        "en": "Face, Lashes & Brows",
+        "fr": "Visage, Cils & Sourcils"
+      },
+      "tagline": {
+        "en": "Glow and definition",
+        "fr": "Éclat et définition"
+      },
+      "subcategories": [
+        {
+          "id": "facials",
+          "order": 1,
+          "name": {
+            "en": "Facials",
+            "fr": "Soins du visage"
+          }
+        },
+        {
+          "id": "lashes",
+          "order": 2,
+          "name": {
+            "en": "Lashes",
+            "fr": "Cils"
+          }
+        },
+        {
+          "id": "brows",
+          "order": 3,
+          "name": {
+            "en": "Brows",
+            "fr": "Sourcils"
+          }
+        }
+      ],
+      "count": 9
+    },
+    {
+      "id": "hands-feet",
+      "order": 5,
+      "icon": "nails",
+      "name": {
+        "en": "Hands & Feet",
+        "fr": "Mains & Pieds"
+      },
+      "tagline": {
+        "en": "Manicure, pedicure, nail art",
+        "fr": "Manucure, pédicure, nail art"
+      },
+      "subcategories": [
+        {
+          "id": "manicure",
+          "order": 1,
+          "name": {
+            "en": "Manicure",
+            "fr": "Manucure"
+          }
+        },
+        {
+          "id": "pedicure",
+          "order": 2,
+          "name": {
+            "en": "Pedicure",
+            "fr": "Pédicure"
+          }
+        },
+        {
+          "id": "gel-extensions",
+          "order": 3,
+          "name": {
+            "en": "Gel & extensions",
+            "fr": "Gel & extensions"
+          }
+        },
+        {
+          "id": "nail-art",
+          "order": 4,
+          "name": {
+            "en": "Polish & nail art",
+            "fr": "Vernis & nail art"
+          }
+        },
+        {
+          "id": "care",
+          "order": 5,
+          "name": {
+            "en": "Care",
+            "fr": "Soins"
+          }
+        },
+        {
+          "id": "removal",
+          "order": 6,
+          "name": {
+            "en": "Removal",
+            "fr": "Dépose"
+          }
+        }
+      ],
+      "count": 34
+    },
+    {
+      "id": "hair",
+      "order": 6,
+      "icon": "hair",
+      "name": {
+        "en": "Hair",
+        "fr": "Cheveux"
+      },
+      "tagline": {
+        "en": "Styling, colour and care",
+        "fr": "Coiffage, couleur et soins"
+      },
+      "subcategories": [
+        {
+          "id": "cut-style",
+          "order": 1,
+          "name": {
+            "en": "Cut & styling",
+            "fr": "Coupe & coiffage"
+          }
+        },
+        {
+          "id": "color",
+          "order": 2,
+          "name": {
+            "en": "Colour",
+            "fr": "Coloration"
+          }
+        },
+        {
+          "id": "care",
+          "order": 3,
+          "name": {
+            "en": "Treatments",
+            "fr": "Soins"
+          }
+        },
+        {
+          "id": "products",
+          "order": 4,
+          "name": {
+            "en": "Products",
+            "fr": "Produits"
+          }
+        }
+      ],
+      "count": 17
+    },
+    {
+      "id": "waxing",
+      "order": 7,
+      "icon": "waxing",
+      "name": {
+        "en": "Waxing",
+        "fr": "Épilation"
+      },
+      "tagline": {
+        "en": "Smooth and precise",
+        "fr": "Lisse et précise"
+      },
+      "subcategories": [
+        {
+          "id": "face",
+          "order": 1,
+          "name": {
+            "en": "Face",
+            "fr": "Visage"
+          }
+        },
+        {
+          "id": "body",
+          "order": 2,
+          "name": {
+            "en": "Body",
+            "fr": "Corps"
+          }
+        },
+        {
+          "id": "bikini",
+          "order": 3,
+          "name": {
+            "en": "Bikini",
+            "fr": "Maillot"
+          }
+        },
+        {
+          "id": "full-body",
+          "order": 4,
+          "name": {
+            "en": "Full body",
+            "fr": "Corps complet"
+          }
+        }
+      ],
+      "count": 10
+    },
+    {
+      "id": "barber",
+      "order": 8,
+      "icon": "barber",
+      "name": {
+        "en": "Barber (Men)",
+        "fr": "Barber (Hommes)"
+      },
+      "tagline": {
+        "en": "Barber Senses",
+        "fr": "Barber Senses"
+      },
+      "subcategories": [
+        {
+          "id": "cut-beard",
+          "order": 1,
+          "name": {
+            "en": "Cut & beard",
+            "fr": "Coupe & barbe"
+          }
+        },
+        {
+          "id": "color",
+          "order": 2,
+          "name": {
+            "en": "Colour",
+            "fr": "Coloration"
+          }
+        },
+        {
+          "id": "face-care",
+          "order": 3,
+          "name": {
+            "en": "Face & care",
+            "fr": "Visage & soins"
+          }
+        },
+        {
+          "id": "hands-feet",
+          "order": 4,
+          "name": {
+            "en": "Hands & feet",
+            "fr": "Mains & pieds"
+          }
+        }
+      ],
+      "count": 19
+    }
+  ]
+}

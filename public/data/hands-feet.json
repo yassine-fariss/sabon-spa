@@ -1,0 +1,339 @@
+{
+  "category": {
+    "id": "hands-feet",
+    "order": 5,
+    "icon": "nails",
+    "name": {
+      "en": "Hands & Feet",
+      "fr": "Mains & Pieds"
+    },
+    "tagline": {
+      "en": "Manicure, pedicure, nail art",
+      "fr": "Manucure, pédicure, nail art"
+    },
+    "subcategories": [
+      {
+        "id": "manicure",
+        "order": 1,
+        "name": {
+          "en": "Manicure",
+          "fr": "Manucure"
+        }
+      },
+      {
+        "id": "pedicure",
+        "order": 2,
+        "name": {
+          "en": "Pedicure",
+          "fr": "Pédicure"
+        }
+      },
+      {
+        "id": "gel-extensions",
+        "order": 3,
+        "name": {
+          "en": "Gel & extensions",
+          "fr": "Gel & extensions"
+        }
+      },
+      {
+        "id": "nail-art",
+        "order": 4,
+        "name": {
+          "en": "Polish & nail art",
+          "fr": "Vernis & nail art"
+        }
+      },
+      {
+        "id": "care",
+        "order": 5,
+        "name": {
+          "en": "Care",
+          "fr": "Soins"
+        }
+      },
+      {
+        "id": "removal",
+        "order": 6,
+        "name": {
+          "en": "Removal",
+          "fr": "Dépose"
+        }
+      }
+    ],
+    "count": 34
+  },
+  "services": [
+    {
+      "id": "hands-feet-classic-manicure",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Classic manicure",
+      "price": 150,
+      "duration": 60,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "hands-feet-spa-manicure",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Spa manicure",
+      "price": 200,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-russian-manicure",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Russian manicure",
+      "price": 250,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-sabon-spa-manicure",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Sabon Spa manicure",
+      "price": 300,
+      "duration": 90
+    },
+    {
+      "id": "hands-feet-russian-manicure-semi-permanent",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Russian manicure, semi-permanent",
+      "price": 300,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-semi-permanent-semilac",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Semi-permanent (Semilac)",
+      "price": 200,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-semi-permanent-gel-bottle",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Semi-permanent (gel bottle)",
+      "price": 250,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-manicure-semi-permanent",
+      "category": "hands-feet",
+      "subcategory": "manicure",
+      "name": "Manicure + semi-permanent",
+      "price": 450
+    },
+    {
+      "id": "hands-feet-classic-pedicure",
+      "category": "hands-feet",
+      "subcategory": "pedicure",
+      "name": "Classic pedicure",
+      "price": 200,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-spa-pedicure",
+      "category": "hands-feet",
+      "subcategory": "pedicure",
+      "name": "Spa pedicure",
+      "price": 350,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-sabon-spa-pedicure",
+      "category": "hands-feet",
+      "subcategory": "pedicure",
+      "name": "Sabon Spa pedicure",
+      "price": 500,
+      "duration": 90
+    },
+    {
+      "id": "hands-feet-pedicure-semi-permanent",
+      "category": "hands-feet",
+      "subcategory": "pedicure",
+      "name": "Pedicure + semi-permanent",
+      "price": 500,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-pedicure-gel-bottle",
+      "category": "hands-feet",
+      "subcategory": "pedicure",
+      "name": "Pedicure gel bottle",
+      "price": 400,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-paraffin-pedicure",
+      "category": "hands-feet",
+      "subcategory": "pedicure",
+      "name": "Paraffin pedicure",
+      "price": 350,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-permanent-false-nails",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "Permanent false nails",
+      "price": 300,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-biab-gel-overlay-hands",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "BIAB gel overlay (hands)",
+      "price": 550,
+      "duration": 120
+    },
+    {
+      "id": "hands-feet-biab-gel-overlay-feet",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "BIAB gel overlay (feet)",
+      "price": 350,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-biab-normal",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "BIAB normal",
+      "price": 550
+    },
+    {
+      "id": "hands-feet-biab-extension",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "BIAB extension",
+      "price": 650,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-biab-extension-french",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "BIAB extension, French",
+      "price": 500,
+      "duration": 120
+    },
+    {
+      "id": "hands-feet-acrylic-extension",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "Acrylic extension",
+      "price": 500,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-gel-application-pose-de-gel",
+      "category": "hands-feet",
+      "subcategory": "gel-extensions",
+      "name": "Gel application (pose de gel)",
+      "price": 550,
+      "duration": 120
+    },
+    {
+      "id": "hands-feet-regular-polish-opi",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "Regular polish (OPI)",
+      "price": 80
+    },
+    {
+      "id": "hands-feet-semi-permanent-polish",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "Semi-permanent polish",
+      "price": 300
+    },
+    {
+      "id": "hands-feet-french",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "French",
+      "price": 50,
+      "duration": 10
+    },
+    {
+      "id": "hands-feet-nail-chrome",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "Nail chrome",
+      "price": 100,
+      "duration": 30
+    },
+    {
+      "id": "hands-feet-nail-ombre",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "Nail ombré",
+      "price": 100,
+      "duration": 30
+    },
+    {
+      "id": "hands-feet-nail-art",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "Nail art",
+      "price": 50,
+      "duration": 10
+    },
+    {
+      "id": "hands-feet-gel-nail-per-nail",
+      "category": "hands-feet",
+      "subcategory": "nail-art",
+      "name": "Gel nail (per nail)",
+      "price": 50,
+      "duration": 15
+    },
+    {
+      "id": "hands-feet-paraffin-treatment-hands",
+      "category": "hands-feet",
+      "subcategory": "care",
+      "name": "Paraffin treatment (hands)",
+      "price": 150,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-callus-treatment",
+      "category": "hands-feet",
+      "subcategory": "care",
+      "name": "Callus treatment",
+      "price": 150,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-relaxing-treatment",
+      "category": "hands-feet",
+      "subcategory": "care",
+      "name": "Relaxing treatment",
+      "price": 300,
+      "duration": 60
+    },
+    {
+      "id": "hands-feet-removal-biab-extension",
+      "category": "hands-feet",
+      "subcategory": "removal",
+      "name": "Removal: BIAB / extension",
+      "price": 150,
+      "duration": 15
+    },
+    {
+      "id": "hands-feet-removal-semi-permanent",
+      "category": "hands-feet",
+      "subcategory": "removal",
+      "name": "Removal: semi-permanent",
+      "price": 100,
+      "duration": 30
+    }
+  ]
+}

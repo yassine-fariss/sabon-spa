@@ -1,0 +1,142 @@
+{
+  "category": {
+    "id": "face-lashes",
+    "order": 4,
+    "icon": "face",
+    "name": {
+      "en": "Face, Lashes & Brows",
+      "fr": "Visage, Cils & Sourcils"
+    },
+    "tagline": {
+      "en": "Glow and definition",
+      "fr": "Éclat et définition"
+    },
+    "subcategories": [
+      {
+        "id": "facials",
+        "order": 1,
+        "name": {
+          "en": "Facials",
+          "fr": "Soins du visage"
+        }
+      },
+      {
+        "id": "lashes",
+        "order": 2,
+        "name": {
+          "en": "Lashes",
+          "fr": "Cils"
+        }
+      },
+      {
+        "id": "brows",
+        "order": 3,
+        "name": {
+          "en": "Brows",
+          "fr": "Sourcils"
+        }
+      }
+    ],
+    "count": 9
+  },
+  "services": [
+    {
+      "id": "face-lashes-soin-hydra-facial",
+      "category": "face-lashes",
+      "subcategory": "facials",
+      "name": "Soin Hydra Facial",
+      "price": 700,
+      "duration": 90
+    },
+    {
+      "id": "face-lashes-hydra-facial-five-senses",
+      "category": "face-lashes",
+      "subcategory": "facials",
+      "name": "Hydra Facial Five Senses",
+      "price": 500,
+      "duration": 90
+    },
+    {
+      "id": "face-lashes-men-s-facial",
+      "category": "face-lashes",
+      "subcategory": "facials",
+      "name": "Men's facial",
+      "price": 300,
+      "duration": 30,
+      "audience": [
+        "men"
+      ]
+    },
+    {
+      "id": "face-lashes-eyelash-extensions",
+      "category": "face-lashes",
+      "subcategory": "lashes",
+      "name": "Eyelash extensions",
+      "variants": [
+        {
+          "label": "Classic",
+          "price": 250,
+          "duration": 30
+        },
+        {
+          "label": "Russian volume",
+          "price": 350,
+          "duration": 30
+        },
+        {
+          "label": "Volume 2D",
+          "price": 450,
+          "duration": 30
+        },
+        {
+          "label": "Volume 3D",
+          "price": 550,
+          "duration": 60
+        }
+      ],
+      "price": 250,
+      "priceFrom": true,
+      "duration": 30
+    },
+    {
+      "id": "face-lashes-lash-lift-rehaussement-de-cils",
+      "category": "face-lashes",
+      "subcategory": "lashes",
+      "name": "Lash lift (rehaussement de cils)",
+      "price": 200,
+      "duration": 60
+    },
+    {
+      "id": "face-lashes-lash-tint",
+      "category": "face-lashes",
+      "subcategory": "lashes",
+      "name": "Lash tint",
+      "price": 100,
+      "duration": 60
+    },
+    {
+      "id": "face-lashes-brow-lift-tint",
+      "category": "face-lashes",
+      "subcategory": "brows",
+      "name": "Brow lift + tint",
+      "price": 250,
+      "duration": 60
+    },
+    {
+      "id": "face-lashes-brow-design-henna",
+      "category": "face-lashes",
+      "subcategory": "brows",
+      "name": "Brow design (henna)",
+      "price": 150,
+      "duration": 45
+    },
+    {
+      "id": "face-lashes-brow-threading",
+      "category": "face-lashes",
+      "subcategory": "brows",
+      "name": "Brow threading",
+      "price": 80,
+      "duration": 30
+    }
+  ]
+}

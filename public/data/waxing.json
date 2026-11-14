@@ -1,0 +1,206 @@
+{
+  "category": {
+    "id": "waxing",
+    "order": 7,
+    "icon": "waxing",
+    "name": {
+      "en": "Waxing",
+      "fr": "Épilation"
+    },
+    "tagline": {
+      "en": "Smooth and precise",
+      "fr": "Lisse et précise"
+    },
+    "subcategories": [
+      {
+        "id": "face",
+        "order": 1,
+        "name": {
+          "en": "Face",
+          "fr": "Visage"
+        }
+      },
+      {
+        "id": "body",
+        "order": 2,
+        "name": {
+          "en": "Body",
+          "fr": "Corps"
+        }
+      },
+      {
+        "id": "bikini",
+        "order": 3,
+        "name": {
+          "en": "Bikini",
+          "fr": "Maillot"
+        }
+      },
+      {
+        "id": "full-body",
+        "order": 4,
+        "name": {
+          "en": "Full body",
+          "fr": "Corps complet"
+        }
+      }
+    ],
+    "count": 10
+  },
+  "services": [
+    {
+      "id": "waxing-eyebrows-waxing",
+      "category": "waxing",
+      "subcategory": "face",
+      "name": "Eyebrows (waxing)",
+      "price": 70,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-upper-lip",
+      "category": "waxing",
+      "subcategory": "face",
+      "name": "Upper lip",
+      "price": 50,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-chin",
+      "category": "waxing",
+      "subcategory": "face",
+      "name": "Chin",
+      "price": 50,
+      "duration": 10,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-full-face",
+      "category": "waxing",
+      "subcategory": "face",
+      "name": "Full face",
+      "price": 250,
+      "duration": 20,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-nose-and-ears",
+      "category": "waxing",
+      "subcategory": "face",
+      "name": "Nose and ears",
+      "price": 70,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-underarms",
+      "category": "waxing",
+      "subcategory": "body",
+      "name": "Underarms",
+      "price": 80,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-arms",
+      "category": "waxing",
+      "subcategory": "body",
+      "name": "Arms",
+      "variants": [
+        {
+          "label": "Half arms",
+          "price": 100,
+          "duration": 15
+        },
+        {
+          "label": "Full arms",
+          "price": 150,
+          "duration": 20
+        }
+      ],
+      "price": 100,
+      "priceFrom": true,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-legs",
+      "category": "waxing",
+      "subcategory": "body",
+      "name": "Legs",
+      "variants": [
+        {
+          "label": "Half legs",
+          "price": 100,
+          "duration": 15
+        },
+        {
+          "label": "Full legs",
+          "price": 180,
+          "duration": 30
+        }
+      ],
+      "price": 100,
+      "priceFrom": true,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-bikini",
+      "category": "waxing",
+      "subcategory": "bikini",
+      "name": "Bikini",
+      "variants": [
+        {
+          "label": "Classic",
+          "price": 150,
+          "duration": 20
+        },
+        {
+          "label": "Brazilian cut (échancré)",
+          "price": 200,
+          "duration": 15
+        },
+        {
+          "label": "Full (intégral)",
+          "price": 200,
+          "duration": 20
+        }
+      ],
+      "price": 150,
+      "priceFrom": true,
+      "duration": 15,
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "id": "waxing-full-body-waxing",
+      "category": "waxing",
+      "subcategory": "full-body",
+      "name": "Full body waxing",
+      "price": 700,
+      "duration": 60,
+      "audience": [
+        "women"
+      ]
+    }
+  ]
+}
