@@ -67,10 +67,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange }) => {
 
   return (
     <header
-      className={`left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'fixed top-0 bg-navy/95 backdrop-blur-md border-b border-champagne/30 py-3 shadow-luxury text-white'
-          : 'absolute top-full bg-navy/95 sm:bg-navy/90 backdrop-blur-md border-b border-champagne/25 py-4 text-white'
+          ? 'bg-navy/95 backdrop-blur-md border-b border-champagne/30 py-3 shadow-luxury text-white'
+          : 'bg-navy/90 backdrop-blur-md border-b border-champagne/20 py-4 text-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

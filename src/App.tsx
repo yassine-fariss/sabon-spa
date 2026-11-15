@@ -1,5 +1,4 @@
 import React from 'react';
-import { TrustBar } from './components/layout/TrustBar';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/hero/HeroSection';
@@ -29,14 +28,11 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-ivory text-navy font-sans selection:bg-brand selection:text-white">
-      {/* Top Header Area: Slim Trust Bar (scrolls away) + Floating Navbar */}
-      <div className="relative z-40">
-        <TrustBar lang={lang} />
-        <Navbar
-          lang={lang}
-          onLanguageChange={switchLang}
-        />
-      </div>
+      {/* Top Header Navbar */}
+      <Navbar
+        lang={lang}
+        onLanguageChange={switchLang}
+      />
 
       <main>
         {/* 1. Cinematic Video Hero */}

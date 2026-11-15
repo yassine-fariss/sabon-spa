@@ -9,11 +9,21 @@ interface HeroSectionProps {
   lang: Language;
 }
 
+const AVATARS = [
+  'images/avatars/avatar-1.jpg',
+  'images/avatars/avatar-2.jpg',
+  'images/avatars/avatar-3.jpg',
+  'images/avatars/avatar-4.jpg',
+  'images/avatars/avatar-5.jpg',
+];
+
 export const HeroSection: React.FC<HeroSectionProps> = ({
   lang,
 }) => {
+  const satisfiedText = lang === 'fr' ? '2K+ clients satisfaits' : '2K+ Satisfied Customers';
+
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-28 pb-10">
+    <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-36 sm:pt-40 pb-12">
       {/* Background Layer: Authentic Hammam Ambient Video & High-Res Photography Fallback */}
       <div className="absolute inset-0 z-0">
         <video
@@ -35,8 +45,60 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Main Hero Content Area - Minimalist Clean Layout */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-12">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8">
         <div className="max-w-2xl lg:max-w-3xl">
+          {/* Trust Row: 5 Avatars + 4.9 Stars + 2K+ Clients Satisfaits (No background, clean & uncrowded) */}
+          <div
+            className="mb-6 sm:mb-8 inline-flex flex-wrap items-center gap-x-3 sm:gap-x-3.5 gap-y-2 select-none animate-fade-in-up"
+            style={{ animationDelay: '150ms' }}
+          >
+            {/* 1. Avatars: 5 overlapping round photos */}
+            <div className="flex items-center -space-x-2.5 shrink-0" aria-hidden="true">
+              {AVATARS.map((path, idx) => (
+                <img
+                  key={idx}
+                  src={getAssetUrl(path)}
+                  alt=""
+                  className="w-7 h-7 min-[480px]:w-8 min-[480px]:h-8 rounded-full border-2 border-navy-900 object-cover shrink-0 shadow-md"
+                  loading="eager"
+                  width={32}
+                  height={32}
+                />
+              ))}
+            </div>
+
+            {/* 2. Rating: 5 gold stars + 4.9 */}
+            <div className="flex items-center gap-1 shrink-0">
+              <div className="flex items-center text-gold" aria-label="Note de 4.9 sur 5 étoiles">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className="w-3.5 h-3.5 fill-current drop-shadow-xs"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="font-semibold text-white text-xs sm:text-sm ml-0.5 drop-shadow-xs">
+                4.9
+              </span>
+            </div>
+
+            {/* Divider */}
+            <span
+              className="inline-block w-px h-3.5 bg-white/30 shrink-0"
+              aria-hidden="true"
+            />
+
+            {/* 3. Customer Count + Smiley Emoji */}
+            <div className="flex items-center gap-1.5 shrink-0 font-medium text-white/95 text-xs sm:text-sm tracking-wide drop-shadow-xs">
+              <span>{satisfiedText}</span>
+              <span role="img" aria-label="Visage souriant">😊</span>
+            </div>
+          </div>
+
           {/* Main Headline */}
           <h1
             className="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.08] tracking-tight text-glow-aqua animate-fade-in-up"
@@ -91,42 +153,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <span>{lang === 'fr' ? 'Découvrir nos services' : 'Explore Our Services'}</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition duration-200" />
             </a>
-          </div>
-
-          {/* Trust points strip */}
-          <div
-            className="mt-12 pt-8 border-t border-champagne/20 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-mist/80 animate-fade-in-up"
-            style={{ animationDelay: '700ms' }}
-          >
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-champagne/15 border border-champagne/30 flex items-center justify-center text-champagne">
-                <Shield size={14} />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-semibold text-white">100% Séparé</span>
-                <span className="text-[11px] text-mist/60">{lang === 'fr' ? 'Hommes & Femmes' : 'Men & Women'}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center text-gold">
-                <Star size={14} fill="currentColor" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-semibold text-white">5.0 ★ Vérifié</span>
-                <span className="text-[11px] text-mist/60">Google & Tripadvisor</span>
-              </div>
-            </div>
-
-            <div className="col-span-2 sm:col-span-1 flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-brand/30 border border-brand/50 flex items-center justify-center text-champagne-light">
-                <Sparkles size={14} />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-semibold text-white">10h00 – 23h00</span>
-                <span className="text-[11px] text-mist/60">{lang === 'fr' ? 'Ouvert 7 jours / 7' : 'Open 7 days a week'}</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
