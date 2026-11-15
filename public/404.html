@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sabon Spa Tanger</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // Encodes path and search into query parameters so index.html can restore the clean route
+      var pathSegmentsToKeep = 1; // /sabon-spa/
+      var l = window.location;
+      var cleanPath = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/');
+      var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+        encodeURIComponent(cleanPath) +
+        (l.search ? '&q=' + encodeURIComponent(l.search.slice(1)) : '') +
+        l.hash;
+      l.replace(redirectUrl);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

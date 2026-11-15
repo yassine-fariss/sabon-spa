@@ -9,11 +9,19 @@ import { SectionTransition } from '../ui/SectionTransition';
 
 interface FooterProps {
   lang: Language;
+  onNavigateSection?: (href: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ lang }) => {
+export const Footer: React.FC<FooterProps> = ({ lang, onNavigateSection }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (onNavigateSection) {
+      e.preventDefault();
+      onNavigateSection(href);
+    }
   };
 
   const mapEmbedUrl = "https://maps.google.com/maps?q=Sabon%20Spa,%20R%C3%A9sidence%20Iris,%20Route%20de%20Malabata,%20Tanger&t=&z=15&ie=UTF8&iwloc=&output=embed";
@@ -100,19 +108,19 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
               </span>
               <ul className="space-y-2 text-xs text-mist/75 font-light">
                 <li>
-                  <a href="#soins" className="hover:text-champagne-light transition">{lang === 'fr' ? 'Carte des Soins' : 'Treatments'}</a>
+                  <a href="#soins" onClick={(e) => handleLinkClick(e, '#soins')} className="hover:text-champagne-light transition">{lang === 'fr' ? 'Carte des Soins' : 'Treatments'}</a>
                 </li>
                 <li>
-                  <a href="#packs" className="hover:text-champagne-light transition">{lang === 'fr' ? 'Packs & Forfaits' : 'Packages & Bundles'}</a>
+                  <a href="#packs" onClick={(e) => handleLinkClick(e, '#packs')} className="hover:text-champagne-light transition">{lang === 'fr' ? 'Packs & Forfaits' : 'Packages & Bundles'}</a>
                 </li>
                 <li>
-                  <a href="#sanctuaire" className="hover:text-champagne-light transition">{lang === 'fr' ? 'Galerie du Sanctuaire' : 'Sanctuary Gallery'}</a>
+                  <a href="#sanctuaire" onClick={(e) => handleLinkClick(e, '#sanctuaire')} className="hover:text-champagne-light transition">{lang === 'fr' ? 'Galerie du Sanctuaire' : 'Sanctuary Gallery'}</a>
                 </li>
                 <li>
-                  <a href="#avis" className="hover:text-champagne-light transition">{lang === 'fr' ? 'Avis Clients Google (5.0 ★)' : 'Google Reviews (5.0 ★)'}</a>
+                  <a href="#avis" onClick={(e) => handleLinkClick(e, '#avis')} className="hover:text-champagne-light transition">{lang === 'fr' ? 'Avis Clients Google (5.0 ★)' : 'Google Reviews (5.0 ★)'}</a>
                 </li>
                 <li>
-                  <a href="#faq" className="hover:text-champagne-light transition">{lang === 'fr' ? 'Questions Fréquentes' : 'FAQ'}</a>
+                  <a href="#faq" onClick={(e) => handleLinkClick(e, '#faq')} className="hover:text-champagne-light transition">{lang === 'fr' ? 'Questions Fréquentes' : 'FAQ'}</a>
                 </li>
               </ul>
             </div>

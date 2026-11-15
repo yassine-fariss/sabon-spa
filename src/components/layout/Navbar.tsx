@@ -8,9 +8,14 @@ import { getWhatsAppUrl } from '../../utils/whatsapp';
 interface NavbarProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
+  onNavigateSection?: (href: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  lang,
+  onLanguageChange,
+  onNavigateSection,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
@@ -58,6 +63,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange }) => {
   ) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+    if (onNavigateSection) {
+      onNavigateSection(href);
+      return;
+    }
     const id = href.replace('#', '');
     const el = document.getElementById(id);
     if (el) {
@@ -78,7 +87,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange }) => {
         {/* ── Brand Logo ── */}
         <a
           href="#"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigateSection) {
+              onNavigateSection('#');
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           <div className="relative w-10 h-10 rounded-full overflow-hidden border border-champagne/40 shadow-sm transition group-hover:scale-105">

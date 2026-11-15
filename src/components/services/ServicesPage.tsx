@@ -1,35 +1,27 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import type { Category, IndexData, SearchEntry } from '../../lib/data';
-import { fetchIndex, fetchSearchIndex } from '../../lib/data';
+import type { SearchEntry } from '../../lib/data';
+import { fetchSearchIndex } from '../../lib/data';
 import type { Lang } from '../../i18n';
 import { t } from '../../i18n';
 import { stripAccents, formatPrice } from '../../lib/format';
 import { getWhatsAppUrl } from '../../utils/whatsapp';
-import { CategoryGrid } from './CategoryGrid';
-import { CategoryPage } from './CategoryPage';
+import { CategoryDirectoryList } from './CategoryDirectoryList';
 import { SearchBox } from './SearchBox';
 import { Reveal } from '../ui/Reveal';
 import { Sparkles, MessageSquare } from 'lucide-react';
 
 interface ServicesPageProps {
   lang: Lang;
+  onSelectCategory: (categorySlug: string) => void;
 }
 
-export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
-  const [indexData, setIndexData] = useState<IndexData | null>(null);
+export const ServicesPage: React.FC<ServicesPageProps> = ({
+  lang,
+  onSelectCategory,
+}) => {
   const [searchEntries, setSearchEntries] = useState<SearchEntry[] | null>(null);
-  const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
-
-  // Search state
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResultLimit, setSearchResultLimit] = useState(30);
-
-  // Load index data on mount
-  useEffect(() => {
-    fetchIndex()
-      .then((data) => setIndexData(data))
-      .catch((err) => console.error('Failed to load services index:', err));
-  }, []);
 
   // Lazy load search index on input focus
   const handleSearchFocus = () => {
@@ -38,18 +30,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
         .then((data) => setSearchEntries(data))
         .catch((err) => console.error('Failed to load search index:', err));
     }
-  };
-
-  const handleSelectCategory = (categoryId: string) => {
-    setActiveCategoryId(categoryId);
-    const el = document.getElementById('soins');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleBackToGrid = () => {
-    setActiveCategoryId(null);
   };
 
   const isSearching = Boolean(searchQuery.trim().length > 0);
@@ -64,11 +44,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
     });
   }, [searchEntries, searchQuery]);
 
-  const activeCategory = useMemo(() => {
-    if (!indexData || !activeCategoryId) return null;
-    return indexData.categories.find((c) => c.id === activeCategoryId) || null;
-  }, [indexData, activeCategoryId]);
-
   return (
     <section id="soins" className="py-28 sm:py-32 bg-gradient-to-b from-sand via-ivory to-sand/40 text-navy relative overflow-hidden transition-colors">
       {/* Decorative subtle ambient lights */}
@@ -77,40 +52,40 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        {!activeCategory && (
-          <Reveal variant="fade-up" duration={700}>
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-brand font-medium">
-                <Sparkles size={13} />
-                <span>{lang === 'fr' ? 'Expériences & Bien-être' : 'Wellness & Sanctuary'}</span>
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-serif text-navy font-light tracking-tight">
-                {lang === 'fr' ? (
-                  <>
-                    La Carte des <span className="italic text-brand">Soins</span>
-                  </>
-                ) : (
-                  <>
-                    Treatment <span className="italic text-brand">Menu</span>
-                  </>
-                )}
-              </h2>
-              <p className="text-sm sm:text-base text-charcoal-muted font-light leading-relaxed max-w-2xl mx-auto">
-                {t(lang, 'services.subtitle')}
-              </p>
-
-              {/* Search Box */}
-              <div className="pt-4">
-                <SearchBox
-                  value={searchQuery}
-                  onChange={setSearchQuery}
-                  onFocus={handleSearchFocus}
-                  lang={lang}
-                />
-              </div>
+        <Reveal variant="fade-up" duration={700}>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-brand font-medium">
+              <Sparkles size={13} />
+              <span>{lang === 'fr' ? 'Expériences & Bien-être' : 'Wellness & Sanctuary'}</span>
             </div>
-          </Reveal>
-        )}
+            <h2 className="text-3xl sm:text-5xl font-serif text-navy font-light tracking-tight">
+              {lang === 'fr' ? (
+                <>
+                  La Carte des <span className="italic text-brand">Soins</span>
+                </>
+              ) : (
+                <>
+                  Treatment <span className="italic text-brand">Menu</span>
+                </>
+              )}
+            </h2>
+            <p className="text-sm sm:text-base text-charcoal-muted font-light leading-relaxed max-w-2xl mx-auto">
+              {lang === 'fr'
+                ? 'Explorez notre répertoire de rituels thermaux, massages et soins d’exception. Cliquez sur une catégorie pour découvrir la carte complète et réserver votre créneau.'
+                : 'Explore our directory of thermal rituals, bespoke bodywork, and luxury care. Select any category to view its dedicated treatment menu and reserve your ritual.'}
+            </p>
+
+            {/* Global Search Box */}
+            <div className="pt-4">
+              <SearchBox
+                value={searchQuery}
+                onChange={setSearchQuery}
+                onFocus={handleSearchFocus}
+                lang={lang}
+              />
+            </div>
+          </div>
+        </Reveal>
 
         {/* Search Results Mode */}
         {isSearching ? (
@@ -122,6 +97,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
                   : `${filteredSearchResults.length} soin(s) trouvé(s) pour "${searchQuery}"`}
               </span>
               <button
+                type="button"
                 onClick={() => setSearchQuery('')}
                 className="text-brand hover:underline font-medium"
               >
@@ -175,6 +151,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
             {filteredSearchResults.length > searchResultLimit && (
               <div className="text-center pt-2">
                 <button
+                  type="button"
                   onClick={() => setSearchResultLimit((prev) => prev + 30)}
                   className="px-6 py-2.5 rounded-full bg-white border border-champagne/50 text-xs uppercase tracking-[0.14em] font-medium text-navy hover:text-brand shadow-xs hover:shadow-sm transition-all"
                 >
@@ -183,22 +160,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang }) => {
               </div>
             )}
           </div>
-        ) : activeCategory ? (
-          /* Category Detail View */
-          <CategoryPage
-            category={activeCategory}
-            lang={lang}
-            onBack={handleBackToGrid}
-          />
         ) : (
-          /* Category Grid View */
-          indexData && (
-            <CategoryGrid
-              categories={indexData.categories}
-              lang={lang}
-              onSelectCategory={handleSelectCategory}
-            />
-          )
+          /* Main Horizontal Directory List (Inspired by Reference Screenshot 1) */
+          <CategoryDirectoryList
+            lang={lang}
+            onSelectCategory={onSelectCategory}
+          />
         )}
       </div>
     </section>

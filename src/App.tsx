@@ -6,6 +6,7 @@ import { ProofStrip } from './components/sections/ProofStrip';
 import { Introduction } from './components/sections/Introduction';
 import { FeaturedPacks } from './components/sections/FeaturedPacks';
 import { ServicesPage } from './components/services/ServicesPage';
+import { CategoryDetailPage } from './components/services/CategoryDetailPage';
 import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
 import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
@@ -15,15 +16,23 @@ import { SectionTransition } from './components/ui/SectionTransition';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
 import { useLang } from './hooks/useLang';
+import { useSpaRouter } from './hooks/useSpaRouter';
 
 export const App: React.FC = () => {
   const { lang, switchLang } = useLang();
+  const { activeCategorySlug, navigateToCategory, navigateToHome } = useSpaRouter();
+
+  const handleNavSection = (href: string) => {
+    if (href === '#' || href === '#presentation') {
+      navigateToHome(href === '#' ? undefined : 'presentation');
+    } else {
+      const sectionId = href.replace('#', '');
+      navigateToHome(sectionId);
+    }
+  };
 
   const handleScrollToServices = () => {
-    const el = document.getElementById('soins');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigateToHome('soins');
   };
 
   return (
@@ -32,46 +41,64 @@ export const App: React.FC = () => {
       <Navbar
         lang={lang}
         onLanguageChange={switchLang}
+        onNavigateSection={handleNavSection}
       />
 
-      <main>
-        {/* 1. Cinematic Video Hero */}
-        <HeroSection lang={lang} />
+      {activeCategorySlug ? (
+        /* Dedicated Category Detail Page (Inspired by Reference Screenshot 2) */
+        <main>
+          <CategoryDetailPage
+            categorySlug={activeCategorySlug}
+            lang={lang}
+            onBackToDirectory={() => navigateToHome('soins')}
+            onSelectCategory={navigateToCategory}
+            onNavigateHome={() => navigateToHome()}
+          />
+        </main>
+      ) : (
+        /* Main Homepage with Horizontal Directory List (Inspired by Reference Screenshot 1) */
+        <main>
+          {/* 1. Cinematic Video Hero */}
+          <HeroSection lang={lang} />
 
-        {/* 2. Proof Strip */}
-        <ProofStrip lang={lang} />
+          {/* 2. Proof Strip */}
+          <ProofStrip lang={lang} />
 
-        {/* 3. Brand Story & Architecture */}
-        <Introduction lang={lang} />
+          {/* 3. Brand Story & Architecture */}
+          <Introduction lang={lang} />
 
-        <SectionTransition variant="accent-line" showIcon className="-my-2" />
+          <SectionTransition variant="accent-line" showIcon className="-my-2" />
 
-        {/* 4. Signature Featured Packs (Bronze, Silver, Golden, Royal) */}
-        <FeaturedPacks lang={lang} onExploreAllPacks={handleScrollToServices} />
+          {/* 4. Signature Featured Packs */}
+          <FeaturedPacks lang={lang} onExploreAllPacks={handleScrollToServices} />
 
-        {/* 5. Complete Data-Driven Services & Category Catalog */}
-        <ServicesPage lang={lang} />
+          {/* 5. Complete Services Directory Horizontal List */}
+          <ServicesPage
+            lang={lang}
+            onSelectCategory={navigateToCategory}
+          />
 
-        {/* 6. Immersive Caustic Break */}
-        <ImmersiveBreak lang={lang} />
+          {/* 6. Immersive Caustic Break */}
+          <ImmersiveBreak lang={lang} />
 
-        {/* 7. Authentic Photography Gallery & Lightbox */}
-        <GallerySection lang={lang} />
+          {/* 7. Authentic Photography Gallery & Lightbox */}
+          <GallerySection lang={lang} />
 
-        {/* 8. Why Sabon Spa */}
-        <WhySabon lang={lang} />
+          {/* 8. Why Sabon Spa */}
+          <WhySabon lang={lang} />
 
-        <SectionTransition variant="accent-line" showIcon className="-my-2" />
+          <SectionTransition variant="accent-line" showIcon className="-my-2" />
 
-        {/* 9. Verified Google Reviews & Social Proof */}
-        <ReviewsSection lang={lang} />
+          {/* 9. Verified Google Reviews & Social Proof */}
+          <ReviewsSection lang={lang} />
 
-        {/* 10. FAQ Section */}
-        <FAQSection lang={lang} />
-      </main>
+          {/* 10. FAQ Section */}
+          <FAQSection lang={lang} />
+        </main>
+      )}
 
       {/* Footer with Interactive Google Map & Hours */}
-      <Footer lang={lang} />
+      <Footer lang={lang} onNavigateSection={handleNavSection} />
 
       {/* Floating Instant WhatsApp Button */}
       <a
