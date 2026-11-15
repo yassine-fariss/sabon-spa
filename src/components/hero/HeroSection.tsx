@@ -46,53 +46,56 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
         className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8 sm:py-12"
       >
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Trust Row: 5 Avatars + 4.9 Stars + 2K+ Clients Satisfaits */}
+          {/* Trust Row: 5 Avatars + 4.9 Stars + 2K+ Clients Satisfaits (Transparent & Mobile Responsive) */}
           <div
-            className="mb-8 sm:mb-10 inline-flex flex-wrap items-center gap-x-3.5 sm:gap-x-4 gap-y-2 select-none animate-fade-in-up px-4 py-2 rounded-full bg-navy-950/50 backdrop-blur-md border border-champagne/20 shadow-sm"
+            className="mb-8 sm:mb-10 flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-1.5 select-none animate-fade-in-up bg-transparent p-0"
             style={{ animationDelay: '150ms' }}
           >
-            {/* 1. Avatars: 5 overlapping round photos */}
-            <div className="flex items-center -space-x-2.5 shrink-0" aria-hidden="true">
-              {AVATARS.map((path, idx) => (
-                <img
-                  key={idx}
-                  src={getAssetUrl(path)}
-                  alt=""
-                  className="w-7 h-7 min-[480px]:w-8 min-[480px]:h-8 rounded-full border-2 border-navy-900 object-cover shrink-0 shadow-md"
-                  loading="eager"
-                  width={32}
-                  height={32}
-                />
-              ))}
-            </div>
-
-            {/* 2. Rating: 5 gold stars + 4.9 */}
-            <div className="flex items-center gap-1 shrink-0">
-              <div className="flex items-center text-gold" aria-label="Note de 4.9 sur 5 étoiles">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-3.5 h-3.5 fill-current drop-shadow-xs"
-                    viewBox="0 0 20 20"
-                    aria-hidden="true"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+            {/* 1. Avatars + Rating Group */}
+            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+              <div className="flex items-center -space-x-2 sm:-space-x-2.5 shrink-0" aria-hidden="true">
+                {AVATARS.map((path, idx) => (
+                  <img
+                    key={idx}
+                    src={getAssetUrl(path)}
+                    alt=""
+                    className="w-6 h-6 min-[420px]:w-7 min-[420px]:h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-950 object-cover shrink-0 shadow-sm"
+                    loading="eager"
+                    width={32}
+                    height={32}
+                  />
                 ))}
               </div>
-              <span className="font-semibold text-white text-xs sm:text-sm ml-0.5 drop-shadow-xs">
-                4.9
-              </span>
+
+              {/* 5 gold stars + 4.9 */}
+              <div className="flex items-center gap-1 shrink-0">
+                <div className="flex items-center text-gold" aria-label="Note de 4.9 sur 5 étoiles">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-3 h-3 min-[420px]:w-3.5 min-[420px]:h-3.5 fill-current drop-shadow-xs"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <span className="font-semibold text-white text-xs sm:text-sm ml-0.5 drop-shadow-xs">
+                  4.9
+                </span>
+              </div>
             </div>
 
-            {/* Divider */}
+            {/* Divider on screens with sufficient space */}
             <span
-              className="inline-block w-px h-3.5 bg-white/30 shrink-0"
+              className="hidden sm:inline-block w-px h-3.5 bg-white/30 shrink-0"
               aria-hidden="true"
             />
 
-            {/* 3. Customer Count + Smiley Emoji */}
+            {/* 2. Customer Count + Smiley Emoji */}
             <div className="flex items-center gap-1.5 shrink-0 font-medium text-white/95 text-xs sm:text-sm tracking-wide drop-shadow-xs">
+              <span className="text-white/40 sm:hidden" aria-hidden="true">•</span>
               <span>{satisfiedText}</span>
               <span role="img" aria-label="Visage souriant">😊</span>
             </div>
