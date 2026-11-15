@@ -47,7 +47,7 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
   const whatsappUrl = getWhatsAppUrl(reservationLabel, lang);
 
   return (
-    <div className="border-b border-aqua/10 last:border-b-0 transition-colors bg-navy-900/40 hover:bg-navy-900/70">
+    <div className="border-b border-sand/50 last:border-b-0 transition-colors bg-white hover:bg-sand/20">
       <div className="flex items-center justify-between min-h-[58px] px-4 sm:px-6 py-3.5 gap-3">
         {/* Clickable area for title + duration */}
         <div
@@ -57,7 +57,7 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
           }`}
         >
           <div className="flex items-center gap-2">
-            <h4 className="text-sm sm:text-base font-medium text-white group-hover:text-aqua transition-colors">
+            <h4 className="text-sm sm:text-base font-medium text-navy group-hover:text-brand transition-colors">
               {service.name}
             </h4>
 
@@ -66,7 +66,7 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
                 {service.audience.map((aud) => (
                   <span
                     key={aud}
-                    className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-aqua/10 text-aqua border border-aqua/20 font-medium"
+                    className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-sand/70 text-navy border border-champagne/40 font-medium"
                   >
                     {aud === 'kids' ? 'Enfant' : aud === 'men' ? 'Homme' : aud === 'pregnancy' ? 'Maternité' : 'Femme'}
                   </span>
@@ -77,14 +77,14 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
 
           <div className="flex items-center gap-3 sm:gap-4 self-start sm:self-auto">
             {service.duration && (
-              <span className="text-xs text-mist/60 flex items-center gap-1">
-                <Clock size={12} className="text-aqua/70" />
+              <span className="text-xs text-charcoal-muted flex items-center gap-1">
+                <Clock size={12} className="text-brand/70" />
                 {formatDuration(service.duration)}
               </span>
             )}
 
             {displayPrice && (
-              <span className="text-sm sm:text-base font-serif font-medium text-gold tracking-tight whitespace-nowrap">
+              <span className="text-sm sm:text-base font-serif font-semibold text-gold-dark tracking-tight whitespace-nowrap">
                 {displayPrice}
               </span>
             )}
@@ -97,7 +97,7 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 text-xs uppercase tracking-[0.14em] font-medium rounded-lg bg-brand hover:bg-brand-600 border border-aqua/40 text-white shadow-glow-aqua hover:shadow transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand/40 whitespace-nowrap"
+            className="px-4 py-1.5 text-xs uppercase tracking-[0.14em] font-medium rounded-lg bg-brand hover:bg-brand-600 text-white shadow-xs hover:shadow transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand/40 whitespace-nowrap"
           >
             {t(lang, 'cta.book')}
           </a>
@@ -107,11 +107,11 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
               onClick={toggle}
               aria-expanded={isExpanded}
               aria-label={isExpanded ? t(lang, 'cta.collapse') : t(lang, 'cta.expand')}
-              className="p-1.5 text-aqua/60 hover:text-aqua hover:bg-navy-800 rounded-md transition-colors"
+              className="p-1.5 text-charcoal-muted hover:text-navy hover:bg-sand/40 rounded-md transition-colors"
             >
               <ChevronDown
                 size={16}
-                className={`transition-transform duration-200 ${isExpanded ? 'rotate-180 text-aqua' : ''}`}
+                className={`transition-transform duration-200 ${isExpanded ? 'rotate-180 text-brand' : ''}`}
               />
             </button>
           )}
@@ -120,22 +120,22 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
 
       {/* Expanded details */}
       {isExpanded && hasDetails && (
-        <div className="px-4 sm:px-6 pb-4 pt-2 bg-navy-950/60 text-xs sm:text-sm text-mist/80 space-y-3 animate-fade-in border-t border-aqua/10">
+        <div className="px-4 sm:px-6 pb-4 pt-2 bg-sand/15 text-xs sm:text-sm text-charcoal space-y-3 animate-fade-in border-t border-sand/50">
           {service.description && (
-            <p className="leading-relaxed text-mist/75 italic font-light">
+            <p className="leading-relaxed text-charcoal-muted italic font-light">
               {service.description}
             </p>
           )}
 
           {service.includes && service.includes.length > 0 && (
             <div>
-              <p className="font-semibold text-aqua/90 mb-1.5 text-[11px] uppercase tracking-[0.16em]">
+              <p className="font-semibold text-brand mb-1.5 text-[11px] uppercase tracking-[0.16em]">
                 {t(lang, 'services.includes')}
               </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-mist/80">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-charcoal">
                 {service.includes.map((inc, i) => (
                   <li key={i} className="flex items-start gap-1.5">
-                    <Check size={14} className="text-aqua shrink-0 mt-0.5" />
+                    <Check size={14} className="text-brand shrink-0 mt-0.5" />
                     <span className="font-light">{inc}</span>
                   </li>
                 ))}
@@ -145,7 +145,7 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
 
           {service.variants && service.variants.length > 0 && (
             <div>
-              <p className="font-semibold text-aqua/90 mb-2 text-[11px] uppercase tracking-[0.16em]">
+              <p className="font-semibold text-brand mb-2 text-[11px] uppercase tracking-[0.16em]">
                 {t(lang, 'services.variants')}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -160,12 +160,12 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({
                       href={varBookingUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy-900/90 border border-aqua/25 hover:border-aqua/50 text-xs font-medium text-white hover:text-aqua transition-all shadow-glow-aqua"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-champagne/40 hover:border-brand text-xs font-medium text-navy hover:text-brand transition-all shadow-xs"
                     >
                       <span className="font-light">{v.label}</span>
-                      {v.duration && <span className="text-mist/50">· {formatDuration(v.duration)}</span>}
-                      <span className="font-serif font-medium text-gold">{formatPrice(v.price)}</span>
-                      <ArrowRight size={12} className="text-aqua" />
+                      {v.duration && <span className="text-charcoal-muted">· {formatDuration(v.duration)}</span>}
+                      <span className="font-serif font-semibold text-gold-dark">{formatPrice(v.price)}</span>
+                      <ArrowRight size={12} className="text-brand" />
                     </a>
                   );
                 })}

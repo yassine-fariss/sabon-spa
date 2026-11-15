@@ -16,7 +16,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ lang }) => {
   };
 
   return (
-    <section id="faq" className="py-28 bg-mist text-navy relative overflow-hidden">
+    <section id="faq" className="py-28 bg-gradient-to-b from-sand via-ivory to-sand/40 text-navy relative overflow-hidden transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <Reveal variant="fade-up" duration={700}>
@@ -51,25 +51,26 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ lang }) => {
                 duration={650}
               >
                 <div
-                  className="bg-white rounded-2xl border border-navy/10 overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                  className="bg-white rounded-2xl border border-champagne/35 overflow-hidden shadow-xs hover:shadow-md transition duration-300"
                 >
                   <button
                     onClick={() => toggle(idx)}
                     className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-base sm:text-lg font-serif font-medium text-navy">
+                    <span className="font-serif text-base sm:text-lg font-medium text-navy">
                       {faq.question[lang]}
                     </span>
-                    <div className={`w-8 h-8 rounded-full bg-mist flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-brand text-white' : 'text-navy/70'
-                    }`}>
-                      <ChevronDown size={16} />
-                    </div>
+                    <ChevronDown
+                      size={18}
+                      className={`text-brand transition-transform duration-300 shrink-0 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                    />
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-xs sm:text-sm text-navy/75 leading-relaxed font-light border-t border-navy/5 pt-4 animate-fade-in">
+                    <div className="px-6 sm:px-7 pb-6 pt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed font-light border-t border-sand/60 animate-fade-in">
                       {faq.answer[lang]}
                     </div>
                   )}

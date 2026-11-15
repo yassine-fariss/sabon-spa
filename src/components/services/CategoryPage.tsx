@@ -64,33 +64,33 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
   const tagline = category.tagline[lang] || category.tagline.fr;
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-8 animate-fade-in text-navy">
       {/* Top bar with Back button */}
       <div className="flex items-center justify-between">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-aqua hover:text-white bg-navy-900/80 hover:bg-navy-900 px-5 py-2.5 rounded-xl border border-aqua/25 shadow-glow-aqua transition-all active:scale-95"
+          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-brand hover:text-navy bg-white hover:bg-sand/30 px-5 py-2.5 rounded-xl border border-champagne/40 shadow-xs transition-all active:scale-95"
         >
-          <ArrowLeft size={14} className="text-aqua" />
+          <ArrowLeft size={14} className="text-brand" />
           <span>{t(lang, 'cta.backToCategories')}</span>
         </button>
 
-        <span className="text-xs text-mist/60 font-light">
+        <span className="text-xs text-charcoal-muted font-light">
           {t(lang, 'services.serviceCount', { n: category.count })}
         </span>
       </div>
 
       {/* Category Header */}
       <Reveal variant="fade-up" duration={650}>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl bg-navy-900/80 backdrop-blur-xl border border-aqua/20 shadow-luxury">
-          <div className="w-16 h-16 rounded-2xl bg-brand text-white flex items-center justify-center border border-aqua/40 shadow-glow-aqua flex-shrink-0">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl bg-white border border-champagne/35 shadow-sm">
+          <div className="w-16 h-16 rounded-2xl bg-brand text-white flex items-center justify-center shadow-md flex-shrink-0">
             <CategoryIcon icon={category.icon} className="w-8 h-8" />
           </div>
           <div>
-            <h2 className="text-2xl sm:text-4xl font-serif font-light text-white">
+            <h2 className="text-2xl sm:text-4xl font-serif font-light text-navy">
               {name}
             </h2>
-            <p className="mt-1.5 text-sm sm:text-base text-mist/75 font-light leading-relaxed">
+            <p className="mt-1.5 text-sm sm:text-base text-charcoal-muted font-light leading-relaxed">
               {tagline}
             </p>
           </div>
@@ -99,7 +99,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
 
       {/* Sticky horizontal subcategory chips */}
       {category.subcategories.length > 1 && (
-        <div className="sticky top-20 z-20 py-2.5 -mx-4 px-4 bg-navy-950/95 backdrop-blur-xl border-y border-aqua/15 overflow-x-auto no-scrollbar">
+        <div className="sticky top-20 z-20 py-2.5 -mx-4 px-4 bg-ivory/95 backdrop-blur-xl border-y border-champagne/30 overflow-x-auto no-scrollbar shadow-xs">
           <div className="flex items-center gap-2 min-w-max">
             {category.subcategories.map((subcat) => {
               const subName = subcat.name[lang] || subcat.name.fr;
@@ -110,8 +110,8 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
                   onClick={() => scrollToSubcat(subcat.id)}
                   className={`text-xs uppercase tracking-[0.14em] px-4 py-2 rounded-full font-medium transition-all whitespace-nowrap ${
                     isActive
-                      ? 'bg-brand text-white border border-aqua/40 shadow-glow-aqua'
-                      : 'bg-navy-900/80 text-mist/75 hover:bg-navy-800 hover:text-white border border-aqua/20'
+                      ? 'bg-brand text-white border border-brand shadow-sm'
+                      : 'bg-white text-navy/75 hover:bg-sand/40 hover:text-navy border border-champagne/35'
                   }`}
                 >
                   {subName}
@@ -125,13 +125,13 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
       {/* Content / Accordions */}
       {loading ? (
         <div className="py-16 text-center space-y-3">
-          <div className="w-8 h-8 border-2 border-aqua border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-xs text-mist/60 font-light">
+          <div className="w-8 h-8 border-2 border-brand border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-xs text-charcoal-muted font-light">
             {lang === 'fr' ? 'Chargement des soins...' : 'Loading treatments...'}
           </p>
         </div>
       ) : error ? (
-        <div className="p-8 text-center text-rose-300 bg-rose-950/30 rounded-2xl border border-rose-800/40">
+        <div className="p-8 text-center text-rose-800 bg-rose-50 rounded-2xl border border-rose-200">
           <p className="text-sm font-medium">{error}</p>
           <button
             onClick={onBack}

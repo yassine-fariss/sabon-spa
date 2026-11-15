@@ -33,30 +33,30 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           >
             <button
               onClick={() => onSelectCategory(cat.id)}
-              className="w-full h-full group text-left relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-navy-900/70 hover:bg-navy-900/95 backdrop-blur-xl border border-aqua/15 hover:border-aqua/45 shadow-luxury transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-aqua/40"
+              className="w-full h-full group text-left relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white/90 hover:bg-white border border-champagne/35 hover:border-brand/45 shadow-sm hover:shadow-luxury transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-brand/30"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-navy-800/80 border border-aqua/20 flex items-center justify-center text-aqua group-hover:bg-brand group-hover:text-white group-hover:border-aqua/40 transition-all duration-300 shadow-glow-aqua">
+                <div className="w-12 h-12 rounded-xl bg-sand/40 border border-champagne/35 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300 shadow-xs">
                   <CategoryIcon icon={cat.icon} className="w-6 h-6" />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-serif font-medium text-white group-hover:text-aqua transition-colors">
+                  <h3 className="text-xl font-serif font-medium text-navy group-hover:text-brand transition-colors">
                     {name}
                   </h3>
-                  <p className="mt-1 text-xs text-mist/70 line-clamp-2 leading-relaxed font-light">
+                  <p className="mt-1 text-xs text-charcoal-muted line-clamp-2 leading-relaxed font-light">
                     {tagline}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-aqua/10 flex items-center justify-between">
-                <span className="text-xs font-light text-mist/60">
+              <div className="mt-6 pt-4 border-t border-sand/70 flex items-center justify-between">
+                <span className="text-xs font-light text-charcoal-muted">
                   {t(lang, 'services.serviceCount', { n: cat.count })}
                 </span>
-                <span className="text-xs uppercase tracking-[0.16em] font-medium text-aqua flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span className="text-xs uppercase tracking-[0.16em] font-medium text-brand flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                   <span>{lang === 'fr' ? 'Découvrir' : 'Explore'}</span>
-                  <ChevronRight size={14} className="text-aqua" />
+                  <ChevronRight size={14} className="text-brand" />
                 </span>
               </div>
             </button>

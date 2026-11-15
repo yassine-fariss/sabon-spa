@@ -21,12 +21,17 @@ export default {
           900: '#051C2C',
         },
         navy: {
-          DEFAULT: '#082B49',
-          950: '#041627',
-          900: '#062037',
-          800: '#0A3357',
-          700: '#0E3D66',
-          600: '#154E80',
+          DEFAULT: '#182D46',
+          deep: '#182D46',
+          950: '#0E1F33',
+          900: '#13253B',
+          800: '#182D46',
+          700: '#223C5C',
+          600: '#2F5079',
+        },
+        charcoal: {
+          DEFAULT: '#243242',
+          muted: '#4A5B6D',
         },
         aqua: {
           DEFAULT: '#63B9D1',
@@ -40,9 +45,21 @@ export default {
           dark: '#D5E6EC',
         },
         ivory: {
-          DEFAULT: '#F3EEE5',
-          light: '#FAF7F2',
-          dark: '#E5DCce',
+          DEFAULT: '#F7F3EB',
+          warm: '#F7F3EB',
+          light: '#FAF8F5',
+          dark: '#EFE9DE',
+        },
+        sand: {
+          DEFAULT: '#E9DFCF',
+          soft: '#E9DFCF',
+          light: '#F2ECE1',
+          dark: '#DBCFBE',
+        },
+        champagne: {
+          DEFAULT: '#D8C6A5',
+          light: '#E8DCC4',
+          dark: '#C4B08C',
         },
         gold: {
           DEFAULT: '#C9A16B',
@@ -53,14 +70,11 @@ export default {
           DEFAULT: '#E9B7BE',
           light: '#F3D4D9',
         },
-        sand: {
-          DEFAULT: '#F3E9DC',
-        },
         cream: {
-          DEFAULT: '#FAF6F0',
+          DEFAULT: '#FAF8F5',
         },
         ink: {
-          DEFAULT: '#3B2B20',
+          DEFAULT: '#182D46',
         },
         sage: {
           DEFAULT: '#DDE8DA',

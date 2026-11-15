@@ -22,14 +22,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           loop
           playsInline
           poster={SPA_IMAGES.hammamStarlight}
-          className="w-full h-full object-cover filter brightness-[0.65] contrast-[1.08] scale-105"
+          className="w-full h-full object-cover filter brightness-[0.72] contrast-[1.05] scale-105"
           src={getAssetUrl('videos/hero-ambient.mp4')}
         />
-        {/* Cinematic dark luxury vignettes */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-navy-950/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-transparent" />
+        {/* Soft luxury vignettes */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/30 to-transparent" />
         {/* Subtle underwater caustic shimmer */}
-        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-aqua/20 via-transparent to-transparent pointer-events-none animate-caustic" />
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-aqua/20 via-transparent to-transparent pointer-events-none animate-caustic" />
+        {/* Bottom soft transition into warm ivory */}
+        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-ivory via-ivory/50 to-transparent opacity-90 pointer-events-none" />
       </div>
 
       {/* Main Hero Content Area - Minimalist Clean Layout */}
@@ -84,7 +86,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 e.preventDefault();
                 document.getElementById('soins')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-aqua/35 text-aqua hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-aqua text-center group"
+              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-champagne/40 text-champagne-light hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-sm hover:shadow-luxury text-center group"
             >
               <span>{lang === 'fr' ? 'Découvrir nos services' : 'Explore Our Services'}</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition duration-200" />
@@ -93,11 +95,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Trust points strip */}
           <div
-            className="mt-12 pt-8 border-t border-aqua/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-mist/80 animate-fade-in-up"
+            className="mt-12 pt-8 border-t border-champagne/20 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-mist/80 animate-fade-in-up"
             style={{ animationDelay: '700ms' }}
           >
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-aqua/15 border border-aqua/30 flex items-center justify-center text-aqua">
+              <div className="w-8 h-8 rounded-full bg-champagne/15 border border-champagne/30 flex items-center justify-center text-champagne">
                 <Shield size={14} />
               </div>
               <div className="flex flex-col">
@@ -117,7 +119,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             <div className="col-span-2 sm:col-span-1 flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-brand/30 border border-brand/50 flex items-center justify-center text-aqua">
+              <div className="w-8 h-8 rounded-full bg-brand/30 border border-brand/50 flex items-center justify-center text-champagne-light">
                 <Sparkles size={14} />
               </div>
               <div className="flex flex-col">
@@ -133,7 +135,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 flex justify-center pb-2">
         <a
           href="#presentation"
-          className="flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-mist/50 hover:text-aqua transition"
+          className="flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-mist/60 hover:text-champagne-light transition"
         >
           <span>{lang === 'fr' ? 'Découvrir' : 'Scroll to explore'}</span>
           <ChevronDown size={14} className="animate-bounce" />

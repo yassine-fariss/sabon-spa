@@ -27,7 +27,7 @@ export const FilterChips: React.FC<FilterChipsProps> = ({
 }) => {
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 py-2">
-      <span className="text-xs text-mist/60 font-medium mr-1 hidden sm:inline">
+      <span className="text-xs text-charcoal-muted font-medium mr-1 hidden sm:inline">
         {t(lang, 'services.filterTitle')}
       </span>
 
@@ -40,8 +40,8 @@ export const FilterChips: React.FC<FilterChipsProps> = ({
             onClick={() => onToggleFilter(key)}
             className={`text-xs px-3.5 py-1.5 rounded-full border transition-all duration-200 font-medium flex items-center gap-1.5 ${
               isActive
-                ? 'bg-brand text-white border-aqua/50 shadow-glow-aqua'
-                : 'bg-navy-900/80 text-mist/80 border-aqua/20 hover:border-aqua/40 hover:text-white'
+                ? 'bg-brand text-white border-brand shadow-xs'
+                : 'bg-white text-navy/80 border-champagne/40 hover:bg-sand/30 hover:border-brand/40'
             }`}
           >
             <span>{t(lang, labelKey)}</span>
@@ -56,7 +56,7 @@ export const FilterChips: React.FC<FilterChipsProps> = ({
         <button
           type="button"
           onClick={onClearFilters}
-          className="text-xs text-aqua hover:underline font-medium px-2 py-1"
+          className="text-xs text-brand hover:underline font-medium px-2 py-1"
         >
           {t(lang, 'services.clearFilters')}
         </button>

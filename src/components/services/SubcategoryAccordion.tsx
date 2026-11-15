@@ -36,7 +36,7 @@ export const SubcategoryAccordion: React.FC<SubcategoryAccordionProps> = ({
   return (
     <div
       id={`subcat-${subcategory.id}`}
-      className="rounded-2xl border border-aqua/15 bg-navy-900/60 backdrop-blur-xl shadow-luxury overflow-hidden transition-all duration-300"
+      className="rounded-2xl border border-champagne/35 bg-white shadow-sm overflow-hidden transition-all duration-300 text-navy"
       style={{ contentVisibility: 'auto' }}
     >
       <button
@@ -44,35 +44,35 @@ export const SubcategoryAccordion: React.FC<SubcategoryAccordionProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls={accordionId}
-        className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-navy-800/30 transition-colors focus:outline-none focus:ring-2 focus:ring-aqua/40"
+        className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-sand/20 transition-colors focus:outline-none focus:ring-2 focus:ring-brand/30"
       >
         <div className="flex items-center gap-3">
-          <h3 className="text-lg sm:text-xl font-serif font-medium text-white">
+          <h3 className="text-lg sm:text-xl font-serif font-medium text-navy">
             {name}
           </h3>
-          <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-aqua/10 text-aqua border border-aqua/20">
+          <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-sand/60 text-navy border border-champagne/35">
             {services.length}
           </span>
         </div>
 
-        <div className="flex items-center gap-2 text-aqua/60">
+        <div className="flex items-center gap-2 text-brand">
           <ChevronDown
             size={18}
-            className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-aqua' : ''}`}
+            className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           />
         </div>
       </button>
 
       {isOpen && (
-        <div id={accordionId} className="border-t border-aqua/10 animate-fade-in">
+        <div id={accordionId} className="border-t border-sand/60 animate-fade-in">
           {isPacksCategory ? (
-            <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 bg-ivory/30">
               {displayedServices.map((service) => (
                 <PackCard key={service.id} pack={service} lang={lang} />
               ))}
             </div>
           ) : (
-            <div className="divide-y divide-aqua/10">
+            <div className="divide-y divide-sand/50">
               {displayedServices.map((service) => (
                 <ServiceRow
                   key={service.id}
@@ -88,11 +88,11 @@ export const SubcategoryAccordion: React.FC<SubcategoryAccordionProps> = ({
           )}
 
           {hasMore && (
-            <div className="p-4 text-center border-t border-aqua/10 bg-navy-950/40">
+            <div className="p-4 text-center border-t border-sand/50 bg-sand/10">
               <button
                 type="button"
                 onClick={() => setShowAll(true)}
-                className="text-xs sm:text-sm font-medium text-aqua hover:text-white hover:underline inline-flex items-center gap-1.5 py-1 px-3 transition-colors"
+                className="text-xs sm:text-sm font-medium text-brand hover:underline inline-flex items-center gap-1.5 py-1 px-3 transition-colors"
               >
                 <span>{lang === 'fr' ? `Voir tous les ${services.length} soins` : `View all ${services.length} treatments`}</span>
                 <span className="font-bold">↓</span>

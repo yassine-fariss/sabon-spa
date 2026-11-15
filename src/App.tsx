@@ -27,7 +27,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-navy-950 text-white font-sans selection:bg-brand selection:text-white">
+    <div className="min-h-screen bg-ivory text-navy font-sans selection:bg-brand selection:text-white">
       {/* Top Header Area: Slim Trust Bar (scrolls away) + Floating Navbar */}
       <div className="relative z-40">
         <TrustBar lang={lang} />
@@ -78,7 +78,7 @@ export const App: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Direct WhatsApp Concierge"
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white shadow-glow-aqua hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group focus:outline-none focus:ring-4 focus:ring-brand/40"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand hover:bg-brand-600 border border-champagne/40 text-white shadow-luxury hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group focus:outline-none focus:ring-4 focus:ring-brand/40"
       >
         <MessageSquare size={26} className="group-hover:scale-105 transition" />
         <span className="sr-only">Contact Sabon Spa WhatsApp</span>

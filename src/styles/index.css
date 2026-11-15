@@ -7,14 +7,15 @@
 ─────────────────────────────────────────────── */
 :root {
   --color-brand: #1672B1;
-  --color-navy: #082B49;
+  --color-navy: #182D46;
   --color-aqua: #63B9D1;
   --color-mist: #EAF3F6;
-  --color-ivory: #F3EEE5;
+  --color-ivory: #F7F3EB;
+  --color-sand: #E9DFCF;
+  --color-champagne: #D8C6A5;
   --color-gold: #C9A16B;
-  --color-sand: #F3E9DC;
-  --color-cream: #FAF6F0;
-  --color-ink: #3B2B20;
+  --color-cream: #FAF8F5;
+  --color-ink: #182D46;
 }
 
 /* ───────────────────────────────────────────────

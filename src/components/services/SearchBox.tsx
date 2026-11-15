@@ -19,7 +19,7 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
   return (
     <div className="relative w-full max-w-xl mx-auto">
       <div className="relative flex items-center">
-        <div className="absolute left-4 pointer-events-none text-aqua/60">
+        <div className="absolute left-4 pointer-events-none text-brand/60">
           <Search size={18} />
         </div>
 
@@ -29,14 +29,14 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
           onChange={(e) => onChange(e.target.value)}
           onFocus={onFocus}
           placeholder={t(lang, 'services.searchPlaceholder')}
-          className="w-full pl-11 pr-10 py-3.5 bg-navy-900/90 backdrop-blur-xl rounded-full border border-aqua/30 text-white placeholder:text-mist/40 text-sm focus:outline-none focus:ring-2 focus:ring-aqua/40 focus:border-aqua shadow-luxury transition-all"
+          className="w-full pl-11 pr-10 py-3.5 bg-white border border-champagne/45 text-navy placeholder:text-charcoal-muted/60 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand shadow-sm transition-all"
         />
 
         {value && (
           <button
             onClick={() => onChange('')}
             aria-label="Effacer la recherche"
-            className="absolute right-3.5 p-1 rounded-full text-aqua/60 hover:text-white hover:bg-navy-800 transition-colors"
+            className="absolute right-3.5 p-1 rounded-full text-charcoal-muted hover:text-navy hover:bg-sand/40 transition-colors"
           >
             <X size={16} />
           </button>

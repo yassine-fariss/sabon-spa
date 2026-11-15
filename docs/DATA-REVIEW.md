@@ -1,6 +1,6 @@
 # Sabon Spa & Hammam - Data Review & Owner Confirmation
 
-*Generated automatically on 2026-11-14 from `src/data/services.json`.*
+*Generated automatically on 2026-11-15 from `src/data/services.json`.*
 
 This document lists items requiring validation or confirmation by the Spa management.
 
