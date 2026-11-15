@@ -115,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         {/* ── Desktop Nav (4 links) ── */}
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
+        <nav className="hidden lg:flex items-center gap-9 lg:gap-11" aria-label="Navigation principale">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace('#', '');
             return (
@@ -123,11 +123,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative text-xs uppercase tracking-[0.18em] py-1.5 transition-all duration-200 font-medium
+                className={`relative text-xs uppercase tracking-[0.2em] py-1.5 transition-all duration-200 font-medium
                   after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:transition-all after:duration-300
                   ${isActive
                     ? 'text-champagne-light after:w-full after:bg-champagne font-semibold'
-                    : 'text-mist/85 hover:text-white after:w-0 hover:after:w-full after:bg-champagne'
+                    : 'text-mist/80 hover:text-white after:w-0 hover:after:w-full after:bg-champagne'
                   }`}
               >
                 {link.label[lang]}
@@ -136,13 +136,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* ── Desktop Right: Lang + WhatsApp CTA ── */}
-        <div className="hidden sm:flex items-center gap-3">
-          {/* Language Switcher */}
+        {/* ── Desktop Right: Language Switcher (Spacious & Minimalist) ── */}
+        <div className="hidden sm:flex items-center">
           <div className="flex items-center rounded-full border border-champagne/30 bg-navy-950/80 p-1 text-xs transition-colors">
             <button
               onClick={() => onLanguageChange('fr')}
-              className={`px-2.5 py-1 rounded-full transition font-medium ${
+              className={`px-3 py-1 rounded-full transition font-medium ${
                 lang === 'fr'
                   ? 'bg-brand text-white shadow-xs'
                   : 'text-mist/70 hover:text-white'
@@ -152,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => onLanguageChange('en')}
-              className={`px-2.5 py-1 rounded-full transition font-medium ${
+              className={`px-3 py-1 rounded-full transition font-medium ${
                 lang === 'en'
                   ? 'bg-brand text-white shadow-xs'
                   : 'text-mist/70 hover:text-white'
@@ -161,17 +160,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               EN
             </button>
           </div>
-
-          {/* WhatsApp CTA */}
-          <a
-            href={getWhatsAppUrl(undefined, lang)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand hover:bg-brand-600 border border-champagne/40 text-white text-xs uppercase tracking-[0.16em] font-medium shadow-md hover:shadow-luxury transition transform hover:-translate-y-0.5 active:scale-95"
-          >
-            <MessageSquare size={14} />
-            <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
-          </a>
         </div>
 
         {/* ── Mobile: Lang toggle + Hamburger ── */}

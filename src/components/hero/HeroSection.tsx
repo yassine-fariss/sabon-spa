@@ -1,9 +1,8 @@
 import React from 'react';
-import { ChevronDown, ArrowRight, MessageSquare } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Language } from '../../types';
 import { getAssetUrl } from '../../utils/assets';
 import { SPA_IMAGES } from '../../data/spaImages';
-import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface HeroSectionProps {
   lang: Language;
@@ -21,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
   const satisfiedText = lang === 'fr' ? '2K+ clients satisfaits' : '2K+ Satisfied Customers';
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-36 sm:pt-40 pb-12">
+    <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-44 sm:pt-52 pb-16 sm:pb-24">
       {/* Background Layer: Authentic Hammam Ambient Video & High-Res Photography Fallback */}
       <div className="absolute inset-0 z-0">
         <video
@@ -44,12 +43,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
 
       {/* Main Hero Content Area - Real H1 and CTAs exist in DOM from first paint for SEO/LCP */}
       <div
-        className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8"
+        className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8 sm:py-12"
       >
         <div className="max-w-2xl lg:max-w-3xl">
           {/* Trust Row: 5 Avatars + 4.9 Stars + 2K+ Clients Satisfaits */}
           <div
-            className="mb-6 sm:mb-8 inline-flex flex-wrap items-center gap-x-3 sm:gap-x-3.5 gap-y-2 select-none animate-fade-in-up"
+            className="mb-8 sm:mb-10 inline-flex flex-wrap items-center gap-x-3.5 sm:gap-x-4 gap-y-2 select-none animate-fade-in-up px-4 py-2 rounded-full bg-navy-950/50 backdrop-blur-md border border-champagne/20 shadow-sm"
             style={{ animationDelay: '150ms' }}
           >
             {/* 1. Avatars: 5 overlapping round photos */}
@@ -101,7 +100,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
 
           {/* Main Headline */}
           <h1
-            className="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.08] tracking-tight text-glow-aqua animate-fade-in-up"
+            className="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.14] tracking-tight text-glow-aqua animate-fade-in-up"
             style={{ animationDelay: '250ms' }}
           >
             {lang === 'fr' ? (
@@ -119,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
 
           {/* Subline / Narrative */}
           <p
-            className="mt-6 text-base sm:text-lg text-mist/85 font-light leading-relaxed max-w-xl animate-fade-in-up"
+            className="mt-8 sm:mt-10 text-base sm:text-lg text-mist/85 font-light leading-relaxed max-w-xl animate-fade-in-up"
             style={{ animationDelay: '400ms' }}
           >
             {lang === 'fr'
@@ -127,41 +126,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
               : 'Enter our deep blue sanctuary facing the historic bay of Tangier. Royal Moroccan hammam beneath illuminated salt-brick vaults, master bodywork, and strictly separate wings for women and men.'}
           </p>
 
-          {/* CTAs */}
+          {/* Single Action CTA: Only "Découvrir nos services" with refined breathing room */}
           <div
-            className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 animate-fade-in-up"
+            className="mt-10 sm:mt-12 flex items-center animate-fade-in-up"
             style={{ animationDelay: '550ms' }}
           >
-            <a
-              href={getWhatsAppUrl(undefined, lang)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-brand hover:bg-brand-600 border border-aqua/40 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] shadow-glow-aqua hover:shadow-xl transition transform hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2 text-center"
-            >
-              <MessageSquare size={16} />
-              <span>{lang === 'fr' ? 'Réserver' : 'Book'}</span>
-            </a>
-
             <a
               href="#soins"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('soins')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-7 py-4 rounded-full bg-navy-900/80 hover:bg-navy-800 border border-champagne/40 text-champagne-light hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.18em] transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-sm hover:shadow-luxury text-center group"
+              className="px-8 sm:px-9 py-4 rounded-full bg-navy-900/60 hover:bg-navy-900/90 border border-champagne/40 hover:border-champagne text-champagne-light hover:text-white font-medium text-xs sm:text-sm uppercase tracking-[0.22em] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-3.5 shadow-lg hover:shadow-luxury group backdrop-blur-md"
             >
               <span>{lang === 'fr' ? 'Découvrir nos services' : 'Explore Our Services'}</span>
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition duration-200" />
+              <ArrowRight size={15} className="group-hover:translate-x-1.5 transition-transform duration-300 text-champagne" />
             </a>
           </div>
         </div>
       </div>
 
       {/* Bottom Scroll Cue */}
-      <div className="relative z-10 flex justify-center pb-2">
+      <div className="relative z-10 flex justify-center pb-8 sm:pb-10">
         <a
           href="#presentation"
-          className="flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-mist/60 hover:text-champagne-light transition"
+          className="flex flex-col items-center gap-1.5 text-[11px] uppercase tracking-[0.22em] text-mist/60 hover:text-champagne-light transition"
         >
           <span>{lang === 'fr' ? 'Découvrir' : 'Scroll to explore'}</span>
           <ChevronDown size={14} className="animate-bounce" />
