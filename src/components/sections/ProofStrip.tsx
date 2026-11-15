@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, ShieldCheck, MapPin, Award } from 'lucide-react';
+import { Star, ShieldCheck, MapPin, Clock } from 'lucide-react';
 import { Language } from '../../types';
 import { Reveal } from '../ui/Reveal';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
@@ -32,14 +32,14 @@ export const ProofStrip: React.FC<ProofStripProps> = ({ lang }) => {
       detail: { fr: 'Ailes dédiées femmes et hommes', en: 'Dedicated women & men wings' }
     },
     {
-      icon: <Award size={18} className="text-gold" />,
+      icon: <Clock size={18} className="text-gold" />,
       metricNode: (
-        <span className="font-serif text-2xl sm:text-3xl font-normal text-navy tracking-tight">
-          Signature
+        <span className="font-serif text-xl sm:text-2xl font-normal text-navy tracking-tight whitespace-nowrap">
+          10h00 – 23h00
         </span>
       ),
-      label: { fr: 'Voûte en Briques de Sel', en: 'Salt-Brick Starry Vault' },
-      detail: { fr: 'Atmosphère de détente unique', en: 'Unique restorative atmosphere' }
+      label: { fr: 'Ouvert 7 jours / 7', en: 'Open 7 days a week' },
+      detail: { fr: 'Sans interruption toute la semaine', en: 'Open continuously every day' }
     },
     {
       icon: <MapPin size={18} className="text-brand" />,
