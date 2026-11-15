@@ -5,6 +5,7 @@ import { BUSINESS_INFO } from '../../data/content';
 import { getAssetUrl } from '../../utils/assets';
 import { getWhatsAppUrl } from '../../utils/whatsapp';
 import { Reveal } from '../ui/Reveal';
+import { SectionTransition } from '../ui/SectionTransition';
 
 interface FooterProps {
   lang: Language;
@@ -18,7 +19,12 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
   const mapEmbedUrl = "https://maps.google.com/maps?q=Sabon%20Spa,%20R%C3%A9sidence%20Iris,%20Route%20de%20Malabata,%20Tanger&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
   return (
-    <footer id="contact" className="bg-gradient-to-b from-navy via-navy-900 to-navy-950 text-white border-t border-champagne/30 pt-24 pb-12 relative overflow-hidden">
+    <footer id="contact" className="bg-gradient-to-b from-navy via-navy-900 to-navy-950 text-white pt-24 pb-12 relative overflow-hidden">
+      {/* Top smooth curve transition from FAQ */}
+      <div className="absolute top-0 left-0 right-0 pointer-events-none z-20">
+        <SectionTransition variant="curve-down" fillColor="#EDE5D8" height={36} />
+      </div>
+
       {/* Top transition highlight from sand */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-champagne/15 to-transparent pointer-events-none" />
 

@@ -3,6 +3,7 @@ import { Waves, Sparkles } from 'lucide-react';
 import { Language } from '../../types';
 import { SPA_IMAGES } from '../../data/spaImages';
 import { Reveal } from '../ui/Reveal';
+import { SectionTransition } from '../ui/SectionTransition';
 
 interface ImmersiveBreakProps {
   lang: Language;
@@ -11,8 +12,11 @@ interface ImmersiveBreakProps {
 export const ImmersiveBreak: React.FC<ImmersiveBreakProps> = ({ lang }) => {
   return (
     <section className="relative py-36 sm:py-48 bg-navy-950 overflow-hidden text-center">
-      {/* Top soft transition from light sand into immersive break */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-sand/40 via-navy/80 to-transparent z-20 pointer-events-none" />
+      {/* Top smooth curve & feathered transition from light catalog into dark sanctuary */}
+      <div className="absolute top-0 left-0 right-0 z-20 pointer-events-none">
+        <SectionTransition variant="curve-down" fillColor="#F2ECE1" height={42} />
+        <div className="h-24 bg-gradient-to-b from-navy-950/95 via-navy-950/50 to-transparent" />
+      </div>
 
       {/* Background High-Res Photograph with slow breathing drift */}
       <div className="absolute inset-0 overflow-hidden">
@@ -32,8 +36,8 @@ export const ImmersiveBreak: React.FC<ImmersiveBreakProps> = ({ lang }) => {
 
       {/* Narrative & Quote */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
-        <Reveal variant="scale-up" duration={700}>
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-champagne/40 text-champagne mb-2 shadow-glow-aqua mx-auto animate-pulse-subtle">
+        <Reveal variant="pop-up" duration={750}>
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-champagne/40 text-champagne mb-2 shadow-luxury mx-auto animate-pulse-subtle">
             <Waves size={20} />
           </div>
         </Reveal>
@@ -44,8 +48,8 @@ export const ImmersiveBreak: React.FC<ImmersiveBreakProps> = ({ lang }) => {
           </p>
         </Reveal>
 
-        <Reveal variant="fade-up" delay={200} duration={800}>
-          <blockquote className="text-2xl sm:text-4xl lg:text-5xl font-serif text-white font-light italic leading-tight text-glow-aqua max-w-3xl mx-auto">
+        <Reveal variant="pop-up" delay={200} duration={850}>
+          <blockquote className="text-2xl sm:text-4xl lg:text-5xl font-serif text-white font-light italic leading-tight max-w-3xl mx-auto drop-shadow-md">
             {lang === 'fr'
               ? '« Comme si vous étiez quelque part au fond de l’océan... Un silence précieux, une eau bienfaisante et le temps suspendu. »'
               : '“As if you were somewhere underneath the ocean... A rare stillness, therapeutic waters, and suspended time.”'}
@@ -62,8 +66,11 @@ export const ImmersiveBreak: React.FC<ImmersiveBreakProps> = ({ lang }) => {
         </Reveal>
       </div>
 
-      {/* Bottom soft transition from immersive break into warm ivory gallery */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ivory via-navy/80 to-transparent z-20 pointer-events-none" />
+      {/* Bottom smooth curve & soft transition from dark sanctuary into warm ivory gallery */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
+        <div className="h-24 bg-gradient-to-t from-navy-950/95 via-navy-950/50 to-transparent" />
+        <SectionTransition variant="curve-up" fillColor="#F7F3EB" height={42} />
+      </div>
     </section>
   );
 };

@@ -50,7 +50,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ lang }) => {
             </Reveal>
 
             {/* Two key pillars - Staggered reveal */}
-            <StaggerReveal variant="fade-up" baseDelay={250} staggerMs={120} className="pt-2 space-y-3.5">
+            <StaggerReveal variant="pop-up" baseDelay={200} staggerMs={110} className="pt-2 space-y-3.5">
               <div className="flex items-start gap-4 p-4 rounded-xl bg-white/90 border border-champagne/35 hover:border-brand/40 shadow-xs hover:shadow-md transition duration-300 group">
                 <div className="w-9 h-9 rounded-lg bg-sand/60 text-brand flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-sand transition duration-300">
                   <Droplets size={18} />
@@ -85,7 +85,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ lang }) => {
             </StaggerReveal>
 
             {/* CTAs */}
-            <Reveal variant="fade-up" delay={450}>
+            <Reveal variant="pop-up" delay={400} duration={650}>
               <div className="pt-4 flex flex-wrap items-center gap-5">
                 <a
                   href={getWhatsAppUrl(undefined, lang)}
@@ -110,7 +110,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ lang }) => {
 
           {/* Right Visual Story Collage */}
           <div className="lg:col-span-6 relative">
-            <Reveal variant="fade-left" duration={800}>
+            <Reveal variant="pop-up" duration={800}>
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 {/* Main Hero Card — Authentic Starlight Hammam */}
                 <div className="relative rounded-3xl overflow-hidden border border-champagne/40 shadow-luxury group">

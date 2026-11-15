@@ -68,9 +68,9 @@ export const FeaturedPacks: React.FC<FeaturedPacksProps> = ({
           {featuredPacks.map((pack, idx) => (
             <Reveal
               key={pack.id}
-              variant="fade-up"
+              variant="pop-up"
               delay={idx * 110}
-              duration={650}
+              duration={700}
               className="h-full"
             >
               <PackCard pack={pack} lang={lang} />
@@ -79,7 +79,7 @@ export const FeaturedPacks: React.FC<FeaturedPacksProps> = ({
         </div>
 
         {onExploreAllPacks && (
-          <Reveal variant="fade-up" delay={200} duration={600}>
+          <Reveal variant="pop-up" delay={250} duration={650}>
             <div className="text-center mt-12">
               <button
                 onClick={onExploreAllPacks}

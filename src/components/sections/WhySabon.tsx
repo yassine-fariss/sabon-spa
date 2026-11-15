@@ -88,7 +88,7 @@ export const WhySabon: React.FC<WhySabonProps> = ({ lang }) => {
           {pillars.map((p, idx) => (
             <Reveal
               key={idx}
-              variant="fade-up"
+              variant="pop-up"
               delay={idx * 110}
               duration={750}
             >

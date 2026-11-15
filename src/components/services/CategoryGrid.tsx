@@ -26,9 +26,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
         return (
           <Reveal
             key={cat.id}
-            variant="fade-up"
-            delay={idx * 70}
-            duration={650}
+            variant="pop-up"
+            delay={idx * 80}
+            duration={700}
             className="h-full"
           >
             <button

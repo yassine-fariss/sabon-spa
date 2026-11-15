@@ -46,7 +46,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ lang }) => {
             return (
               <Reveal
                 key={idx}
-                variant="fade-up"
+                variant="pop-up"
                 delay={idx * 70}
                 duration={650}
               >

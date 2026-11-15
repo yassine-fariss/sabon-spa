@@ -12,6 +12,7 @@ import { GallerySection } from './components/sections/GallerySection';
 import { WhySabon } from './components/sections/WhySabon';
 import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
+import { SectionTransition } from './components/ui/SectionTransition';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
 import { useLang } from './hooks/useLang';
@@ -47,6 +48,8 @@ export const App: React.FC = () => {
         {/* 3. Brand Story & Architecture */}
         <Introduction lang={lang} />
 
+        <SectionTransition variant="accent-line" showIcon className="-my-2" />
+
         {/* 4. Signature Featured Packs (Bronze, Silver, Golden, Royal) */}
         <FeaturedPacks lang={lang} onExploreAllPacks={handleScrollToServices} />
 
@@ -61,6 +64,8 @@ export const App: React.FC = () => {
 
         {/* 8. Why Sabon Spa */}
         <WhySabon lang={lang} />
+
+        <SectionTransition variant="accent-line" showIcon className="-my-2" />
 
         {/* 9. Verified Google Reviews & Social Proof */}
         <ReviewsSection lang={lang} />

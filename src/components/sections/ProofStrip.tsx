@@ -54,14 +54,13 @@ export const ProofStrip: React.FC<ProofStripProps> = ({ lang }) => {
   ];
 
   return (
-    <div className="relative z-20 -mt-8 max-w-6xl mx-auto px-4 sm:px-6">
-      <Reveal variant="fade-up" duration={700}>
+    <div className="relative z-20 -mt-10 max-w-6xl mx-auto px-4 sm:px-6">
+      <Reveal variant="pop-up" duration={800} threshold={0.02}>
         <div className="bg-white/95 backdrop-blur-xl border border-champagne/40 rounded-2xl p-6 sm:p-8 shadow-luxury grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 transition-colors">
           {proofs.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center text-center group transition duration-300"
-              style={{ transitionDelay: `${idx * 80}ms` }}
+              className="flex flex-col items-center text-center group transition-all duration-500 hover:-translate-y-1"
             >
               <div className="w-10 h-10 rounded-full bg-sand/40 border border-champagne/40 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:border-brand/40 group-hover:bg-sand/70 transition duration-300 shadow-xs">
                 {item.icon}
