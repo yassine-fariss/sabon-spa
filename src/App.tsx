@@ -9,7 +9,6 @@ import { ServicesPage } from './components/services/ServicesPage';
 import { CategoryDetailPage } from './components/services/CategoryDetailPage';
 import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
 import { GallerySection } from './components/sections/GallerySection';
-import { WhySabon } from './components/sections/WhySabon';
 import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { SectionTransition } from './components/ui/SectionTransition';
@@ -84,12 +83,9 @@ export const App: React.FC = () => {
           {/* 7. Authentic Photography Gallery with Foam Lather Reveals & Lightbox */}
           <GallerySection lang={lang} />
 
-          {/* 8. Why Sabon Spa */}
-          <WhySabon lang={lang} />
-
           <SectionTransition variant="accent-line" showIcon className="-my-2" />
 
-          {/* 9. Verified Google Reviews & Social Proof */}
+          {/* 8. Verified Google Reviews & Social Proof */}
           <ReviewsSection lang={lang} />
 
           {/* 10. FAQ Section */}
