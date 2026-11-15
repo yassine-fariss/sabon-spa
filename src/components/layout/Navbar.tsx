@@ -75,14 +75,14 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-navy/95 backdrop-blur-md border-b border-champagne/30 py-3 shadow-luxury text-white'
-          : 'bg-navy/90 backdrop-blur-md border-b border-champagne/20 py-4 text-white'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <header className="fixed top-3 sm:top-5 inset-x-0 z-40 flex flex-col items-center px-3 sm:px-6 pointer-events-none transition-all duration-300">
+      <div
+        className={`pointer-events-auto w-full max-w-5xl rounded-full border transition-all duration-300 px-4 sm:px-6 flex items-center justify-between shadow-luxury ${
+          scrolled
+            ? 'bg-navy/95 backdrop-blur-md border-champagne/40 py-2 sm:py-2.5 shadow-2xl text-white'
+            : 'bg-navy/90 backdrop-blur-md border-champagne/25 py-3 sm:py-3.5 shadow-lg text-white'
+        }`}
+      >
 
         {/* ── Brand Logo ── */}
         <a
@@ -192,9 +192,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* ── Mobile Drawer ── */}
+      {/* ── Mobile Drawer (Rounded floating card) ── */}
       {mobileMenuOpen && (
-        <div className="sm:hidden backdrop-blur-xl border-b border-champagne/30 bg-navy-950/98 px-6 py-6 animate-fade-in text-white shadow-luxury">
+        <div className="pointer-events-auto sm:hidden w-full max-w-5xl mt-2 rounded-2xl backdrop-blur-xl border border-champagne/30 bg-navy-950/98 px-6 py-6 animate-fade-in text-white shadow-2xl">
           <nav className="flex flex-col space-y-1" aria-label="Navigation mobile">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');

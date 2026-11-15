@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronDown, ArrowRight, MessageSquare } from 'lucide-react';
 import { Language } from '../../types';
 import { getAssetUrl } from '../../utils/assets';
 import { SPA_IMAGES } from '../../data/spaImages';
 import { getWhatsAppUrl } from '../../utils/whatsapp';
-import { SteamMirror } from './SteamMirror';
 
 interface HeroSectionProps {
   lang: Language;
@@ -20,17 +19,6 @@ const AVATARS = [
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
   const satisfiedText = lang === 'fr' ? '2K+ clients satisfaits' : '2K+ Satisfied Customers';
-
-  // State for LCP optimization: mount steam mirror only after first paint
-  const [mounted, setMounted] = useState(false);
-  const [isMirrorCleared, setIsMirrorCleared] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return true;
-    return sessionStorage.getItem('sabon_mirror_wiped') === 'true';
-  });
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-between overflow-hidden bg-navy-950 pt-36 sm:pt-40 pb-12">
@@ -54,19 +42,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
         <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-ivory via-ivory/50 to-transparent opacity-90 pointer-events-none" />
       </div>
 
-      {/* Feature 2: SteamMirror Hammam Fog Layer (Mounts after first paint, disappears once cleared) */}
-      {mounted && !isMirrorCleared && (
-        <SteamMirror
-          lang={lang}
-          onCleared={() => setIsMirrorCleared(true)}
-        />
-      )}
-
       {/* Main Hero Content Area - Real H1 and CTAs exist in DOM from first paint for SEO/LCP */}
       <div
-        className={`relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8 transition-opacity duration-1000 ${
-          isMirrorCleared ? 'opacity-100' : 'opacity-40 sm:opacity-50'
-        }`}
+        className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-auto py-8"
       >
         <div className="max-w-2xl lg:max-w-3xl">
           {/* Trust Row: 5 Avatars + 4.9 Stars + 2K+ Clients Satisfaits */}

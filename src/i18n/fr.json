@@ -65,5 +65,13 @@
     "foamAlt": "Photo du sanctuaire Sabon Spa",
     "viewImage": "Agrandir l'image",
     "photoNumber": "Photo #{n}"
+  },
+  "candle": {
+    "ariaLabel": "Rituel de la Bougie Sabon, indicateur de défilement",
+    "readyAnnouncement": "Votre rituel est prêt",
+    "ctaText": "Réserver votre rituel",
+    "ctaDismiss": "Fermer le rappel",
+    "candleIgnited": "Bougie allumée",
+    "backToTop": "Retour en haut"
   }
 }

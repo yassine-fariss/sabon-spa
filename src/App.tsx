@@ -13,7 +13,7 @@ import { WhySabon } from './components/sections/WhySabon';
 import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { SectionTransition } from './components/ui/SectionTransition';
-import { SoapProgress } from './components/ui/SoapProgress';
+import { CandleRitual } from './components/ui/CandleRitual';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
 import { useLang } from './hooks/useLang';
@@ -101,8 +101,8 @@ export const App: React.FC = () => {
       {/* Footer with Interactive Google Map & Hours */}
       <Footer lang={lang} onNavigateSection={handleNavSection} />
 
-      {/* Feature 1: SoapProgress Signature Scroll Meter */}
-      <SoapProgress lang={lang} />
+      {/* Feature: CandleRitual Signature Scroll Indicator */}
+      <CandleRitual lang={lang} />
 
       {/* Floating Instant WhatsApp Button */}
       <a

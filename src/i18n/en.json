@@ -65,5 +65,13 @@
     "foamAlt": "Sabon Spa sanctuary photo",
     "viewImage": "Expand image",
     "photoNumber": "Photo #{n}"
+  },
+  "candle": {
+    "ariaLabel": "Sabon Candle Ritual scroll indicator",
+    "readyAnnouncement": "Your ritual is ready",
+    "ctaText": "Book your ritual",
+    "ctaDismiss": "Dismiss",
+    "candleIgnited": "Candle lit",
+    "backToTop": "Back to top"
   }
 }
