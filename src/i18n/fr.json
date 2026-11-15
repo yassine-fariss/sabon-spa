@@ -66,6 +66,14 @@
     "viewImage": "Agrandir l'image",
     "photoNumber": "Photo #{n}"
   },
+  "brandFilm": {
+    "label": "DÉCOUVRIR SPA SABON",
+    "heading": "L'Art du Bien-Être",
+    "body": "Plongez dans l'univers sensoriel de Spa Sabon — où les traditions du hammam marocain se fondent avec les soins les plus raffinés pour éveiller corps et esprit.",
+    "play": "Lancer le film",
+    "pause": "Mettre en pause",
+    "fullscreen": "Plein écran"
+  },
   "candle": {
     "ariaLabel": "Rituel de la Bougie Sabon, indicateur de défilement",
     "readyAnnouncement": "Votre rituel est prêt",

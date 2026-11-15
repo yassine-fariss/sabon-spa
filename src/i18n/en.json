@@ -66,6 +66,14 @@
     "viewImage": "Expand image",
     "photoNumber": "Photo #{n}"
   },
+  "brandFilm": {
+    "label": "DISCOVER SPA SABON",
+    "heading": "The Art of Wellbeing",
+    "body": "Step into the sensory world of Spa Sabon — where authentic Moroccan hammam traditions blend with the most refined treatments to awaken body and mind.",
+    "play": "Play film",
+    "pause": "Pause",
+    "fullscreen": "Full screen"
+  },
   "candle": {
     "ariaLabel": "Sabon Candle Ritual scroll indicator",
     "readyAnnouncement": "Your ritual is ready",

@@ -11,6 +11,7 @@ import { ImmersiveBreak } from './components/sections/ImmersiveBreak';
 import { GallerySection } from './components/sections/GallerySection';
 import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
+import { BrandFilm } from './components/sections/BrandFilm';
 import { SectionTransition } from './components/ui/SectionTransition';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
@@ -60,7 +61,10 @@ export const App: React.FC = () => {
           {/* 1. Cinematic Video Hero with Hammam Steam Mirror Wiping */}
           <HeroSection lang={lang} />
 
-          {/* 2. Proof Strip */}
+          {/* 2. Brand Film Cinematic Showcase */}
+          <BrandFilm lang={lang} />
+
+          {/* 3. Proof Strip */}
           <ProofStrip lang={lang} />
 
           {/* 3. Brand Story & Architecture */}
