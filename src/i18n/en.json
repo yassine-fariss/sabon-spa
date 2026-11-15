@@ -46,5 +46,24 @@
     "featuredTitle": "Signature Packages",
     "featuredSubtitle": "Harmonious rituals combining hammam, massage, and bespoke therapies for pure bliss.",
     "viewAll": "Explore all packages"
+  },
+  "soap": {
+    "ariaLabel": "Sabon Soap scroll progress indicator",
+    "backToTop": "Back to top",
+    "bookNow": "Book now",
+    "milestone25": "The rituals",
+    "milestone50": "The packages",
+    "milestone75": "The gallery",
+    "milestone100": "Book"
+  },
+  "steamMirror": {
+    "hint": "Wipe the steam",
+    "skip": "Skip",
+    "ariaLabel": "Steamy hammam mirror, swipe or drag to wipe clear"
+  },
+  "galleryUI": {
+    "foamAlt": "Sabon Spa sanctuary photo",
+    "viewImage": "Expand image",
+    "photoNumber": "Photo #{n}"
   }
 }

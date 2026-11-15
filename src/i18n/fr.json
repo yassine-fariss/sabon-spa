@@ -46,5 +46,24 @@
     "featuredTitle": "Nos Packs Signature",
     "featuredSubtitle": "Des rituels harmonieux alliant hammam, massage et soins pour une parenthèse inoubliable.",
     "viewAll": "Découvrir tous nos packs"
+  },
+  "soap": {
+    "ariaLabel": "Indicateur de progression Savon Sabon",
+    "backToTop": "Retour en haut",
+    "bookNow": "Réserver maintenant",
+    "milestone25": "Les rituels",
+    "milestone50": "Les packs",
+    "milestone75": "La galerie",
+    "milestone100": "Réserver"
+  },
+  "steamMirror": {
+    "hint": "Essuyez la buée",
+    "skip": "Passer",
+    "ariaLabel": "Miroir embué du hammam, faites glisser pour essuyer"
+  },
+  "galleryUI": {
+    "foamAlt": "Photo du sanctuaire Sabon Spa",
+    "viewImage": "Agrandir l'image",
+    "photoNumber": "Photo #{n}"
   }
 }

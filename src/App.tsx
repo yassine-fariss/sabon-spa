@@ -13,6 +13,7 @@ import { WhySabon } from './components/sections/WhySabon';
 import { ReviewsSection } from './components/sections/ReviewsSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { SectionTransition } from './components/ui/SectionTransition';
+import { SoapProgress } from './components/ui/SoapProgress';
 import { MessageSquare } from 'lucide-react';
 import { BUSINESS_INFO } from './data/content';
 import { useLang } from './hooks/useLang';
@@ -36,7 +37,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-ivory text-navy font-sans selection:bg-brand selection:text-white">
+    <div className="min-h-screen bg-ivory text-navy font-sans selection:bg-brand selection:text-white relative">
       {/* Top Header Navbar */}
       <Navbar
         lang={lang}
@@ -58,7 +59,7 @@ export const App: React.FC = () => {
       ) : (
         /* Main Homepage with Horizontal Directory List (Inspired by Reference Screenshot 1) */
         <main>
-          {/* 1. Cinematic Video Hero */}
+          {/* 1. Cinematic Video Hero with Hammam Steam Mirror Wiping */}
           <HeroSection lang={lang} />
 
           {/* 2. Proof Strip */}
@@ -81,7 +82,7 @@ export const App: React.FC = () => {
           {/* 6. Immersive Caustic Break */}
           <ImmersiveBreak lang={lang} />
 
-          {/* 7. Authentic Photography Gallery & Lightbox */}
+          {/* 7. Authentic Photography Gallery with Foam Lather Reveals & Lightbox */}
           <GallerySection lang={lang} />
 
           {/* 8. Why Sabon Spa */}
@@ -99,6 +100,9 @@ export const App: React.FC = () => {
 
       {/* Footer with Interactive Google Map & Hours */}
       <Footer lang={lang} onNavigateSection={handleNavSection} />
+
+      {/* Feature 1: SoapProgress Signature Scroll Meter */}
+      <SoapProgress lang={lang} />
 
       {/* Floating Instant WhatsApp Button */}
       <a

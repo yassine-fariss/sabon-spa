@@ -1,0 +1,105 @@
+/* ─────────────────────────────────────────────────────────────
+   FoamGallery Lather Reveal & Micro-Bubbles Styling
+───────────────────────────────────────────────────────────── */
+
+@keyframes foamLatherDissolve {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 100%, transparent 100%);
+    mask-image: radial-gradient(circle at 50% 50%, black 100%, transparent 100%);
+  }
+  45% {
+    opacity: 0.96;
+    transform: scale(1.02);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 35%, black 65%);
+    mask-image: radial-gradient(circle at 50% 50%, transparent 35%, black 65%);
+  }
+  80% {
+    opacity: 0.4;
+    transform: scale(1.05);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 75%, black 95%);
+    mask-image: radial-gradient(circle at 50% 50%, transparent 75%, black 95%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 100%, black 100%);
+    mask-image: radial-gradient(circle at 50% 50%, transparent 100%, black 100%);
+  }
+}
+
+/* Fallback fade for browsers without mask-image or on low tier */
+@keyframes foamSimpleDissolve {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+.foam-lather-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+  background:
+    radial-gradient(circle at 20% 25%, #ffffff 0%, rgba(247, 243, 235, 0.95) 30%, transparent 55%),
+    radial-gradient(circle at 75% 30%, #ffffff 0%, rgba(234, 243, 246, 0.92) 35%, transparent 60%),
+    radial-gradient(circle at 40% 70%, #ffffff 0%, rgba(245, 239, 230, 0.94) 40%, transparent 65%),
+    radial-gradient(circle at 85% 75%, #ffffff 0%, rgba(234, 243, 246, 0.92) 30%, transparent 55%),
+    #ffffff;
+  border-radius: inherit;
+}
+
+.foam-lather-overlay.is-lathering {
+  animation: foamLatherDissolve 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.foam-lather-overlay.is-lathering-simple {
+  animation: foamSimpleDissolve 0.8s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.foam-lather-overlay.is-cleared {
+  display: none !important;
+}
+
+/* Micro-bubbles rising on mouse hover over gallery tile */
+@keyframes tileBubbleRise {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -60px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.tile-micro-bubble {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, rgba(99, 185, 209, 0.4) 60%, rgba(22, 114, 177, 0.2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 4px rgba(99, 185, 209, 0.3);
+  animation: tileBubbleRise 1.4s ease-out forwards;
+  z-index: 20;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foam-lather-overlay {
+    display: none !important;
+  }
+  .tile-micro-bubble {
+    display: none !important;
+  }
+}
