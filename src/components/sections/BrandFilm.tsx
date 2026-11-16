@@ -63,28 +63,36 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false); // Sound activated by default
   const [isBuffering, setIsBuffering] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showControls, setShowControls] = useState(false);
 
   const sectionVisible = useIntersection(sectionRef, 0.15);
 
-  /* Autoplay when entering viewport; pause when scrolling out */
+  /* Autoplay with sound enabled by default; fallback to muted if browser policy blocks unmuted autoplay */
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
 
     if (sectionVisible) {
+      // First attempt: play with sound active
+      v.muted = false;
       const playPromise = v.play();
       if (playPromise !== undefined) {
         playPromise
-          .then(() => setIsPlaying(true))
+          .then(() => {
+            setIsPlaying(true);
+            setIsMuted(false);
+          })
           .catch(() => {
-            // If browser blocks unmuted playback, force mute and retry
+            // Browser blocked unmuted autoplay (standard autoplay policy without user gesture).
+            // Fall back to muted playback so visual stream starts immediately.
             v.muted = true;
             setIsMuted(true);
-            v.play().then(() => setIsPlaying(true)).catch(() => {});
+            v.play()
+              .then(() => setIsPlaying(true))
+              .catch(() => {});
           });
       }
     } else {
@@ -95,6 +103,25 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
     }
   }, [sectionVisible]);
 
+  /* One-time interaction hook: unmute on first user click/touch anywhere if browser forced mute */
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      const v = videoRef.current;
+      if (v && v.muted) {
+        v.muted = false;
+        setIsMuted(false);
+      }
+    };
+
+    window.addEventListener('pointerdown', handleFirstInteraction, { once: true });
+    window.addEventListener('keydown', handleFirstInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('pointerdown', handleFirstInteraction);
+      window.removeEventListener('keydown', handleFirstInteraction);
+    };
+  }, []);
+
   /* Toggle Play / Pause */
   const togglePlay = useCallback((e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
@@ -102,6 +129,9 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
     if (!v) return;
 
     if (v.paused) {
+      // Ensure sound is active on click
+      v.muted = false;
+      setIsMuted(false);
       v.play()
         .then(() => setIsPlaying(true))
         .catch(() => {});
@@ -232,7 +262,7 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
           role="region"
           aria-label="Lecteur vidéo du film Sabon"
         >
-          {/* Native HTML5 Video Element with Autoplay & Loop */}
+          {/* Native HTML5 Video Element with Sound Active by Default */}
           <video
             ref={videoRef}
             src={videoSrc}
