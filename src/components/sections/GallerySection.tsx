@@ -27,9 +27,7 @@ const FoamGalleryCard: React.FC<{
 }> = ({ img, idx, lang, onClick }) => {
   const tier = usePerformanceTier();
   const cardRef = useRef<HTMLDivElement>(null);
-  const [foamState, setFoamState] = useState<'hidden' | 'lathering' | 'cleared'>(() => {
-    return tier === 'reduced' ? 'cleared' : 'hidden';
-  });
+  const [foamState, setFoamState] = useState<'hidden' | 'lathering' | 'cleared'>('cleared');
   const [hoverBubbles, setHoverBubbles] = useState<TileBubble[]>([]);
   const lastBubbleTimeRef = useRef(0);
 

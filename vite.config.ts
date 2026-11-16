@@ -11,7 +11,7 @@ export default defineConfig({
     host: true,
     watch: {
       // Exclude large binary assets from file watcher to prevent EBUSY crashes
-      ignored: ['**/public/videos/**', '**/public/spa/**', '**/assets/**'],
+      ignored: ['**/public/videos/**', '**/public/spa/**', '**/public/images/**', '**/assets/**'],
     },
   },
 });
