@@ -152,8 +152,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
       {/* Bottom Scroll Cue */}
       <div className="relative z-10 flex justify-center pb-8 sm:pb-10">
         <a
-          href="#presentation"
+          href="#brand-film"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('brand-film')?.scrollIntoView({ behavior: 'smooth' });
+          }}
           className="flex flex-col items-center gap-1.5 text-[11px] uppercase tracking-[0.22em] text-mist/60 hover:text-champagne-light transition"
+          aria-label={lang === 'fr' ? 'Découvrir la suite' : 'Scroll down to discover'}
         >
           <span>{lang === 'fr' ? 'Découvrir' : 'Scroll to explore'}</span>
           <ChevronDown size={14} className="animate-bounce" />

@@ -526,7 +526,8 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
                           href={whatsappUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-5 py-2.5 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-[0.14em] font-medium shadow-md hover:shadow-luxury transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5 whitespace-nowrap"
+                          aria-label={`${lang === 'fr' ? 'Réserver' : 'Book'} ${service.name} ${lang === 'fr' ? 'sur WhatsApp' : 'via WhatsApp'}`}
+                          className="px-5 py-2.5 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-[0.14em] font-medium shadow-md hover:shadow-luxury transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-brand"
                         >
                           <MessageSquare size={13} />
                           <span>{t(lang, 'cta.book')}</span>

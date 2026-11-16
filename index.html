@@ -2,18 +2,69 @@
 <html lang="fr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="icon" type="image/jpeg" href="%BASE_URL%logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#082B49" />
     <title>Sabon Spa Tanger | Le Sanctuaire Bleu • Luxury Spa & Hammam</title>
     <meta name="description" content="Sabon Spa à Tanger : Une oasis de bien-être immersive face à la baie de Malabata. Hammam royal, massages signatures, soins d'exception et espaces 100% séparés hommes et femmes." />
+    <link rel="canonical" href="https://sabonspa.ma/" />
     
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sabon Spa Tanger" />
+    <meta property="og:locale" content="fr_MA" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:url" content="https://sabonspa.ma/" />
     <meta property="og:title" content="Sabon Spa Tanger | Le Sanctuaire Bleu" />
-    <meta property="og:description" content="Hammam royal d'exception, massages du monde, hydrothérapie et soins bien-être au cœur de Tanger." />
-    <meta property="og:image" content="/images/hammam-vault.jpg" />
+    <meta property="og:description" content="Hammam royal d'exception, massages du monde, hydrothérapie et soins bien-être face à la baie de Tanger." />
+    <meta property="og:image" content="https://sabonspa.ma/images/hammam-vault.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sabon Spa Tanger | Le Sanctuaire Bleu" />
+    <meta name="twitter:description" content="Hammam royal d'exception, massages du monde, hydrothérapie et soins bien-être face à la baie de Tanger." />
+    <meta name="twitter:image" content="https://sabonspa.ma/images/hammam-vault.jpg" />
+
+    <!-- Structured Data (Schema.org / DaySpa) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DaySpa",
+      "name": "Sabon Spa Tanger",
+      "alternateName": "Le Sanctuaire Bleu",
+      "image": "https://sabonspa.ma/images/hammam-vault.jpg",
+      "logo": "https://sabonspa.ma/logo.jpg",
+      "@id": "https://sabonspa.ma/#spa",
+      "url": "https://sabonspa.ma/",
+      "telephone": "+212661098855",
+      "priceRange": "350 MAD - 1250 MAD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Baie de Tanger, Zone Malabata",
+        "addressLocality": "Tanger",
+        "postalCode": "90000",
+        "addressCountry": "MA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.7767,
+        "longitude": -5.7950
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "22:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/sabon_spa_tanger/"
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Cormorant Garamond & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

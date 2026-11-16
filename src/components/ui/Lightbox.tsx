@@ -44,13 +44,16 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={lang === 'fr' ? 'Visionneuse d’image' : 'Image viewer'}
       className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xl p-4 sm:p-8"
       onClick={onClose}
     >
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 p-3 rounded-full bg-navy-900/80 hover:bg-navy-800 text-ivory border border-champagne/30 hover:border-champagne hover:text-champagne transition z-50"
-        aria-label="Fermer"
+        className="absolute top-6 right-6 p-3 rounded-full bg-navy-900/80 hover:bg-navy-800 text-ivory border border-champagne/30 hover:border-champagne hover:text-champagne transition z-50 focus:outline-none focus:ring-2 focus:ring-champagne"
+        aria-label={lang === 'fr' ? 'Fermer' : 'Close'}
       >
         <X size={24} />
       </button>
@@ -61,8 +64,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
           e.stopPropagation();
           onNavigate((currentIndex - 1 + images.length) % images.length);
         }}
-        className="absolute left-4 sm:left-8 p-3 rounded-full bg-navy-900/80 hover:bg-navy-800 text-ivory border border-champagne/30 hover:border-champagne hover:text-champagne transition z-50 hover:scale-105 active:scale-95"
-        aria-label="Image précédente"
+        className="absolute left-4 sm:left-8 p-3 rounded-full bg-navy-900/80 hover:bg-navy-800 text-ivory border border-champagne/30 hover:border-champagne hover:text-champagne transition z-50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-champagne"
+        aria-label={lang === 'fr' ? 'Image précédente' : 'Previous image'}
       >
         <ChevronLeft size={24} />
       </button>
@@ -96,8 +99,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
           e.stopPropagation();
           onNavigate((currentIndex + 1) % images.length);
         }}
-        className="absolute right-4 sm:right-8 p-3 rounded-full bg-navy-900/80 hover:bg-navy-800 text-ivory border border-champagne/30 hover:border-champagne hover:text-champagne transition z-50 hover:scale-105 active:scale-95"
-        aria-label="Image suivante"
+        className="absolute right-4 sm:right-8 p-3 rounded-full bg-navy-900/80 hover:bg-navy-800 text-ivory border border-champagne/30 hover:border-champagne hover:text-champagne transition z-50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-champagne"
+        aria-label={lang === 'fr' ? 'Image suivante' : 'Next image'}
       >
         <ChevronRight size={24} />
       </button>
