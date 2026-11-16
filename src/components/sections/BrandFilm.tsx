@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { Volume2, VolumeX, Maximize2, Play, Pause } from 'lucide-react';
 import { getAssetUrl } from '../../utils/assets';
-import { useLang } from '../../hooks/useLang';
 
 /* ─── i18n ────────────────────────────────────────────────────────────────── */
 const copy = {
@@ -10,8 +10,10 @@ const copy = {
     body: "Plongez dans l'univers sensoriel de Spa Sabon — où les traditions du hammam marocain\nse fondent avec les soins les plus raffinés pour éveiller corps et esprit.",
     play: 'Lancer le film',
     pause: 'Mettre en pause',
+    unmute: 'Activer le son',
+    mute: 'Couper le son',
     fullscreen: 'Plein écran',
-    loading: 'Chargement du film...',
+    loading: 'Chargement...',
     error: 'La vidéo n’a pas pu être chargée.',
     retry: 'Réessayer',
   },
@@ -21,8 +23,10 @@ const copy = {
     body: "Step into the sensory world of Spa Sabon — where authentic Moroccan hammam traditions\nblend with the most refined treatments to awaken body and mind.",
     play: 'Play film',
     pause: 'Pause',
+    unmute: 'Unmute audio',
+    mute: 'Mute audio',
     fullscreen: 'Full screen',
-    loading: 'Loading film...',
+    loading: 'Loading...',
     error: 'The video could not be loaded.',
     retry: 'Retry',
   },
@@ -33,7 +37,7 @@ const VIDEO_SRC = 'videos/brand-film.mp4';
 const POSTER_WEBP = 'images/brand-film-poster.webp';
 const POSTER_JPG = 'images/brand-film-poster.jpg';
 
-function useIntersection(ref: React.RefObject<Element | null>, threshold = 0.15) {
+function useIntersection(ref: React.RefObject<Element | null>, threshold = 0.2) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     if (!ref.current) return;
@@ -47,25 +51,6 @@ function useIntersection(ref: React.RefObject<Element | null>, threshold = 0.15)
   return visible;
 }
 
-/* ─── Minimal Luxury Play Icon ────────────────────────────────────────────── */
-const PlayIcon: React.FC<{ size?: number }> = ({ size = 72 }) => (
-  <svg width={size} height={size} viewBox="0 0 72 72" fill="none" aria-hidden="true">
-    <circle cx="36" cy="36" r="35" stroke="white" strokeWidth="1.5" strokeOpacity="0.75" />
-    <circle
-      cx="36"
-      cy="36"
-      r="35"
-      stroke="#C9A16B"
-      strokeWidth="1.5"
-      strokeOpacity="0.8"
-      strokeDasharray="220"
-      strokeDashoffset="70"
-      style={{ transformOrigin: '36px 36px', animation: 'spin 10s linear infinite' }}
-    />
-    <polygon points="30,24 52,36 30,48" fill="white" fillOpacity="0.95" />
-  </svg>
-);
-
 /* ─── Component ───────────────────────────────────────────────────────────── */
 interface BrandFilmProps {
   lang?: 'fr' | 'en';
@@ -77,52 +62,67 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const [hasStarted, setHasStarted] = useState(false);
-  const [playing, setPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [isBuffering, setIsBuffering] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [showControls, setShowControls] = useState(false);
 
-  const sectionVisible = useIntersection(sectionRef, 0.1);
+  const sectionVisible = useIntersection(sectionRef, 0.15);
 
-  /* Auto-pause when user scrolls out of view */
+  /* Autoplay when entering viewport; pause when scrolling out */
   useEffect(() => {
-    if (!sectionVisible && playing && videoRef.current) {
-      videoRef.current.pause();
-      setPlaying(false);
-    }
-  }, [sectionVisible, playing]);
-
-  /* Handle initial play / resume / pause */
-  const handlePlay = useCallback(async () => {
     const v = videoRef.current;
     if (!v) return;
 
-    if (hasError) {
-      setHasError(false);
-      v.load();
-    }
-
-    try {
-      if (!hasStarted) {
-        setHasStarted(true);
-        setIsBuffering(true);
+    if (sectionVisible) {
+      const playPromise = v.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setIsPlaying(true))
+          .catch(() => {
+            // If browser blocks unmuted playback, force mute and retry
+            v.muted = true;
+            setIsMuted(true);
+            v.play().then(() => setIsPlaying(true)).catch(() => {});
+          });
       }
-
-      if (v.paused) {
-        await v.play();
-        setPlaying(true);
-      } else {
+    } else {
+      if (!v.paused) {
         v.pause();
-        setPlaying(false);
+        setIsPlaying(false);
       }
-    } catch (err) {
-      console.warn('Playback error or user gesture blocked:', err);
     }
-  }, [hasStarted, hasError]);
+  }, [sectionVisible]);
 
-  /* Fullscreen toggle */
-  const handleFullscreen = useCallback((e: React.MouseEvent) => {
+  /* Toggle Play / Pause */
+  const togglePlay = useCallback((e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    const v = videoRef.current;
+    if (!v) return;
+
+    if (v.paused) {
+      v.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+  /* Toggle Mute / Sound */
+  const toggleMute = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    const v = videoRef.current;
+    if (!v) return;
+
+    v.muted = !v.muted;
+    setIsMuted(v.muted);
+  }, []);
+
+  /* Fullscreen */
+  const toggleFullscreen = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     const v = videoRef.current;
     if (!v) return;
@@ -220,99 +220,66 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
         {/* ── Cinematic 16:9 Video Frame ── */}
         <div
           ref={wrapperRef}
-          className={`${revealBase} ${videoReveal} relative w-full rounded-2xl overflow-hidden cursor-pointer group bg-navy-900`}
+          className={`${revealBase} ${videoReveal} relative w-full rounded-2xl overflow-hidden cursor-pointer group bg-navy-900 select-none`}
           style={{
             aspectRatio: '16/9',
             transitionDelay: prefersReduced ? '0ms' : '500ms',
             boxShadow: '0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,161,107,0.15)',
           }}
-          onClick={handlePlay}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          role="button"
-          tabIndex={0}
-          aria-label={playing ? t.pause : t.play}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              handlePlay();
-            }
-          }}
+          onClick={() => togglePlay()}
+          onMouseEnter={() => setShowControls(true)}
+          onMouseLeave={() => setShowControls(false)}
+          role="region"
+          aria-label="Lecteur vidéo du film Sabon"
         >
-          {/* Native HTML5 Video Element: preload="none" ensures no data is downloaded until user plays */}
+          {/* Native HTML5 Video Element with Autoplay & Loop */}
           <video
             ref={videoRef}
-            src={hasStarted ? videoSrc : undefined}
+            src={videoSrc}
             poster={posterWebp}
-            preload="none"
+            autoPlay
+            muted={isMuted}
+            loop
             playsInline
-            controls={playing}
+            preload="metadata"
             onWaiting={() => setIsBuffering(true)}
             onPlaying={() => {
               setIsBuffering(false);
-              setPlaying(true);
+              setIsPlaying(true);
             }}
-            onPause={() => setPlaying(false)}
-            onEnded={() => {
-              setPlaying(false);
-              setIsBuffering(false);
-            }}
+            onPause={() => setIsPlaying(false)}
             onError={() => {
               setHasError(true);
               setIsBuffering(false);
-              setPlaying(false);
             }}
             className="absolute inset-0 w-full h-full object-cover"
             aria-label="Film de présentation officiel Sabon Spa"
           />
 
-          {/* High-quality custom 16:9 Poster (rendered until playback starts) */}
-          {!hasStarted && (
-            <div className="absolute inset-0" aria-hidden="true">
-              <picture>
-                <source srcSet={posterWebp} type="image/webp" />
-                <img
-                  src={posterJpg}
-                  alt="Sabon Spa & Hammam Sanctuaire"
-                  loading="lazy"
-                  width={1280}
-                  height={720}
-                  className="w-full h-full object-cover select-none"
-                />
-              </picture>
-            </div>
-          )}
-
-          {/* Subtle dark gradient overlay to ensure contrast for play button */}
+          {/* Subtle dark gradient overlay */}
           <div
             aria-hidden="true"
             className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
             style={{
               background:
-                'linear-gradient(to bottom, rgba(10,20,35,0.3) 0%, rgba(10,20,35,0.1) 50%, rgba(10,20,35,0.45) 100%)',
-              opacity: playing ? 0 : 1,
+                'linear-gradient(to bottom, rgba(10,20,35,0.3) 0%, rgba(10,20,35,0.05) 50%, rgba(10,20,35,0.45) 100%)',
+              opacity: isPlaying ? 0.35 : 0.7,
             }}
           />
 
-          {/* Centered Play Button (when not playing and not buffering) */}
-          {!playing && !isBuffering && !hasError && (
+          {/* Pause overlay icon when visitor has manually paused */}
+          {!isPlaying && !isBuffering && !hasError && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
+              className="absolute inset-0 flex items-center justify-center pointer-events-none bg-black/25 backdrop-blur-[1px] transition-opacity duration-300"
             >
-              <div
-                className="transition-all duration-300"
-                style={{
-                  transform: hovered ? 'scale(1.12)' : 'scale(1)',
-                  filter: hovered ? 'drop-shadow(0 0 28px rgba(201,161,107,0.6))' : 'none',
-                }}
-              >
-                <PlayIcon size={76} />
+              <div className="w-18 h-18 rounded-full bg-navy/80 border border-gold/40 text-gold flex items-center justify-center shadow-luxury transform group-hover:scale-110 transition-transform duration-300">
+                <Play size={32} className="ml-1 text-gold" />
               </div>
             </div>
           )}
 
-          {/* Loading / Buffering Spinner (only appears once user has requested playback) */}
+          {/* Loading / Buffering Spinner */}
           {isBuffering && !hasError && (
             <div
               aria-hidden="true"
@@ -325,7 +292,7 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
             </div>
           )}
 
-          {/* Graceful Error State with Retry Button */}
+          {/* Graceful Error State */}
           {hasError && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy-950/90 p-6 text-center z-20">
               <p className="text-mist text-sm font-light mb-4">{t.error}</p>
@@ -333,7 +300,9 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  handlePlay();
+                  setHasError(false);
+                  videoRef.current?.load();
+                  videoRef.current?.play().catch(() => {});
                 }}
                 className="px-5 py-2.5 rounded-full bg-brand hover:bg-brand-600 text-white text-xs uppercase tracking-wider font-medium shadow-md transition-all duration-200 active:scale-95"
               >
@@ -342,37 +311,59 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
             </div>
           )}
 
-          {/* Fullscreen Button — top-right shortcut during playback */}
-          {playing && (
+          {/* ── Luxury Floating Control Bar (Always visible on mobile or hover) ── */}
+          <div
+            className={`absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between transition-opacity duration-300 ${
+              showControls || !isPlaying ? 'opacity-100' : 'opacity-85 sm:opacity-0 sm:group-hover:opacity-100'
+            }`}
+          >
+            {/* Left: Play / Pause Button */}
             <button
-              onClick={handleFullscreen}
-              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gold/60"
-              aria-label={t.fullscreen}
-              title={t.fullscreen}
+              onClick={togglePlay}
+              className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-navy/80 hover:bg-navy border border-aqua/25 hover:border-aqua/50 text-mist hover:text-white text-xs font-sans tracking-wide shadow-glass-dark hover:shadow-glow-aqua transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-gold/60"
+              aria-label={isPlaying ? t.pause : t.play}
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <polyline points="15 3 21 3 21 9" />
-                <polyline points="9 21 3 21 3 15" />
-                <line x1="21" y1="3" x2="14" y2="10" />
-                <line x1="3" y1="21" x2="10" y2="14" />
-              </svg>
+              {isPlaying ? <Pause size={14} className="text-aqua" /> : <Play size={14} className="text-gold" />}
+              <span className="hidden sm:inline">{isPlaying ? t.pause : t.play}</span>
             </button>
-          )}
+
+            {/* Right: Sound Toggle + Fullscreen */}
+            <div className="flex items-center gap-2.5">
+              {/* Sound Toggle (Mute / Unmute) */}
+              <button
+                onClick={toggleMute}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-navy/80 hover:bg-navy border border-aqua/25 hover:border-aqua/50 text-mist hover:text-white text-xs font-sans tracking-wide shadow-glass-dark hover:shadow-glow-aqua transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-gold/60"
+                aria-label={isMuted ? t.unmute : t.mute}
+              >
+                {isMuted ? (
+                  <>
+                    <VolumeX size={15} className="text-gold" />
+                    <span>{t.unmute}</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 size={15} className="text-aqua animate-pulse" />
+                    <span>{t.mute}</span>
+                  </>
+                )}
+              </button>
+
+              {/* Fullscreen Button */}
+              <button
+                onClick={toggleFullscreen}
+                className="p-2.5 rounded-full bg-navy/80 hover:bg-navy border border-aqua/25 hover:border-aqua/50 text-mist hover:text-white shadow-glass-dark hover:shadow-glow-aqua transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-gold/60"
+                aria-label={t.fullscreen}
+                title={t.fullscreen}
+              >
+                <Maximize2 size={14} />
+              </button>
+            </div>
+          </div>
 
           {/* Subtle bottom vignette */}
           <div
             className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-            style={{ background: 'linear-gradient(to top, rgba(10,20,35,0.5), transparent)' }}
+            style={{ background: 'linear-gradient(to top, rgba(10,20,35,0.6), transparent)' }}
             aria-hidden="true"
           />
         </div>
@@ -386,9 +377,6 @@ export const BrandFilm: React.FC<BrandFilmProps> = ({ lang = 'fr' }) => {
           Spa Sabon — Tanger, Maroc
         </p>
       </div>
-
-      {/* Rotating animation for play button ring */}
-      <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
     </section>
   );
 };
