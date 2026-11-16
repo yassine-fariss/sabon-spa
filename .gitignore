@@ -25,3 +25,7 @@ dist-ssr
 
 # Temporary test profiles
 temp_chrome_*
+
+# Heavy reference media
+assets/photos/reference/
+
