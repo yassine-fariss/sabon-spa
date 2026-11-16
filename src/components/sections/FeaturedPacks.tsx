@@ -35,29 +35,41 @@ export const FeaturedPacks: React.FC<FeaturedPacksProps> = ({
   if (loading || featuredPacks.length === 0) return null;
 
   return (
-    <section className="py-24 sm:py-28 bg-gradient-to-b from-ivory via-sand-light to-sand text-navy relative overflow-hidden transition-colors">
-      {/* Background warm ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-champagne/25 filter blur-[140px] pointer-events-none" />
+    <section
+      id="packs-signature"
+      className="py-24 sm:py-28 relative overflow-hidden transition-colors"
+      style={{ background: 'linear-gradient(180deg, #0E1F33 0%, #182D46 40%, #142840 100%)' }}
+    >
+      {/* Background texture blobs */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 40% at 20% 30%, rgba(99,185,209,0.06) 0%, transparent 70%),' +
+            'radial-gradient(ellipse 50% 35% at 80% 70%, rgba(201,161,107,0.05) 0%, transparent 70%)',
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal variant="fade-up" duration={700}>
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-brand font-medium">
-              <Sparkles size={13} />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/70 border border-aqua/20 text-aqua text-xs uppercase tracking-[0.22em] font-medium shadow-xs backdrop-blur-sm">
+              <Sparkles size={13} className="text-aqua" />
               <span>{lang === 'fr' ? 'Harmonie & Rituels Complets' : 'Complete Harmony & Rituals'}</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-serif text-navy font-light tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-serif text-mist font-light tracking-tight leading-tight">
               {lang === 'fr' ? (
                 <>
-                  Nos Packs <span className="italic text-brand">Signature</span>
+                  Nos Packs <span className="italic font-normal text-aqua">Signature</span>
                 </>
               ) : (
                 <>
-                  Signature <span className="italic text-brand">Packages</span>
+                  Signature <span className="italic font-normal text-aqua">Packages</span>
                 </>
               )}
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-charcoal-muted font-light leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-mist/60 font-light leading-relaxed max-w-2xl mx-auto">
               {t(lang, 'packs.featuredSubtitle')}
             </p>
           </div>
@@ -73,7 +85,7 @@ export const FeaturedPacks: React.FC<FeaturedPacksProps> = ({
               duration={700}
               className="h-full"
             >
-              <PackCard pack={pack} lang={lang} />
+              <PackCard pack={pack} lang={lang} variant="dark" />
             </Reveal>
           ))}
         </div>
@@ -83,10 +95,10 @@ export const FeaturedPacks: React.FC<FeaturedPacksProps> = ({
             <div className="text-center mt-12">
               <button
                 onClick={onExploreAllPacks}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-navy hover:text-brand bg-white hover:bg-sand-light px-7 py-3.5 rounded-full border border-champagne/50 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-mist hover:text-white bg-navy/70 hover:bg-navy px-7 py-3.5 rounded-full border border-aqua/20 hover:border-aqua/40 shadow-glass-dark hover:shadow-glow-aqua transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 backdrop-blur-sm"
               >
                 <span>{t(lang, 'packs.viewAll')}</span>
-                <ArrowRight size={14} className="text-brand" />
+                <ArrowRight size={14} className="text-aqua" />
               </button>
             </div>
           </Reveal>
